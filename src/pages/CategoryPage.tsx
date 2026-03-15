@@ -148,14 +148,15 @@ function FaqSection({ faqs }: { faqs: { q: string; a: string }[] }) {
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
 export default function CategoryPage() {
-  const { category } = useParams<{ category: string }>();
+  const params = useParams<{ category?: string }>();
 
-  // Determine config from URL param OR from fixed slug
+  // Derive slug from route param OR from pathname
   const config = useMemo(() => {
-    if (category) return getCategoryBySlug(category);
-    const path = window.location.pathname.replace("/", "");
-    return getCategoryBySlug(path);
-  }, [category]);
+    if (params.category) return getCategoryBySlug(params.category);
+    // Fixed routes: pathname = "/katzenhoehlen" → slug = "katzenhoehlen"
+    const slug = window.location.pathname.replace(/^\//, "");
+    return getCategoryBySlug(slug);
+  }, [params.category]);
 
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [sort, setSort] = useState<SortKey>("empfohlen");
