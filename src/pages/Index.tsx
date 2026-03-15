@@ -243,6 +243,22 @@ export default function Index() {
         </div>
       </section>
 
+      {/* BRAND SLIDER */}
+      <section className="py-10 bg-card border-y border-border overflow-hidden" aria-label="Vertrauenswürdige Marken">
+        <div className="container mx-auto px-4 mb-5">
+          <p className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground">Vertrauenswürdige Marken</p>
+        </div>
+        <div className="relative">
+          <div className="flex gap-10 animate-marquee whitespace-nowrap">
+            {[...brands, ...brands].map((brand, i) => (
+              <span key={i} className="text-sm font-semibold text-muted-foreground/60 hover:text-primary transition-colors cursor-default shrink-0">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CATEGORY GRID */}
       <section className="py-20 bg-muted/30" aria-labelledby="categories-heading">
         <div className="container mx-auto px-4">
@@ -431,24 +447,6 @@ export default function Index() {
                   </div>
                 )}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* BRAND SLIDER */}
-      <section className="py-10 bg-card border-y border-border overflow-hidden" aria-label="Vertrauenswürdige Marken">
-        <div className="container mx-auto px-4 mb-5">
-          <p className="text-center text-sm font-semibold uppercase tracking-wider text-muted-foreground">Vertrauenswürdige Marken</p>
-        </div>
-        <div className="relative">
-          <div className="flex gap-10 animate-marquee whitespace-nowrap">
-            {[...brands, ...brands].map((brand, i) => (
-              <span key={i} className="text-sm font-semibold text-muted-foreground/60 hover:text-primary transition-colors cursor-default shrink-0">
-                {brand}
-              </span>
             ))}
           </div>
         </div>
