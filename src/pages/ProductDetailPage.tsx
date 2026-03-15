@@ -204,6 +204,7 @@ export default function ProductDetailPage() {
   const catInfo = CATEGORY_ROUTES[product.kategorie] ?? { name: "Katzenbetten", route: "/katzenbetten" };
   const formattedPrice = product.preis.toFixed(2).replace(".", ",");
   const typMeta = getTypMeta(product.typ);
+  const realName = getProductName(product.rang) || product.produktname;
 
   const keyBenefits = [
     product.besonderheiten,
