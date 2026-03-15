@@ -8,6 +8,15 @@ import catHeated from "@/assets/cat-heated.jpg";
 import catHammock from "@/assets/cat-hammock.jpg";
 import heroCat from "@/assets/hero-cat.jpg";
 
+export interface BuyingGuide {
+  title: string;
+  intro: string;
+  steps?: { title: string; text: string }[];
+  proCon?: { pros: string[]; cons: string[] };
+  table?: { title: string; headers: string[]; rows: string[][] };
+  editorTip?: string;
+}
+
 export interface CategoryConfig {
   slug: string;
   route: string;
@@ -23,6 +32,7 @@ export interface CategoryConfig {
     h2: string;
     body: string;
   };
+  buyingGuide?: BuyingGuide;
   faqs: { q: string; a: string }[];
   produktKategorien: string[]; // maps to Product.kategorie
 }
