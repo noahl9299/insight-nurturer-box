@@ -255,6 +255,42 @@ Achte auf einen niedrigen Einstieg (maximal 10–12 cm), damit alte oder kranke 
 
 **Tipp:** Platziere die Fensterliege an einem Fenster, das Sonnenlicht bekommt – am besten in Süd- oder Westausrichtung. So hat deine Katze ihr persönliches Sonnenbad.`,
     },
+    buyingGuide: {
+      title: "Fensterliege kaufen – Montage, Sicherheit und die besten Tipps",
+      intro: "Eine Fensterliege ist das meistgenutzte Katzenzubehör überhaupt. Diese Punkte entscheiden über Sicherheit und Akzeptanz.",
+      steps: [
+        { title: "Saugnapf-Qualität ist entscheidend", text: "Mindestens 4 starke Saugnäpfe mit Hebelschloss (nicht einfache Saugnäpfe). Glas muss vor der Montage gründlich gereinigt und fettfrei sein. Kontrolliere die Haftung in den ersten Tagen täglich, danach wöchentlich." },
+        { title: "Tragkraft großzügig wählen", text: "Auch wenn deine Katze nur 4 kg wiegt: Wähle eine Fensterliege mit mindestens 15 kg Tragkraft. Das gibt Sicherheitspuffer bei Sprüngen und plötzlichen Bewegungen. Für Maine Coon (7–10 kg) mindestens 25 kg Tragkraft." },
+        { title: "Optimale Ausrichtung", text: "Süd- oder westausgerichtete Fenster geben nachmittags Sonne – perfekt für Sonnenanbeter. Fenster mit Blick auf Garten, Vögel oder belebte Straße werden intensiver genutzt. Keine Zugluft in der Nähe." },
+        { title: "Weich oder Gitter?", text: "Stoff/Plüsch-Liegen sind bequemer und wärmer. Metall-Gitter bieten bessere Luftzirkulation und freie Sicht nach unten. Manche Katzen sitzen lieber auf Gitter (spüren die Wärme besser), andere nur auf weicher Unterlage." },
+      ],
+      proCon: {
+        pros: [
+          "Kein Bohren nötig – Saugnapf-Montage in Minuten",
+          "Katzen lieben erhöhte Plätze mit Überblick",
+          "Sonnenenergie wärmt natürlich – kein Strom nötig",
+          "Visuelle Stimulation durch Vögel und Außenwelt",
+          "Platzsparend – nutzt bereits vorhandene Fensterfläche",
+        ],
+        cons: [
+          "Nur an Glasfenstern nutzbar (kein Kunststoff, kein Doppelrahmen)",
+          "Saugnäpfe müssen regelmäßig kontrolliert werden",
+          "Nicht für sehr schwere Katzen über 8 kg ohne Spezialmodell",
+          "Bei Frost kann Glas porös werden – Haftung prüfen",
+        ],
+      },
+      table: {
+        title: "Fensterliegen-Typen im Vergleich",
+        headers: ["Typ", "Material", "Tragkraft", "Besonderheit", "Preis"],
+        rows: [
+          ["Standard Saugnapf", "Metall + Plüsch", "15–20 kg", "Einfache Montage", "15–30 €"],
+          ["Premium Saugnapf", "Metall + Memory Foam", "20–25 kg", "Komfortableres Liegen", "30–55 €"],
+          ["Fenster-Hängematte", "Canvas/Stoff", "15–20 kg", "Leichtes Schaukeln", "20–40 €"],
+          ["Saugnapf-Regal", "Holz/Metall", "25–35 kg", "Stabil, auch für XXL-Katzen", "45–80 €"],
+        ],
+      },
+      editorTip: "Reinige die Saugnäpfe und die Glasfläche vor der Montage mit Isopropylalkohol-Tuch. Das entfernt unsichtbare Fette und verdoppelt die Haftkraft. Nach 24h Trockenzeit die Saugnäpfe nochmals fest andrücken – dann hält die Liege zuverlässig für Jahre.",
+    },
     faqs: [
       { q: "Wie sicher sind Saugnapf-Fensterliegen?", a: "Bei sauberem Glas und korrekter Montage sehr sicher. Achte auf Saugnäpfe mit Hebelschloss. Kontrolliere die Haftung wöchentlich und reinige Glas und Saugnapf regelmäßig." },
       { q: "Welches Gewicht halten Fensterliegen?", a: "Gute Modelle halten 15–25 kg. Für Katzen bis 7 kg sind alle empfohlenen Modelle geeignet. Für Maine Coon oder andere schwere Rassen auf die angegebene Maximallast achten." },
