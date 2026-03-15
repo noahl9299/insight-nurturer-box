@@ -163,6 +163,7 @@ export default function Index() {
                   { label: "Katzenhöhlen", to: "/katzenhoehlen" },
                   { label: "Donut-Betten", to: "/donut-katzenbetten" },
                   { label: "Für Senioren", to: "/orthopaedische-katzenbetten" },
+                  { label: "📏 Größenberater", to: "/groessenberater" },
                 ].map((link) => (
                   <Link
                     key={link.to}

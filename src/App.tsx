@@ -9,6 +9,7 @@ import CategoryPage from "./pages/CategoryPage.tsx";
 import ProductDetailPage from "./pages/ProductDetailPage.tsx";
 import GuidesOverviewPage from "./pages/GuidesOverviewPage.tsx";
 import GuideArticlePage from "./pages/GuideArticlePage.tsx";
+import GrössenberaterPage from "./pages/GrössenberaterPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/katzenbett/:slug" element={<ProductDetailPage />} />
             <Route path="/ratgeber" element={<GuidesOverviewPage />} />
             <Route path="/ratgeber/:slug" element={<GuideArticlePage />} />
+            <Route path="/groessenberater" element={<GrössenberaterPage />} />
             <Route path="/ueber-uns" element={<Index />} />
             <Route path="/impressum" element={<Index />} />
             <Route path="/datenschutz" element={<Index />} />
