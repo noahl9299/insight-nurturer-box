@@ -435,8 +435,8 @@ export default function ProductDetailPage() {
                   </p>
                   <p>
                     Mit einer Durchschnittsbewertung von{" "}
-                    <strong className="text-foreground">{product.bewertung}/5</strong> bei über{" "}
-                    {product.anzahlBewertungen.toLocaleString("de-DE")} Bewertungen gehört dieses
+                    <strong className="text-foreground">{realRating}/5</strong> bei über{" "}
+                    {realReviews.toLocaleString("de-DE")} Bewertungen gehört dieses
                     Katzenbett zu den beliebtesten seiner Kategorie.
                   </p>
                 </div>
