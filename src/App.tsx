@@ -10,11 +10,6 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-// Wrapper that passes a fixed slug to CategoryPage via route params
-function CategoryRoute({ slug }: { slug: string }) {
-  return <CategoryPage />;
-}
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
