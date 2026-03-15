@@ -50,20 +50,29 @@ function getTypMeta(typ: string): TypEmoji {
   return TYPE_META[typ] ?? TYPE_META.default;
 }
 
-/* ── Product image placeholder ─────────────────────────────── */
+/* ── Product image with real Amazon photo ───────────────────── */
 function ProductHeroImage({ product }: { product: Product }) {
+  const [error, setError] = useState(false);
+  const imgSrc = getProductImage(product.rang);
   const meta = getTypMeta(product.typ);
+
+  if (imgSrc && !error) {
+    return (
+      <img
+        src={imgSrc}
+        alt={product.produktname}
+        className="w-full h-full object-cover"
+        referrerPolicy="no-referrer"
+        onError={() => setError(true)}
+        loading="lazy"
+      />
+    );
+  }
   return (
-    <div
-      className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}
-    >
+    <div className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}>
       <span className="text-9xl mb-4 select-none">{meta.icon}</span>
-      <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">
-        {product.produktname}
-      </p>
-      <p className="mt-2 text-xs font-medium px-3 py-1 rounded-full bg-white/60 text-muted-foreground">
-        {product.marke}
-      </p>
+      <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">{product.produktname}</p>
+      <p className="mt-2 text-xs font-medium px-3 py-1 rounded-full bg-white/60 text-muted-foreground">{product.marke}</p>
     </div>
   );
 }
