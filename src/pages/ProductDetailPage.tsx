@@ -665,4 +665,3 @@ function FaqList({ faqs }: { faqs: { q: string; a: string }[] }) {
   );
 }
 
-import { useState } from "react";
