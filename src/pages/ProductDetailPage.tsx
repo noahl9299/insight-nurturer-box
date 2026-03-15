@@ -357,7 +357,7 @@ export default function ProductDetailPage() {
 
             {/* Secondary CTA */}
             <a
-              href={product.affiliateLink}
+              href={getAmazonUrl(product.rang)}
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-2xl border-2 border-border text-foreground font-semibold text-sm hover:border-primary hover:text-primary transition-all mb-6"
