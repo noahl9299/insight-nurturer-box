@@ -34,6 +34,12 @@ export default function GuidesOverviewPage() {
 
   return (
     <>
+      <SEO
+        title="Ratgeber – Expertenwissen rund um Katzenbetten 2025"
+        description="Unsere Katzenbett-Ratgeber helfen dir beim Kauf: Größenratgeber, Materialvergleich, Kaufcheckliste und mehr – von Tierverhaltensexpertinnen verfasst."
+        canonical="https://katzenbett.de/ratgeber"
+        type="website"
+      />
       {/* JSON-LD: CollectionPage */}
       <script
         type="application/ld+json"

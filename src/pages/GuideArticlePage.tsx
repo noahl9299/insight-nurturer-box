@@ -84,6 +84,15 @@ export default function GuideArticlePage() {
 
   return (
     <>
+      <SEO
+        title={guide.metaTitle}
+        description={guide.metaDescription}
+        canonical={`https://katzenbett.de/ratgeber/${guide.slug}`}
+        type="article"
+        datePublished={guide.publishedAt}
+        dateModified={guide.updatedAt}
+        author={guide.author}
+      />
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
