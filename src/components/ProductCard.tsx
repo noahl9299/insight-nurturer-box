@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Product } from "@/data/products";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
+import { getProductName } from "@/data/productNames";
 
 interface ProductCardProps {
   product: Product;
@@ -80,12 +81,13 @@ export function StarRating({ rating, count }: { rating: number; count?: number }
 
 export function ProductCard({ product, badge }: ProductCardProps) {
   const formattedPrice = product.preis.toFixed(2).replace(".", ",");
+  const displayName = getProductName(product.rang) || product.produktname;
 
   return (
     <Link
       to={`/katzenbett/${product.slug}`}
       className="product-card block group"
-      aria-label={`${product.produktname} - ${formattedPrice} Euro`}
+      aria-label={`${displayName} - ${formattedPrice} Euro`}
     >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
@@ -128,7 +130,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
       <div className="p-4">
         <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">{product.marke}</p>
         <h3 className="text-sm font-semibold text-foreground line-clamp-2 mb-1.5 leading-snug" style={{ fontFamily: "'Inter', sans-serif" }}>
-          {product.produktname}
+          {displayName}
         </h3>
         {product.besonderheiten && (
           <p className="text-xs text-muted-foreground line-clamp-1 mb-2">{product.besonderheiten}</p>

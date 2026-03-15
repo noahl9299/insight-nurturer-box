@@ -22,6 +22,7 @@ import { getProductBySlug, getSimilarProducts, Product } from "@/data/products";
 import { ProductCard, StarRating } from "@/components/ProductCard";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
+import { getProductName } from "@/data/productNames";
 
 /* ── Type helpers ─────────────────────────────────────────── */
 type TypEmoji = { icon: string; gradient: string };
@@ -151,7 +152,7 @@ function ProductSchema({ product }: { product: Product }) {
   const schema = {
     "@context": "https://schema.org/",
     "@type": "Product",
-    name: product.produktname,
+    name: getProductName(product.rang) || product.produktname,
     brand: { "@type": "Brand", name: product.marke },
     offers: {
       "@type": "Offer",
@@ -203,6 +204,7 @@ export default function ProductDetailPage() {
   const catInfo = CATEGORY_ROUTES[product.kategorie] ?? { name: "Katzenbetten", route: "/katzenbetten" };
   const formattedPrice = product.preis.toFixed(2).replace(".", ",");
   const typMeta = getTypMeta(product.typ);
+  const realName = getProductName(product.rang) || product.produktname;
 
   const keyBenefits = [
     product.besonderheiten,
@@ -215,8 +217,8 @@ export default function ProductDetailPage() {
   return (
     <>
       <SEO
-        title={`${product.produktname} – ${product.marke} Katzenbett kaufen`}
-        description={`${product.produktname} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${product.bewertung}/5 bei ${product.anzahlBewertungen.toLocaleString("de-DE")} Rezensionen. Ab ${product.preis.toFixed(2).replace(".", ",")} €.`}
+        title={`${realName} – ${product.marke} Katzenbett kaufen`}
+        description={`${realName} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${product.bewertung}/5 bei ${product.anzahlBewertungen.toLocaleString("de-DE")} Rezensionen. Ab ${product.preis.toFixed(2).replace(".", ",")} €.`}
         canonical={`https://katzenbett.de/katzenbett/${product.slug}`}
         type="product"
         priceAmount={product.preis.toFixed(2)}
@@ -240,7 +242,7 @@ export default function ProductDetailPage() {
           </li>
           <ChevronRight size={14} />
           <li className="text-foreground font-medium line-clamp-1 max-w-[260px]">
-            {product.produktname}
+            {realName}
           </li>
         </ol>
       </nav>
@@ -310,7 +312,7 @@ export default function ProductDetailPage() {
               className="text-heading-2 text-foreground mb-4 leading-tight"
               style={{ fontFamily: "'DM Serif Display', serif" }}
             >
-              {product.produktname}
+              {realName}
             </h1>
 
             {/* Rating row */}
@@ -416,7 +418,7 @@ export default function ProductDetailPage() {
                 </h2>
                 <div className="prose max-w-none text-muted-foreground space-y-4 leading-relaxed">
                   <p>
-                    Das <strong className="text-foreground">{product.produktname}</strong> von{" "}
+                    Das <strong className="text-foreground">{realName}</strong> von{" "}
                     <strong className="text-foreground">{product.marke}</strong> ist ein {product.typ}-Katzenbett, das
                     sich durch {product.besonderheiten.toLowerCase()} auszeichnet. Mit Maßen von{" "}
                     {product.groesse} cm bietet es ausreichend Platz für die meisten Katzenrassen.
@@ -624,10 +626,11 @@ export default function ProductDetailPage() {
 
 /* ── FAQ Accordion ──────────────────────────────────────────── */
 function FaqAccordion({ product }: { product: Product }) {
+  const realName = getProductName(product.rang) || product.produktname;
   const faqs = [
     {
       q: `Für welche Katzen eignet sich das ${product.marke} Katzenbett?`,
-      a: `Das ${product.produktname} mit Maßen von ${product.groesse} cm eignet sich für die meisten Katzenrassen. ${product.besonderheiten}.`,
+      a: `Das ${realName} mit Maßen von ${product.groesse} cm eignet sich für die meisten Katzenrassen. ${product.besonderheiten}.`,
     },
     {
       q: `Wie pflege ich das ${product.typ}?`,
