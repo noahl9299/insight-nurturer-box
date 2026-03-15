@@ -5,6 +5,7 @@ import { Product } from "@/data/products";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
+import { getProductPrice, getProductRating, getProductReviews } from "@/data/productPrices";
 
 interface ProductCardProps {
   product: Product;
