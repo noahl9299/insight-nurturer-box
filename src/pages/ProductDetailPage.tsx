@@ -626,10 +626,11 @@ export default function ProductDetailPage() {
 
 /* ── FAQ Accordion ──────────────────────────────────────────── */
 function FaqAccordion({ product }: { product: Product }) {
+  const realName = getProductName(product.rang) || product.produktname;
   const faqs = [
     {
       q: `Für welche Katzen eignet sich das ${product.marke} Katzenbett?`,
-      a: `Das ${product.produktname} mit Maßen von ${product.groesse} cm eignet sich für die meisten Katzenrassen. ${product.besonderheiten}.`,
+      a: `Das ${realName} mit Maßen von ${product.groesse} cm eignet sich für die meisten Katzenrassen. ${product.besonderheiten}.`,
     },
     {
       q: `Wie pflege ich das ${product.typ}?`,
