@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/Layout";
 import Index from "./pages/Index.tsx";
 import CategoryPage from "./pages/CategoryPage.tsx";
+import ProductDetailPage from "./pages/ProductDetailPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -34,7 +35,7 @@ const App = () => (
             <Route path="/katzenbett-zubehoer" element={<CategoryPage />} />
 
             {/* Product detail, guide, about */}
-            <Route path="/katzenbett/:slug" element={<Index />} />
+            <Route path="/katzenbett/:slug" element={<ProductDetailPage />} />
             <Route path="/ratgeber" element={<Index />} />
             <Route path="/ratgeber/:slug" element={<Index />} />
             <Route path="/ueber-uns" element={<Index />} />

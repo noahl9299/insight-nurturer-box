@@ -156,6 +156,21 @@ export function getBestsellers(): Product[] {
     .slice(0, 12);
 }
 
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getSimilarProducts(product: Product, limit = 4): Product[] {
+  return products
+    .filter(
+      (p) =>
+        p.slug !== product.slug &&
+        (p.kategorie === product.kategorie || p.typ === product.typ)
+    )
+    .sort((a, b) => b.bewertung - a.bewertung)
+    .slice(0, limit);
+}
+
 export function searchProducts(query: string): Product[] {
   const q = query.toLowerCase();
   return products.filter(
