@@ -652,10 +652,15 @@ export default function ProductDetailPage() {
                 </p>
                 <dl className="space-y-2.5">
                   {[
+                  {[
                     { dt: "Marke", dd: product.marke },
                     { dt: "Kategorie", dd: product.typ },
-                    { dt: "Maße", dd: `${product.groesse} cm` },
-                    { dt: "Material", dd: product.material },
+                    { dt: "Maße", dd: realSize || product.groesse || "–" },
+                    { dt: "Material", dd: realMaterial || product.material || "–" },
+                    { dt: "Waschbar", dd: product.waschbar },
+                    { dt: "Farben", dd: product.farben },
+                    { dt: "ASIN", dd: product.asin },
+                  ]
                     { dt: "Waschbar", dd: product.waschbar },
                     { dt: "Farben", dd: product.farben },
                     { dt: "ASIN", dd: product.asin },
