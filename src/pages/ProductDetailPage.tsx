@@ -650,21 +650,16 @@ export default function ProductDetailPage() {
                 <p className="text-xs font-semibold text-foreground uppercase tracking-wide mb-3">
                   Produktdaten
                 </p>
-                <dl className="space-y-2.5">
-                  {[
-                  {[
-                    { dt: "Marke", dd: product.marke },
-                    { dt: "Kategorie", dd: product.typ },
-                    { dt: "Maße", dd: realSize || product.groesse || "–" },
-                    { dt: "Material", dd: realMaterial || product.material || "–" },
-                    { dt: "Waschbar", dd: product.waschbar },
-                    { dt: "Farben", dd: product.farben },
-                    { dt: "ASIN", dd: product.asin },
-                  ]
-                    { dt: "Waschbar", dd: product.waschbar },
-                    { dt: "Farben", dd: product.farben },
-                    { dt: "ASIN", dd: product.asin },
-                  ].map(({ dt, dd }) => (
+                 <dl className="space-y-2.5">
+                   {[
+                     { dt: "Marke", dd: product.marke },
+                     { dt: "Kategorie", dd: product.typ },
+                     { dt: "Maße", dd: realSize || product.groesse || "–" },
+                     { dt: "Material", dd: realMaterial || product.material || "–" },
+                     { dt: "Waschbar", dd: product.waschbar },
+                     { dt: "Farben", dd: product.farben },
+                     { dt: "ASIN", dd: product.asin },
+                   ].map(({ dt, dd }) => (
                     <div key={dt} className="flex gap-2">
                       <dt className="text-xs text-muted-foreground w-20 shrink-0">{dt}</dt>
                       <dd className="text-xs font-medium text-foreground">{dd}</dd>
