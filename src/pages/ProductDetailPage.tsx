@@ -457,7 +457,7 @@ export default function ProductDetailPage() {
                     { icon: "🧵", text: `Material: ${product.material}` },
                     { icon: "🫧", text: `Pflege: ${product.waschbar}` },
                     { icon: "🎨", text: `Farben: ${product.farben}` },
-                    { icon: "⭐", text: `${product.bewertung} von 5 Sternen` },
+                    { icon: "⭐", text: `${realRating} von 5 Sternen` },
                   ].map((item) => (
                     <div
                       key={item.text}
