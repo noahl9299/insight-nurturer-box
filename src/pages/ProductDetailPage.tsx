@@ -340,7 +340,7 @@ export default function ProductDetailPage() {
 
             {/* CTA Button */}
             <a
-              href={product.affiliateLink}
+              href={getAmazonUrl(product.rang)}
               target="_blank"
               rel="noopener noreferrer sponsored"
               data-asin={product.asin}
