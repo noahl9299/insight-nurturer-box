@@ -1,7 +1,7 @@
 import { Star, ShoppingBag, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Product } from "@/data/products";
+import { Product, getAmazonLink } from "@/data/products";
 
 interface ProductCardProps {
   product: Product;
@@ -112,7 +112,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
 
         {/* Wishlist icon */}
         <button
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-red-400"
+          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-background hover:text-destructive"
           aria-label="Auf Merkliste"
           onClick={(e) => e.preventDefault()}
         >
@@ -140,13 +140,23 @@ export function ProductCard({ product, badge }: ProductCardProps) {
 
         {/* CTA */}
         <div className="mt-4">
-          <div
-            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full text-sm font-semibold text-primary-foreground transition-all group-hover:-translate-y-0.5"
-            style={{ background: "hsl(var(--primary))" }}
-          >
-            <ShoppingBag size={14} />
-            Zum Angebot
-          </div>
+          {getAmazonLink(product.asin) ? (
+            <a
+              href={getAmazonLink(product.asin)!}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              onClick={(e) => e.stopPropagation()}
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full text-sm font-semibold bg-primary text-primary-foreground transition-all group-hover:-translate-y-0.5 hover:opacity-90"
+            >
+              <ShoppingBag size={14} />
+              Bei Amazon ansehen
+            </a>
+          ) : (
+            <div className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full text-sm font-semibold bg-primary text-primary-foreground transition-all group-hover:-translate-y-0.5 opacity-70 cursor-default">
+              <ShoppingBag size={14} />
+              Zum Angebot
+            </div>
+          )}
         </div>
       </div>
     </Link>
