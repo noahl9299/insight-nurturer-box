@@ -9,6 +9,7 @@ import CategoryPage from "./pages/CategoryPage.tsx";
 import ProductDetailPage from "./pages/ProductDetailPage.tsx";
 import GuidesOverviewPage from "./pages/GuidesOverviewPage.tsx";
 import GuideArticlePage from "./pages/GuideArticlePage.tsx";
+import GrössenberaterPage from "./pages/GrössenberaterPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
