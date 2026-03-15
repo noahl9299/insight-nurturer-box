@@ -125,6 +125,18 @@ export const products: Product[] = [
   { rang: 100, slug: "katzenbett-aus-holz-bb", produktname: "Katzenbett aus Holz BB", marke: "COZY KISS", kategorie: "Erhoeht", preis: 189.99, bewertung: 4.5, anzahlBewertungen: 120, material: "Baumwolle", groesse: "50x50", waschbar: "Ja", farben: "Anthrazit", typ: "Erhöhtes Bett", bildUrl: "https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?w=800&h=800&fit=crop&q=80", bildUrl2: "https://images.unsplash.com/photo-1501820488136-72669149e0d4?w=800&h=800&fit=crop&q=80", bildUrl3: "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?w=800&h=800&fit=crop&q=80", asin: "B109100XYZ", affiliateLink: "https://amzn.to/PLATZHALTER100", besonderheiten: "Leicht zu reinigen", badge: "Premium" },
 ];
 
+/** Baut den Amazon-Produktlink aus der ASIN.
+ *  Sobald ein Affiliate-Tag hinterlegt ist, wird er automatisch angehängt.
+ *  Enthält die ASIN noch "XYZ" (Platzhalter), wird null zurückgegeben.
+ */
+const AFFILIATE_TAG = ""; // z.B. "katzenbett-21" – hier eintragen sobald verfügbar
+
+export function getAmazonLink(asin: string): string | null {
+  if (!asin || asin.includes("XYZ") || asin.includes("PLATZ")) return null;
+  const tag = AFFILIATE_TAG ? `?tag=${AFFILIATE_TAG}` : "";
+  return `https://www.amazon.de/dp/${asin}${tag}`;
+}
+
 export function getBestsellers(): Product[] {
   return [...products].sort((a, b) => b.bewertung - a.bewertung || b.anzahlBewertungen - a.anzahlBewertungen);
 }
