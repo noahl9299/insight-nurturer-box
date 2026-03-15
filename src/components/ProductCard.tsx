@@ -144,23 +144,16 @@ export function ProductCard({ product, badge }: ProductCardProps) {
 
         {/* CTA */}
         <div className="mt-4">
-          {getAmazonLink(product.asin) ? (
-            <a
-              href={getAmazonLink(product.asin)!}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              onClick={(e) => e.stopPropagation()}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full text-sm font-semibold bg-primary text-primary-foreground transition-all group-hover:-translate-y-0.5 hover:opacity-90"
-            >
-              <ShoppingBag size={14} />
-              Bei Amazon ansehen
-            </a>
-          ) : (
-            <div className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full text-sm font-semibold bg-primary text-primary-foreground transition-all group-hover:-translate-y-0.5 opacity-70 cursor-default">
-              <ShoppingBag size={14} />
-              Zum Angebot
-            </div>
-          )}
+          <a
+            href={getAmazonUrl(product.rang)}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            onClick={(e) => e.stopPropagation()}
+            className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full text-sm font-semibold bg-primary text-primary-foreground transition-all group-hover:-translate-y-0.5 hover:opacity-90"
+          >
+            <ShoppingBag size={14} />
+            Bei Amazon ansehen
+          </a>
         </div>
       </div>
     </Link>
