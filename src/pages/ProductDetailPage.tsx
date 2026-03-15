@@ -152,7 +152,7 @@ function ProductSchema({ product }: { product: Product }) {
   const schema = {
     "@context": "https://schema.org/",
     "@type": "Product",
-    name: product.produktname,
+    name: getProductName(product.rang) || product.produktname,
     brand: { "@type": "Brand", name: product.marke },
     offers: {
       "@type": "Offer",
