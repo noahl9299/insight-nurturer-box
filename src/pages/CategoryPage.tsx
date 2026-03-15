@@ -5,6 +5,7 @@ import { ProductCard, StarRating } from "@/components/ProductCard";
 import { products, Product } from "@/data/products";
 import { getCategoryBySlug } from "@/data/categories";
 import NotFound from "@/pages/NotFound";
+import { SEO } from "@/components/SEO";
 
 // ── Filter types ──────────────────────────────────────────────────────────────
 type SortKey = "empfohlen" | "preis-asc" | "preis-desc" | "bewertung" | "beliebtheit";

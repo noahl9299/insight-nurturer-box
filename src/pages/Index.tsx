@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle } from "lucide-react";
 import { getBestsellers, searchProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
+import { SEO } from "@/components/SEO";
 import heroCat from "@/assets/hero-cat.jpg";
 import catCave from "@/assets/cat-cave.jpg";
 import catDonut from "@/assets/cat-donut.jpg";

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Clock, Calendar, Tag, ArrowRight, BookOpen, Star } from "lucide-react";
 import { guides } from "@/data/guides";
+import { SEO } from "@/components/SEO";
 import {
   Breadcrumb,
   BreadcrumbList,

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import {
   ShoppingBag,
   Star,

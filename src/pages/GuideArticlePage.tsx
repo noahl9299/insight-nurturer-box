@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Clock, Calendar, User, ArrowRight, ChevronRight, Star, BookOpen, Tag, List } from "lucide-react";
 import { getGuideBySlug, getRelatedGuides } from "@/data/guides";
+import { SEO } from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
   Breadcrumb,
