@@ -416,9 +416,27 @@ export default function ProductDetailPage() {
               </span>
               <span className="text-sm text-muted-foreground">inkl. MwSt.</span>
             </div>
-            <p className="text-xs text-muted-foreground mb-6 ml-1">
+            <p className="text-xs text-muted-foreground mb-2 ml-1">
               * Preis kann variieren · bei Amazon & weiteren Partnershops
             </p>
+
+            {/* Size & Material */}
+            {(realSize || realMaterial) && (
+              <div className="flex flex-wrap gap-3 mb-5">
+                {realSize && (
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 rounded-lg px-3 py-1.5">
+                    <Ruler size={12} />
+                    <span><strong className="text-foreground">Größe:</strong> {realSize}</span>
+                  </div>
+                )}
+                {realMaterial && (
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 rounded-lg px-3 py-1.5">
+                    <Layers size={12} />
+                    <span><strong className="text-foreground">Material:</strong> {realMaterial}</span>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* CTA Button */}
             <a
