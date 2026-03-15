@@ -140,7 +140,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
           <p className="text-xs text-muted-foreground line-clamp-1 mb-2">{product.besonderheiten}</p>
         )}
 
-        <StarRating rating={product.bewertung} count={product.anzahlBewertungen} />
+        <StarRating rating={realRating} count={realReviews} />
 
         {/* Price row */}
         <div className="flex items-baseline gap-2 mt-3">
