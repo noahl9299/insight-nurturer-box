@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle, Clock, BookOpen } from "lucide-react";
-import { getBestsellers, searchProducts } from "@/data/products";
+import { products, searchProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SEO } from "@/components/SEO";
 import { guides } from "@/data/guides";
