@@ -125,6 +125,42 @@ Für Katzen bis 4 kg reichen 45–50 cm Durchmesser. Für Katzen von 4–6 kg si
 
 **Materialien:** Kunstfell (flauschig, günstig, maschinenwaschbar) ist Standard. Premium-Modelle verwenden Bio-Baumwolle oder nachhaltiges Polyester.`,
     },
+    buyingGuide: {
+      title: "Donut-Katzenbett kaufen – die wichtigsten Entscheidungskriterien",
+      intro: "Der Donut ist Deutschlands meistgekauftes Katzenbett. Doch nicht jedes Modell hält, was es verspricht. Das solltest du wissen.",
+      steps: [
+        { title: "Größe ist entscheidend", text: "Für Katzen bis 4 kg: 45–50 cm Durchmesser. Für 4–6 kg: 55 cm. Für Maine Coon, Ragdoll: 65–70 cm. Faustregel: Die eingerollte Katze muss bequem hineinpassen, ohne überzuhängen. Im Zweifelsfall lieber größer." },
+        { title: "Normal vs. Anti-Angst-Donut", text: "Anti-Angst-Donuts haben einen besonders hohen, weichen Rand (10–15 cm), der die Katze fast vollständig umschließt. Das 'Eingemauert-Sein'-Gefühl reduziert Stress erheblich – ideal für ängstliche Katzen, Gewitter oder Silvester." },
+        { title: "Material und Waschbarkeit prüfen", text: "Kunstfell und Plüsch sind Standard: weich, günstig, maschinenwaschbar bei 30 Grad. Achte auf Anti-Rutsch-Unterseite. Premium-Modelle verwenden Bio-Baumwolle oder recyceltes Polyester. Wäschenetz beim Waschen nutzen, damit die Form erhalten bleibt." },
+        { title: "Füllung macht den Unterschied", text: "Günstiger Polyesterwatte-Fill verliert nach wenigen Monaten Form. Hochwertige Modelle verwenden PP-Baumwolle (federartige Füllung, formstabil) oder Memory Foam-Flocken. Drücke das Bett zusammen: Springt es schnell zurück, ist die Qualität gut." },
+      ],
+      proCon: {
+        pros: [
+          "Erhöhter Rand gibt Geborgenheit und Anlehnmöglichkeit",
+          "Für alle Katzengrößen erhältlich (45–70 cm)",
+          "Meistens maschinenwaschbar bei 30 Grad",
+          "Anti-Angst-Varianten reduzieren Stress deutlich",
+          "Breite Auswahl: Budget bis Premium, viele Farben",
+        ],
+        cons: [
+          "Günstige Modelle verlieren schnell die Form",
+          "Nicht für Katzen geeignet, die lieber in einer Höhle schlafen",
+          "Zu kleine Donuts werden häufig ignoriert",
+          "Im Trockner kann die Form dauerhaft beschädigt werden",
+        ],
+      },
+      table: {
+        title: "Donut-Größentabelle nach Katzengewicht",
+        headers: ["Gewicht der Katze", "Empfohlener Durchmesser", "Typische Rassen", "Beispiel-Modell"],
+        rows: [
+          ["bis 3 kg", "45 cm", "Britisch Kurzhaar, Siamese", "Bedsure 45 cm"],
+          ["3–5 kg (Standard)", "50–55 cm", "Hauskatze, Europäisch Kurzhaar", "Bedsure 51 cm ⭐"],
+          ["5–7 kg", "55–60 cm", "Perser, Siam, Abessiner", "SCHLITZOHR 55 cm"],
+          ["über 7 kg (groß)", "65–70 cm", "Maine Coon, Ragdoll, Waldkatze", "JEMIDI XXL 70 cm"],
+        ],
+      },
+      editorTip: "Für die erste Katze empfehlen wir das Bedsure Donut in Grau oder Beige – über 7.000 Bewertungen bei Amazon, günstig, waschbar und wird von fast allen Katzen sofort angenommen. Erst danach ausprobieren, ob ein Anti-Angst-Donut oder ein anderer Typ besser passt.",
+    },
     faqs: [
       { q: "Was ist der Unterschied zwischen normalem Donut und Anti-Angst-Donut?", a: "Anti-Angst-Donuts haben einen besonders hohen, weichen Rand, der die Katze fast vollständig umschließt. Das Eingemauert-Sein-Gefühl reduziert Stress und Angst erheblich." },
       { q: "Welche Größe Donut-Bett für meine Katze?", a: "Für Katzen bis 4 kg: 45–50 cm. Für 4–6 kg: 55 cm. Für Maine Coon und Co.: 60–70 cm. Im Zweifelsfall lieber eine Nummer größer wählen." },
