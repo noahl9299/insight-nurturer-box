@@ -112,7 +112,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
 
         {/* Wishlist icon */}
         <button
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-red-400"
+          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-background hover:text-destructive"
           aria-label="Auf Merkliste"
           onClick={(e) => e.preventDefault()}
         >
