@@ -381,38 +381,163 @@ export default function Index() {
         </div>
       </section>
 
-      {/* SEO CONTENT */}
-      <section className="py-20 bg-muted/20" aria-labelledby="seo-heading">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 id="seo-heading" className="text-heading-2 text-foreground mb-8 text-center">
-            Katzenbett kaufen - Darauf solltest du achten
-          </h2>
+      {/* BUYING GUIDE */}
+      <section className="py-20 bg-muted/20" aria-labelledby="guide-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Kaufberatung</p>
+            <h2 id="guide-heading" className="text-heading-2 text-foreground mb-4">
+              Katzenbett kaufen – worauf wirklich ankommt
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Unsere Redaktion hat über 500 Katzenbetten analysiert. Hier sind die wichtigsten Entscheidungskriterien.
+            </p>
+          </div>
 
-          <div className="prose max-w-none space-y-8 text-muted-foreground leading-relaxed">
+          {/* Step-by-step guide */}
+          <div className="space-y-8 mb-14">
+            {[
+              {
+                step: "01",
+                title: "Den richtigen Typ finden",
+                icon: "🐾",
+                content: "Der wichtigste Schritt: Welcher Schlafstil hat deine Katze? Kugelschläfer lieben Donut-Betten mit erhöhtem Rand. Ängstliche oder scheue Katzen brauchen eine Katzenhöhle mit rundum Schutz. Neugierige Sonnenanbeter freuen sich über eine Fensterliege. Ältere Katzen mit Gelenkproblemen brauchen orthopädischen Memory Foam.",
+                links: [
+                  { label: "Katzenhöhlen", to: "/katzenhoehlen" },
+                  { label: "Donut-Betten", to: "/donut-katzenbetten" },
+                  { label: "Orthopädisch", to: "/orthopaedische-katzenbetten" },
+                ],
+              },
+              {
+                step: "02",
+                title: "Die richtige Größe wählen",
+                icon: "📐",
+                content: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Faustregel: Das Bett sollte mindestens 1,5× so groß sein wie die eingerollte Katze. Für Hauskatzen (3–5 kg) empfehlen wir 50 cm Durchmesser. Für große Rassen wie Maine Coon oder Norwegische Waldkatze mindestens 60–70 cm. Im Zweifelsfall lieber eine Nummer größer.",
+                links: [
+                  { label: "📏 Größenberater starten", to: "/groessenberater" },
+                ],
+              },
+              {
+                step: "03",
+                title: "Das passende Material",
+                icon: "🧶",
+                content: "Plüsch & Kunstfell: weich, günstig, maschinenwaschbar – der Klassiker. Filz (Merinowolle): naturbelassen, atmungsaktiv, temperaturregulierend – ideal für Höhlen. Memory Foam: druckentlastend, für ältere und kranke Katzen. Cord & Canvas: modisch, robust, pflegeleicht. Holz/Birke: langlebig, hygienisch, fürs Design-Bewusste.",
+                links: [],
+              },
+              {
+                step: "04",
+                title: "Waschbarkeit & Hygiene",
+                icon: "🧺",
+                content: "Ein waschbares Katzenbett ist kein Luxus, sondern Pflicht. Katzen verlieren täglich Haare und hinterlassen Hautschuppen – ein regelmäßiges Waschen bei 30–40 Grad reduziert Bakterien und Gerüche. Achte auf Modelle mit abnehmbarem Bezug: So muss nicht das komplette Bett in die Maschine. Filzhöhlen nur per Handwäsche.",
+                links: [],
+              },
+            ].map((item) => (
+              <div key={item.step} className="flex gap-6 bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors">
+                <div className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold text-primary/20 border-2 border-primary/20 font-mono">
+                  {item.step}
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">{item.icon}</span>
+                    <h3 className="text-base font-bold text-foreground">{item.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.content}</p>
+                  {item.links.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {item.links.map((l) => (
+                        <Link key={l.to} to={l.to} className="text-xs px-3 py-1.5 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                          {l.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Material comparison table */}
+          <div className="bg-card rounded-2xl border border-border overflow-hidden mb-10">
+            <div className="px-6 py-4 border-b border-border bg-muted/40">
+              <h3 className="font-bold text-foreground">Materialvergleich auf einen Blick</h3>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Material</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Vorteile</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Nachteile</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Am besten für</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { mat: "Plüsch / Kunstfell", pros: "Weich, günstig, waschbar", cons: "Verschleißt schneller", best: "Junge Katzen, Budget-Käufer" },
+                    { mat: "Filz (Merinowolle)", pros: "Natürlich, atmungsaktiv", cons: "Nur Handwäsche", best: "Höhlen, Naturliebhaber" },
+                    { mat: "Memory Foam", pros: "Gelenkentlastend, passt sich an", cons: "Teurer, schwerer", best: "Senioren, kranke Katzen" },
+                    { mat: "Cord / Canvas", pros: "Modisch, robust, pflegeleicht", cons: "Weniger weich", best: "Design-Haushalte" },
+                    { mat: "Holz / Birkenholz", pros: "Langlebig, hygienisch, stylisch", cons: "Kein Kuschelfaktor allein", best: "Design-Betten mit Kissen" },
+                  ].map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-muted/20" : ""}>
+                      <td className="px-4 py-3 font-medium text-foreground">{row.mat}</td>
+                      <td className="px-4 py-3 text-muted-foreground">✅ {row.pros}</td>
+                      <td className="px-4 py-3 text-muted-foreground">⚠️ {row.cons}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.best}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Editor tip */}
+          <div className="rounded-2xl p-6 flex gap-4 items-start border border-primary/20" style={{ background: "hsl(var(--accent))" }}>
+            <div className="text-3xl shrink-0">💡</div>
             <div>
-              <h3 className="text-heading-3 text-foreground mb-3">Das richtige Material für den Katzenschlafplatz</h3>
-              <p>
-                Beim Katzenbett kommt es auf das richtige Material an. Plüsch und Fleece sind besonders weich und kuschelig - perfekt für Katzen, die es flauschig mögen. Filz aus Merinowolle ist natürlich temperaturregulierend und langlebig, ideal für Katzenhöhlen. Memory Foam sorgt bei orthopädischen Katzenbetten für optimale Gelenkentlastung. Cord und Canvas sind modern, robust und leicht zu pflegen.
+              <p className="font-semibold text-foreground mb-1">Redaktionstipp: So gewöhnt deine Katze sich schneller an das neue Bett</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Stelle das neue Bett an einem ruhigen, erhöhten Ort auf – Katzen mögen den Überblick. Lege ein getragenes T-Shirt hinein, damit das Bett nach dir riecht. Katzenminze am Eingang oder auf dem Kissen kann die Neugier wecken. Gib deiner Katze 2–3 Wochen Zeit. Manche Katzen brauchen länger – sei geduldig und locke sie nie mit Gewalt.
               </p>
             </div>
-            <div>
-              <h3 className="text-heading-3 text-foreground mb-3">Welche Größe braucht meine Katze?</h3>
-              <p>
-                Ein Katzenkorb oder Katzenbett sollte groß genug sein, dass sich deine Katze bequem einrollen kann. Für eine durchschnittliche Hauskatze (3-5 kg) empfehlen wir einen Durchmesser von mindestens 50 cm. Bei großen Rassen wie Maine Coon oder Norwegische Waldkatze solltest du zu 60-70 cm greifen. Unser <Link to="/ratgeber/katzenbett-groesse" className="text-primary hover:underline">Größen-Guide</Link> hilft dir bei der Auswahl.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-heading-3 text-foreground mb-3">Waschbare Katzenbetten - ein Muss für jeden Katzenhaushalt</h3>
-              <p>
-                Hygiene ist wichtig: Ein waschbares Katzenbett lässt sich leicht sauber halten und reduziert Bakterien und Gerüche. Die meisten modernen Katzenkörbchen und Katzenbetten sind bei 30-40 Grad in der Waschmaschine waschbar. Achte auf Betten mit abnehmbarem Bezug - das erleichtert die Reinigung erheblich.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-heading-3 text-foreground mb-3">Katzenbett oder Katzenhöhle - was ist besser?</h3>
-              <p>
-                Das hängt ganz von deiner Katze ab. Ängstliche oder scheue Katzen fühlen sich in einer <Link to="/katzenhoehlen" className="text-primary hover:underline">Katzenhöhle</Link> oder einem Iglu sicherer - der geschlossene Raum gibt ihnen Geborgenheit. Selbstbewusste, neugierige Katzen bevorzugen oft offene Betten oder <Link to="/fensterliegen-katzen" className="text-primary hover:underline">Fensterliegen</Link> mit freiem Blick. Für ältere Katzen sind <Link to="/orthopaedische-katzenbetten" className="text-primary hover:underline">orthopädische Katzenbetten</Link> mit Memory Foam die beste Wahl.
-              </p>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BETTEN NACH KATZENPERSÖNLICHKEIT */}
+      <section className="py-20 bg-background" aria-labelledby="personality-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Entscheidungshilfe</p>
+            <h2 id="personality-heading" className="text-heading-2 text-foreground mb-4">
+              Welches Katzenbett passt zu welcher Katze?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Jede Katze ist anders. Diese Übersicht hilft dir, den richtigen Typ zu finden.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { emoji: "😰", title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier – braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
+              { emoji: "🌞", title: "Der Sonnenanbeter", desc: "Liegt immer am Fenster, beobachtet alles, liebt Wärme.", rec: "Fensterliege oder beheiztes Bett", link: "/fensterliegen-katzen", badge: "Tipp" },
+              { emoji: "👑", title: "Die Diva", desc: "Hält dein Sofa für ihr Eigentum und lässt das alle wissen.", rec: "Katzensofa direkt daneben", link: "/katzensofas", badge: "Tipp" },
+              { emoji: "🦁", title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze – braucht Platz.", rec: "XL-Donut (60–70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
+              { emoji: "🧓", title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
+              { emoji: "✨", title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
+            ].map((item) => (
+              <Link key={item.link} to={item.link} className="group bg-card rounded-2xl border border-border p-5 hover:border-primary/40 hover:shadow-md transition-all hover:-translate-y-0.5">
+                <div className="flex items-start justify-between mb-3">
+                  <span className="text-3xl">{item.emoji}</span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-semibold">{item.badge}</span>
+                </div>
+                <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
+                <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{item.desc}</p>
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-semibold text-primary">→ {item.rec}</p>
+                  <ArrowRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
