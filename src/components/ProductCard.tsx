@@ -46,7 +46,8 @@ function ProductImage({ bildUrl, produktname, typ }: { bildUrl?: string; produkt
         src={bildUrl}
         alt={produktname}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        onError={() => setError(true)}
+        referrerPolicy="no-referrer"
+        onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.svg"; setError(true); }}
         loading="lazy"
       />
     );
