@@ -87,7 +87,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
     <Link
       to={`/katzenbett/${product.slug}`}
       className="product-card block group"
-      aria-label={`${product.produktname} - ${formattedPrice} Euro`}
+      aria-label={`${displayName} - ${formattedPrice} Euro`}
     >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
