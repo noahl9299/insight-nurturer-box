@@ -58,6 +58,42 @@ Die Höhle sollte groß genug sein, dass deine Katze sich darin umdrehen kann �
 
 **Filz vs. Plüsch:** Filzhöhlen (aus Wolle) sind atmungsaktiver, teurer, aber nachhaltiger. Plüschhöhlen sind günstiger, weicher und meist maschinenwaschbar.`,
     },
+    buyingGuide: {
+      title: "Katzenhöhle kaufen – worauf es wirklich ankommt",
+      intro: "Nicht jede Höhle ist gleich. Diese 4 Punkte entscheiden, ob deine Katze das neue Rückzugsnest liebt oder ignoriert.",
+      steps: [
+        { title: "Richtige Größe wählen", text: "Innenmaß mindestens 40×35 cm – deine Katze muss sich darin umdrehen können. Für Maine Coon, Ragdoll oder Norwegische Waldkatze lieber 50×45 cm oder mehr. Ein zu enges Nest wird selten genutzt." },
+        { title: "Den besten Standort finden", text: "Erhöht und ruhig ist ideal. Katzen fühlen sich sicherer, wenn sie von oben das Geschehen beobachten können. Nicht direkt neben lauten Geräten oder stark befahrenen Türen aufstellen." },
+        { title: "Material und Pflegeleichtigkeit", text: "Plüsch: weich, günstig, bei 30 Grad waschbar – der Alltags-Favorit. Filz (Merinowolle): atmungsaktiv, temperaturregulierend, nur Handwäsche. Cord: modern, robust, pflegeleicht. Achte immer auf abnehmbares Innenkissen." },
+        { title: "Eingewöhnung planen", text: "Lege ein getragenes T-Shirt in die Höhle – dein Geruch beruhigt. Katzenminze am Eingang weckt die Neugier. Gib deiner Katze 2–3 Wochen Zeit. Zwinge sie nie hinein." },
+      ],
+      proCon: {
+        pros: [
+          "Gibt ängstlichen Katzen Sicherheit und Geborgenheit",
+          "Reduziert Stress (nach Tierarzt, Gewitter, Umzug)",
+          "Schützt vor Zugluft und Kälte",
+          "2-in-1-Modelle auch als offenes Bett nutzbar",
+          "Filz-Modelle sind nachhaltig und langlebig",
+        ],
+        cons: [
+          "Filzhöhlen sind nur per Hand waschbar",
+          "Zu kleine Höhlen werden oft nicht angenommen",
+          "Manche Katzen brauchen Wochen zur Eingewöhnung",
+          "Bei mehreren Katzen ggf. mehrere Höhlen nötig (Revierdenken)",
+        ],
+      },
+      table: {
+        title: "Katzenhöhlen-Materialien im Vergleich",
+        headers: ["Material", "Waschbar", "Haltbarkeit", "Preis", "Ideal für"],
+        rows: [
+          ["Plüsch / Polyester", "30°C Maschine", "1–3 Jahre", "ab 20 €", "Alltag, Budget"],
+          ["Filz (Merinowolle)", "Nur Handwäsche", "3–7 Jahre", "ab 40 €", "Nachhaltigkeit, Atmungsaktivität"],
+          ["Cord", "30°C Maschine", "2–4 Jahre", "ab 30 €", "Design, Robustheit"],
+          ["Kunstfell", "30°C Maschine", "1–2 Jahre", "ab 18 €", "Kuschel-Feeling, Budget"],
+        ],
+      },
+      editorTip: "Kaufe für eine neue Katze zuerst eine günstige Plüschhöhle zum Testen. Wenn sie das Höhlen-Konzept mag, lohnt sich danach das Upgrade auf eine langlebige Filz- oder Cord-Höhle. So sparst du Geld und weißt, was deine Katze wirklich möchte.",
+    },
     faqs: [
       { q: "Wie groß sollte eine Katzenhöhle sein?", a: "Mindestens 40×35 cm Innenmaß, damit deine Katze sich bequem einrollen und umdrehen kann. Für größere Rassen (Maine Coon, Ragdoll) lieber 50×45 cm oder mehr wählen." },
       { q: "Welches Material ist am besten für Katzenhöhlen?", a: "Filz (Wolle) ist atmungsaktiv und langlebig, aber nur per Hand waschbar. Plüsch ist günstiger, maschinenwaschbar und sehr weich. Cord-Höhlen liegen im Trend und sind pflegeleicht." },
