@@ -130,6 +130,9 @@ export function Navigation() {
           <Link to="/ratgeber" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Ratgeber
           </Link>
+          <Link to="/groessenberater" className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors">
+            📏 Größenberater
+          </Link>
           <Link to="/ueber-uns" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Über uns
           </Link>
