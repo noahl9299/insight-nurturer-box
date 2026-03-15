@@ -242,7 +242,7 @@ export default function ProductDetailPage() {
           </li>
           <ChevronRight size={14} />
           <li className="text-foreground font-medium line-clamp-1 max-w-[260px]">
-            {product.produktname}
+            {realName}
           </li>
         </ol>
       </nav>
