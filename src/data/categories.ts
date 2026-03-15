@@ -524,6 +524,42 @@ Echte Materialien (Eiche, Buche, Merinowolle, Canvas), handwerkliche Fertigung o
 
 **Doppel-Hängematten:** Zwei-Ebenen-Modelle sparen Platz und ermöglichen es, dass zwei Katzen gleichzeitig ihren Lieblingsplatz haben.`,
     },
+    buyingGuide: {
+      title: "Katzenhängematte kaufen – Heizkörper, Fenster oder freistehend?",
+      intro: "Die Hängematte ist das kosteneffizienteste Katzen-Upgrade überhaupt – wenn du den richtigen Typ für deinen Heizkörper wählst.",
+      steps: [
+        { title: "Heizkörpertyp messen", text: "Miss zuerst: Breite des Heizkörpers (Standard: 40–80 cm), Tiefe der Rippen (9–11 cm = Standard, >12 cm = tief), Abstand Unterkante zum Boden. Notiere die Maße vor dem Kauf. Flachheizkörper und Design-Heizkörper brauchen spezielle Adapter." },
+        { title: "Tragkraft und Haken-Qualität", text: "Mindestens 10 kg Tragkraft, auch wenn deine Katze nur 4 kg wiegt (Sprünge erzeugen Stoßkräfte). Haken aus Metall (nicht Kunststoff). Prüfe nach Montage durch sanften Zug – wackelt nichts, sitzt alles korrekt." },
+        { title: "Liegematerial wählen", text: "Plüsch/Fleece: warm, weich, waschbar – Favorit für kalte Räume. Baumwoll-Canvas: atmungsaktiv, kühler – besser im Sommer. Gitter/Netz: maximale Luftzirkulation, manche Katzen mögen die offene Struktur. Achte auf abnehmbares Kissen." },
+        { title: "Position optimieren", text: "Hängematte auf Heizkörpermitte oder leicht erhöht montieren, nicht zu nah an heißen Rippenflächen. Katze sollte den Raum im Blick haben (Blickrichtung Tür oder Fenster). Doppel-Hängematten bei zwei Katzen – vermeidet Revierstreit." },
+      ],
+      proCon: {
+        pros: [
+          "Natürliche Wärmequelle (Heizkörper) ohne Stromkosten",
+          "Sehr platzsparend – nutzt sonst ungenutzte Fläche",
+          "Günstig (ab 15 €) und einfach zu montieren",
+          "Erhöhte Position – ideal für beobachtungsfreudige Katzen",
+          "Doppel-Modelle für zwei Katzen gleichzeitig",
+        ],
+        cons: [
+          "Passt nicht an alle Heizkörpertypen (Flachheizkörper problematisch)",
+          "Im Sommer ohne Heizung weniger attraktiv",
+          "Haken müssen regelmäßig kontrolliert werden",
+          "Kleine Liegefläche – für sehr große Katzen ggf. zu eng",
+        ],
+      },
+      table: {
+        title: "Heizkörper-Kompatibilitätstabelle",
+        headers: ["Heizkörpertyp", "Kompatibilität", "Adapter nötig?", "Empfohlener Typ"],
+        rows: [
+          ["Rippenheizung (Standard)", "✅ Sehr gut", "Nein", "Standard-Hängematte"],
+          ["Plattenheizkörper (flach)", "⚠️ Eingeschränkt", "Ja (Klemmen-Adapter)", "Spezial-Hängematte"],
+          ["Design-Heizkörper", "❌ Meist nicht", "Oft nicht möglich", "Fensterliege als Alternative"],
+          ["Handtuchwärmer", "✅ Gut", "Spezial-Haken", "Schmale Hängematte"],
+        ],
+      },
+      editorTip: "Kauf eine günstige Hängematte (15–20 €) zum Testen. Manche Katzen lieben Hängematten sofort, andere nie. Erst wenn sie die Hängematte regelmäßig nutzt, lohnt sich ein Upgrade auf ein hochwertiges Modell mit Memory Foam-Kissen.",
+    },
     faqs: [
       { q: "Passen Heizkörper-Hängematten an jeden Heizkörper?", a: "Nein. Prüfe vor dem Kauf die Breite und Tiefe deines Heizkörpers. Standard-Heizkörper (Rippenheizkörper) passen zu den meisten Modellen. Flachheizkörper und Design-Heizkörper benötigen spezielle Halterungen." },
       { q: "Wie viel Gewicht halten Katzenhängematten?", a: "Standard-Modelle tragen 6–10 kg – ausreichend für die meisten Hauskatzen. Für Maine Coon oder andere schwere Rassen über 7 kg auf verstärkte Modelle mit höherer Tragkraft achten." },
