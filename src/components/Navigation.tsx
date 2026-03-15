@@ -61,12 +61,6 @@ export function Navigation() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
-      {/* Affiliate-Hinweis */}
-      <div className="w-full bg-accent/60 border-b border-primary/10 py-1.5 px-4 text-center">
-        <p className="text-xs text-muted-foreground">
-          ℹ️ Hinweis: Wir vergleichen Produkte unabhängig. Bei einem Kauf über unsere Links erhalten wir eine Provision - für dich bleibt der Preis gleich.
-        </p>
-      </div>
 
       <nav className="container mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo */}
