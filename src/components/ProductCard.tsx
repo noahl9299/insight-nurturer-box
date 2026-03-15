@@ -1,5 +1,6 @@
 import { Star, ShoppingBag, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Product } from "@/data/products";
 
 interface ProductCardProps {
@@ -19,7 +20,6 @@ const CAT_BED_COLORS: Record<string, string> = {
 
 function PlaceholderImage({ typ, produktname }: { typ: string; produktname: string }) {
   const gradient = CAT_BED_COLORS[typ] || CAT_BED_COLORS.default;
-  const initial = typ.slice(0, 1);
   return (
     <div className={`w-full h-full bg-gradient-to-br ${gradient} flex flex-col items-center justify-center`}>
       <div className="text-5xl mb-2">
@@ -35,6 +35,23 @@ function PlaceholderImage({ typ, produktname }: { typ: string; produktname: stri
       <span className="text-xs text-muted-foreground text-center px-2 line-clamp-2">{produktname}</span>
     </div>
   );
+}
+
+function ProductImage({ bildUrl, produktname, typ }: { bildUrl?: string; produktname: string; typ: string }) {
+  const [error, setError] = useState(false);
+
+  if (bildUrl && !error) {
+    return (
+      <img
+        src={bildUrl}
+        alt={produktname}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        onError={() => setError(true)}
+        loading="lazy"
+      />
+    );
+  }
+  return <PlaceholderImage typ={typ} produktname={produktname} />;
 }
 
 export function StarRating({ rating, count }: { rating: number; count?: number }) {
@@ -69,7 +86,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <div className="product-card-image w-full h-full">
-          <PlaceholderImage typ={product.typ} produktname={product.produktname} />
+          <ProductImage bildUrl={product.bildUrl} produktname={product.produktname} typ={product.typ} />
         </div>
 
         {/* Badge */}
