@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Product } from "@/data/products";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
+import { getProductName } from "@/data/productNames";
 
 interface ProductCardProps {
   product: Product;
