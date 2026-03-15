@@ -280,6 +280,8 @@ export default function ProductDetailPage() {
   const realPrice = getProductPrice(product.rang) ?? product.preis;
   const realRating = getProductRating(product.rang) ?? product.bewertung;
   const realReviews = getProductReviews(product.rang) ?? product.anzahlBewertungen;
+  const realSize = getProductSize(product.rang) ?? product.groesse;
+  const realMaterial = getProductMaterial(product.rang) ?? product.material;
   const formattedPrice = realPrice.toFixed(2).replace(".", ",");
   const typMeta = getTypMeta(product.typ);
   const realName = getProductName(product.rang) || product.produktname;
@@ -287,9 +289,9 @@ export default function ProductDetailPage() {
   const keyBenefits = [
     product.besonderheiten,
     `Bewertung: ${realRating} / 5 (${realReviews.toLocaleString("de-DE")} Bewertungen)`,
-    `Material: ${product.material}`,
+    realMaterial ? `Material: ${realMaterial}` : null,
     product.waschbar === "Ja" ? "✓ Maschinenwaschbar bei 30°C" : `Pflege: ${product.waschbar}`,
-    product.groesse ? `Maße: ${product.groesse} cm` : null,
+    realSize ? `Maße: ${realSize}` : null,
   ].filter(Boolean) as string[];
 
   return (
