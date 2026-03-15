@@ -436,37 +436,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* NEWSLETTER */}
-      <section className="py-16 bg-gradient-to-r from-secondary to-green-900 text-white" aria-labelledby="newsletter-heading">
-        <div className="container mx-auto px-4 text-center max-w-xl">
-          <h2 id="newsletter-heading" className="text-heading-2 text-white mb-4">
-            Bleib auf dem Laufenden
-          </h2>
-          <p className="text-green-100 mb-8 text-lg">
-            Neue Produkte, Testberichte und Tipps rund um den perfekten Katzenschlaf. Einmal im Monat, kein Spam - versprochen. 🐾
-          </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder="deine@email.de"
-              aria-label="E-Mail-Adresse"
-              className="flex-1 px-5 py-3 rounded-full text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-full font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
-              style={{ background: "hsl(var(--primary))" }}
-            >
-              Anmelden
-            </button>
-          </form>
-          <p className="text-green-200 text-xs mt-4 flex items-center justify-center gap-3">
-            <span>🔒 Jederzeit abbestellbar</span>
-            <span>DSGVO-konform</span>
-            <span>Bereits 2.500+ Katzenliebhaber dabei</span>
-          </p>
-        </div>
-      </section>
+
 
       {/* BRAND SLIDER */}
       <section className="py-10 bg-card border-y border-border overflow-hidden" aria-label="Vertrauenswürdige Marken">
