@@ -312,7 +312,7 @@ export default function ProductDetailPage() {
               className="text-heading-2 text-foreground mb-4 leading-tight"
               style={{ fontFamily: "'DM Serif Display', serif" }}
             >
-              {product.produktname}
+              {realName}
             </h1>
 
             {/* Rating row */}
