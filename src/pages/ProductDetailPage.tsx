@@ -222,13 +222,13 @@ export default function ProductDetailPage() {
     <>
       <SEO
         title={`${realName} – ${product.marke} Katzenbett kaufen`}
-        description={`${realName} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${product.bewertung}/5 bei ${product.anzahlBewertungen.toLocaleString("de-DE")} Rezensionen. Ab ${product.preis.toFixed(2).replace(".", ",")} €.`}
+        description={`${realName} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${realRating}/5 bei ${realReviews.toLocaleString("de-DE")} Rezensionen. Ab ${formattedPrice} €.`}
         canonical={`https://katzenbett.de/katzenbett/${product.slug}`}
         type="product"
-        priceAmount={product.preis.toFixed(2)}
+        priceAmount={realPrice.toFixed(2)}
         availability="InStock"
       />
-      <ProductSchema product={product} />
+      <ProductSchema product={product} realPrice={realPrice} realRating={realRating} realReviews={realReviews} />
 
       {/* BREADCRUMBS */}
       <nav className="container mx-auto px-4 pt-6 pb-2" aria-label="Breadcrumb">
