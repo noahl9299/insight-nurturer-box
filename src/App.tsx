@@ -35,7 +35,7 @@ const App = () => (
             <Route path="/katzenbett-zubehoer" element={<CategoryPage />} />
 
             {/* Product detail, guide, about */}
-            <Route path="/katzenbett/:slug" element={<Index />} />
+            <Route path="/katzenbett/:slug" element={<ProductDetailPage />} />
             <Route path="/ratgeber" element={<Index />} />
             <Route path="/ratgeber/:slug" element={<Index />} />
             <Route path="/ueber-uns" element={<Index />} />
