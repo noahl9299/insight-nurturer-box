@@ -5,6 +5,7 @@ import { Product } from "@/data/products";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
+import { getProductPrice, getProductRating, getProductReviews } from "@/data/productPrices";
 
 interface ProductCardProps {
   product: Product;
@@ -80,7 +81,10 @@ export function StarRating({ rating, count }: { rating: number; count?: number }
 }
 
 export function ProductCard({ product, badge }: ProductCardProps) {
-  const formattedPrice = product.preis.toFixed(2).replace(".", ",");
+  const realPrice = getProductPrice(product.rang) ?? product.preis;
+  const realRating = getProductRating(product.rang) ?? product.bewertung;
+  const realReviews = getProductReviews(product.rang) ?? product.anzahlBewertungen;
+  const formattedPrice = realPrice.toFixed(2).replace(".", ",");
   const displayName = getProductName(product.rang) || product.produktname;
 
   return (
@@ -136,7 +140,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
           <p className="text-xs text-muted-foreground line-clamp-1 mb-2">{product.besonderheiten}</p>
         )}
 
-        <StarRating rating={product.bewertung} count={product.anzahlBewertungen} />
+        <StarRating rating={realRating} count={realReviews} />
 
         {/* Price row */}
         <div className="flex items-baseline gap-2 mt-3">

@@ -23,6 +23,7 @@ import { ProductCard, StarRating } from "@/components/ProductCard";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
+import { getProductPrice, getProductRating, getProductReviews } from "@/data/productPrices";
 
 /* ── Type helpers ─────────────────────────────────────────── */
 type TypEmoji = { icon: string; gradient: string };
@@ -148,7 +149,7 @@ function ReviewDistribution({ rating, count }: { rating: number; count: number }
 }
 
 /* ── JSON-LD schema ─────────────────────────────────────────── */
-function ProductSchema({ product }: { product: Product }) {
+function ProductSchema({ product, realPrice, realRating, realReviews }: { product: Product; realPrice: number; realRating: number; realReviews: number }) {
   const schema = {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -157,14 +158,14 @@ function ProductSchema({ product }: { product: Product }) {
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
-      price: product.preis.toFixed(2),
+      price: realPrice.toFixed(2),
       availability: "https://schema.org/InStock",
       url: getAmazonUrl(product.rang),
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: product.bewertung,
-      reviewCount: product.anzahlBewertungen,
+      ratingValue: realRating,
+      reviewCount: realReviews,
       bestRating: 5,
     },
   };
@@ -202,13 +203,16 @@ export default function ProductDetailPage() {
   const similar = getSimilarProducts(product);
   const features = buildFeatures(product);
   const catInfo = CATEGORY_ROUTES[product.kategorie] ?? { name: "Katzenbetten", route: "/katzenbetten" };
-  const formattedPrice = product.preis.toFixed(2).replace(".", ",");
+  const realPrice = getProductPrice(product.rang) ?? product.preis;
+  const realRating = getProductRating(product.rang) ?? product.bewertung;
+  const realReviews = getProductReviews(product.rang) ?? product.anzahlBewertungen;
+  const formattedPrice = realPrice.toFixed(2).replace(".", ",");
   const typMeta = getTypMeta(product.typ);
   const realName = getProductName(product.rang) || product.produktname;
 
   const keyBenefits = [
     product.besonderheiten,
-    `Bewertung: ${product.bewertung} / 5 (${product.anzahlBewertungen.toLocaleString("de-DE")} Bewertungen)`,
+    `Bewertung: ${realRating} / 5 (${realReviews.toLocaleString("de-DE")} Bewertungen)`,
     `Material: ${product.material}`,
     product.waschbar === "Ja" ? "✓ Maschinenwaschbar bei 30°C" : `Pflege: ${product.waschbar}`,
     product.groesse ? `Maße: ${product.groesse} cm` : null,
@@ -218,13 +222,13 @@ export default function ProductDetailPage() {
     <>
       <SEO
         title={`${realName} – ${product.marke} Katzenbett kaufen`}
-        description={`${realName} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${product.bewertung}/5 bei ${product.anzahlBewertungen.toLocaleString("de-DE")} Rezensionen. Ab ${product.preis.toFixed(2).replace(".", ",")} €.`}
+        description={`${realName} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${realRating}/5 bei ${realReviews.toLocaleString("de-DE")} Rezensionen. Ab ${formattedPrice} €.`}
         canonical={`https://katzenbett.de/katzenbett/${product.slug}`}
         type="product"
-        priceAmount={product.preis.toFixed(2)}
+        priceAmount={realPrice.toFixed(2)}
         availability="InStock"
       />
-      <ProductSchema product={product} />
+      <ProductSchema product={product} realPrice={realPrice} realRating={realRating} realReviews={realReviews} />
 
       {/* BREADCRUMBS */}
       <nav className="container mx-auto px-4 pt-6 pb-2" aria-label="Breadcrumb">
@@ -317,7 +321,7 @@ export default function ProductDetailPage() {
 
             {/* Rating row */}
             <div className="flex items-center gap-4 mb-5">
-              <StarRating rating={product.bewertung} count={product.anzahlBewertungen} />
+              <StarRating rating={realRating} count={realReviews} />
               <span className="text-xs text-muted-foreground">
                 Rang #{product.rang} auf katzenbett.de
               </span>
@@ -431,8 +435,8 @@ export default function ProductDetailPage() {
                   </p>
                   <p>
                     Mit einer Durchschnittsbewertung von{" "}
-                    <strong className="text-foreground">{product.bewertung}/5</strong> bei über{" "}
-                    {product.anzahlBewertungen.toLocaleString("de-DE")} Bewertungen gehört dieses
+                    <strong className="text-foreground">{realRating}/5</strong> bei über{" "}
+                    {realReviews.toLocaleString("de-DE")} Bewertungen gehört dieses
                     Katzenbett zu den beliebtesten seiner Kategorie.
                   </p>
                 </div>
@@ -453,7 +457,7 @@ export default function ProductDetailPage() {
                     { icon: "🧵", text: `Material: ${product.material}` },
                     { icon: "🫧", text: `Pflege: ${product.waschbar}` },
                     { icon: "🎨", text: `Farben: ${product.farben}` },
-                    { icon: "⭐", text: `${product.bewertung} von 5 Sternen` },
+                    { icon: "⭐", text: `${realRating} von 5 Sternen` },
                   ].map((item) => (
                     <div
                       key={item.text}
@@ -488,10 +492,10 @@ export default function ProductDetailPage() {
                 <div className="flex items-end gap-4 mb-6">
                   <div className="text-center">
                     <div
-                      className="text-6xl font-bold leading-none"
+                    className="text-6xl font-bold leading-none"
                       style={{ fontFamily: "'DM Serif Display', serif", color: "hsl(var(--primary))" }}
                     >
-                      {product.bewertung}
+                      {realRating}
                     </div>
                     <div className="flex items-center gap-0.5 mt-1 justify-center">
                       {[1, 2, 3, 4, 5].map((i) => (
@@ -499,7 +503,7 @@ export default function ProductDetailPage() {
                           key={i}
                           size={14}
                           className={
-                            i <= Math.floor(product.bewertung)
+                            i <= Math.floor(realRating)
                               ? "fill-yellow-400 text-yellow-400"
                               : "fill-gray-200 text-gray-200"
                           }
@@ -510,8 +514,8 @@ export default function ProductDetailPage() {
                   </div>
                   <div className="flex-1">
                     <ReviewDistribution
-                      rating={product.bewertung}
-                      count={product.anzahlBewertungen}
+                      rating={realRating}
+                      count={realReviews}
                     />
                   </div>
                 </div>
