@@ -331,29 +331,29 @@ export default function ProductDetailPage() {
       <section className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-          {/* ── LEFT: Image ─────────────────────────────────── */}
+          {/* ── LEFT: Gallery ───────────────────────────────── */}
           <div className="space-y-4">
-            {/* Main image */}
-            <div className="relative rounded-3xl overflow-hidden aspect-square shadow-card">
-              <ProductHeroImage product={product} />
-
+            {/* Gallery: thumbnails left + main image right */}
+            <div className="relative rounded-3xl overflow-hidden bg-white shadow-card" style={{ minHeight: "400px" }}>
               {/* Rang badge */}
               {product.rang <= 10 && (
                 <div
-                  className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-primary-foreground"
+                  className="absolute top-4 left-[76px] z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-primary-foreground"
                   style={{ background: "hsl(var(--primary))" }}
                 >
                   ⭐ Top {product.rang} Bestseller
                 </div>
               )}
-
               {/* Wishlist */}
               <button
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-red-400 transition-all shadow-sm"
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-red-400 transition-all shadow-sm"
                 aria-label="Auf Merkliste"
               >
                 <Heart size={18} />
               </button>
+              <div className="p-4 h-full" style={{ minHeight: "400px" }}>
+                <ProductGallery product={product} />
+              </div>
             </div>
 
             {/* Trust row */}
