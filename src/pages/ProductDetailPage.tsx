@@ -22,6 +22,7 @@ import { getProductBySlug, getSimilarProducts, Product } from "@/data/products";
 import { ProductCard, StarRating } from "@/components/ProductCard";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
+import { getProductName } from "@/data/productNames";
 
 /* ── Type helpers ─────────────────────────────────────────── */
 type TypEmoji = { icon: string; gradient: string };

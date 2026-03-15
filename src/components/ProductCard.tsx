@@ -81,6 +81,7 @@ export function StarRating({ rating, count }: { rating: number; count?: number }
 
 export function ProductCard({ product, badge }: ProductCardProps) {
   const formattedPrice = product.preis.toFixed(2).replace(".", ",");
+  const displayName = getProductName(product.rang) || product.produktname;
 
   return (
     <Link
