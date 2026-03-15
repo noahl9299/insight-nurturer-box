@@ -533,7 +533,7 @@ export default function ProductDetailPage() {
 
                 {/* CTA repeat */}
                 <a
-                  href={product.affiliateLink}
+                  href={getAmazonUrl(product.rang)}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="mt-5 flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold text-primary-foreground transition-all hover:-translate-y-0.5"
