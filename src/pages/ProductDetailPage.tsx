@@ -23,7 +23,8 @@ import { ProductCard, StarRating } from "@/components/ProductCard";
 import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
-import { getProductPrice, getProductRating, getProductReviews } from "@/data/productPrices";
+import { getProductPrice, getProductRating, getProductReviews, getProductSize, getProductMaterial } from "@/data/productPrices";
+import { getProductGallery } from "@/data/productGallery";
 
 /* ── Type helpers ─────────────────────────────────────────── */
 type TypEmoji = { icon: string; gradient: string };
@@ -52,29 +53,102 @@ function getTypMeta(typ: string): TypEmoji {
   return TYPE_META[typ] ?? TYPE_META.default;
 }
 
-/* ── Product image with real Amazon photo ───────────────────── */
-function ProductHeroImage({ product }: { product: Product }) {
+/* ── Amazon-style Product Gallery ───────────────────────────── */
+function GalleryImage({ imageId, alt }: { imageId: string; alt: string }) {
   const [error, setError] = useState(false);
-  const imgSrc = getProductImage(product.rang);
-  const meta = getTypMeta(product.typ);
+  const src = `https://m.media-amazon.com/images/I/${imageId}._AC_SL1500_.jpg`;
+  if (error) return null;
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="w-full h-full object-contain"
+      referrerPolicy="no-referrer"
+      onError={() => setError(true)}
+      loading="lazy"
+    />
+  );
+}
 
-  if (imgSrc && !error) {
+function ProductGallery({ product }: { product: Product }) {
+  const gallery = getProductGallery(product.rang);
+  const fallbackSrc = getProductImage(product.rang);
+  const meta = getTypMeta(product.typ);
+  const realName = getProductName(product.rang) || product.produktname;
+
+  // Build image list: gallery IDs take priority, fallback to productImages URL
+  const imageIds: Array<{ type: "asin"; id: string } | { type: "url"; src: string }> = [];
+  if (gallery && gallery.length > 0) {
+    gallery.forEach((id) => imageIds.push({ type: "asin", id }));
+  } else if (fallbackSrc) {
+    imageIds.push({ type: "url", src: fallbackSrc });
+  }
+
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  if (imageIds.length === 0) {
     return (
-      <img
-        src={imgSrc}
-        alt={product.produktname}
-        className="w-full h-full object-cover"
-        referrerPolicy="no-referrer"
-        onError={() => setError(true)}
-        loading="lazy"
-      />
+      <div className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}>
+        <span className="text-9xl mb-4 select-none">{meta.icon}</span>
+        <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">{realName}</p>
+      </div>
     );
   }
+
+  const current = imageIds[activeIdx] ?? imageIds[0];
+
   return (
-    <div className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}>
-      <span className="text-9xl mb-4 select-none">{meta.icon}</span>
-      <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">{product.produktname}</p>
-      <p className="mt-2 text-xs font-medium px-3 py-1 rounded-full bg-white/60 text-muted-foreground">{product.marke}</p>
+    <div className="flex gap-3 h-full">
+      {/* Vertical thumbnails */}
+      {imageIds.length > 1 && (
+        <div className="flex flex-col gap-2 shrink-0">
+          {imageIds.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIdx(i)}
+              className={`w-16 h-16 rounded-xl overflow-hidden border-2 transition-all bg-background flex items-center justify-center ${
+                i === activeIdx
+                  ? "border-primary shadow-md"
+                  : "border-border/40 hover:border-border"
+              }`}
+              aria-label={`Bild ${i + 1}`}
+            >
+              {img.type === "asin" ? (
+                <img
+                  src={`https://m.media-amazon.com/images/I/${img.id}._AC_SL160_.jpg`}
+                  alt={`${realName} Ansicht ${i + 1}`}
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
+              ) : (
+                <img
+                  src={img.src}
+                  alt={`${realName} Ansicht ${i + 1}`}
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Main image */}
+      <div className="flex-1 bg-white rounded-2xl overflow-hidden flex items-center justify-center">
+        {current.type === "asin" ? (
+          <GalleryImage imageId={current.id} alt={realName} />
+        ) : (
+          <img
+            src={current.src}
+            alt={realName}
+            className="w-full h-full object-contain"
+            referrerPolicy="no-referrer"
+            loading="lazy"
+          />
+        )}
+      </div>
     </div>
   );
 }
@@ -206,6 +280,8 @@ export default function ProductDetailPage() {
   const realPrice = getProductPrice(product.rang) ?? product.preis;
   const realRating = getProductRating(product.rang) ?? product.bewertung;
   const realReviews = getProductReviews(product.rang) ?? product.anzahlBewertungen;
+  const realSize = getProductSize(product.rang) ?? product.groesse;
+  const realMaterial = getProductMaterial(product.rang) ?? product.material;
   const formattedPrice = realPrice.toFixed(2).replace(".", ",");
   const typMeta = getTypMeta(product.typ);
   const realName = getProductName(product.rang) || product.produktname;
@@ -213,9 +289,9 @@ export default function ProductDetailPage() {
   const keyBenefits = [
     product.besonderheiten,
     `Bewertung: ${realRating} / 5 (${realReviews.toLocaleString("de-DE")} Bewertungen)`,
-    `Material: ${product.material}`,
+    realMaterial ? `Material: ${realMaterial}` : null,
     product.waschbar === "Ja" ? "✓ Maschinenwaschbar bei 30°C" : `Pflege: ${product.waschbar}`,
-    product.groesse ? `Maße: ${product.groesse} cm` : null,
+    realSize ? `Maße: ${realSize}` : null,
   ].filter(Boolean) as string[];
 
   return (
@@ -255,29 +331,29 @@ export default function ProductDetailPage() {
       <section className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-          {/* ── LEFT: Image ─────────────────────────────────── */}
+          {/* ── LEFT: Gallery ───────────────────────────────── */}
           <div className="space-y-4">
-            {/* Main image */}
-            <div className="relative rounded-3xl overflow-hidden aspect-square shadow-card">
-              <ProductHeroImage product={product} />
-
+            {/* Gallery: thumbnails left + main image right */}
+            <div className="relative rounded-3xl overflow-hidden bg-white shadow-card" style={{ minHeight: "400px" }}>
               {/* Rang badge */}
               {product.rang <= 10 && (
                 <div
-                  className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-primary-foreground"
+                  className="absolute top-4 left-[76px] z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-primary-foreground"
                   style={{ background: "hsl(var(--primary))" }}
                 >
                   ⭐ Top {product.rang} Bestseller
                 </div>
               )}
-
               {/* Wishlist */}
               <button
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-red-400 transition-all shadow-sm"
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-red-400 transition-all shadow-sm"
                 aria-label="Auf Merkliste"
               >
                 <Heart size={18} />
               </button>
+              <div className="p-4 h-full" style={{ minHeight: "400px" }}>
+                <ProductGallery product={product} />
+              </div>
             </div>
 
             {/* Trust row */}
@@ -340,9 +416,27 @@ export default function ProductDetailPage() {
               </span>
               <span className="text-sm text-muted-foreground">inkl. MwSt.</span>
             </div>
-            <p className="text-xs text-muted-foreground mb-6 ml-1">
+            <p className="text-xs text-muted-foreground mb-2 ml-1">
               * Preis kann variieren · bei Amazon & weiteren Partnershops
             </p>
+
+            {/* Size & Material */}
+            {(realSize || realMaterial) && (
+              <div className="flex flex-wrap gap-3 mb-5">
+                {realSize && (
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 rounded-lg px-3 py-1.5">
+                    <Ruler size={12} />
+                    <span><strong className="text-foreground">Größe:</strong> {realSize}</span>
+                  </div>
+                )}
+                {realMaterial && (
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 rounded-lg px-3 py-1.5">
+                    <Layers size={12} />
+                    <span><strong className="text-foreground">Material:</strong> {realMaterial}</span>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* CTA Button */}
             <a
@@ -556,16 +650,16 @@ export default function ProductDetailPage() {
                 <p className="text-xs font-semibold text-foreground uppercase tracking-wide mb-3">
                   Produktdaten
                 </p>
-                <dl className="space-y-2.5">
-                  {[
-                    { dt: "Marke", dd: product.marke },
-                    { dt: "Kategorie", dd: product.typ },
-                    { dt: "Maße", dd: `${product.groesse} cm` },
-                    { dt: "Material", dd: product.material },
-                    { dt: "Waschbar", dd: product.waschbar },
-                    { dt: "Farben", dd: product.farben },
-                    { dt: "ASIN", dd: product.asin },
-                  ].map(({ dt, dd }) => (
+                 <dl className="space-y-2.5">
+                   {[
+                     { dt: "Marke", dd: product.marke },
+                     { dt: "Kategorie", dd: product.typ },
+                     { dt: "Maße", dd: realSize || product.groesse || "–" },
+                     { dt: "Material", dd: realMaterial || product.material || "–" },
+                     { dt: "Waschbar", dd: product.waschbar },
+                     { dt: "Farben", dd: product.farben },
+                     { dt: "ASIN", dd: product.asin },
+                   ].map(({ dt, dd }) => (
                     <div key={dt} className="flex gap-2">
                       <dt className="text-xs text-muted-foreground w-20 shrink-0">{dt}</dt>
                       <dd className="text-xs font-medium text-foreground">{dd}</dd>
