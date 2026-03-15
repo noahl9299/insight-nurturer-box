@@ -41,6 +41,7 @@ const App = () => (
             <Route path="/katzenbett/:slug" element={<ProductDetailPage />} />
             <Route path="/ratgeber" element={<GuidesOverviewPage />} />
             <Route path="/ratgeber/:slug" element={<GuideArticlePage />} />
+            <Route path="/groessenberater" element={<GrössenberaterPage />} />
             <Route path="/ueber-uns" element={<Index />} />
             <Route path="/impressum" element={<Index />} />
             <Route path="/datenschutz" element={<Index />} />
