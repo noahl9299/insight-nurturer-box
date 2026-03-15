@@ -356,7 +356,7 @@ export default function Index() {
 
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               {[
-                { icon: "🐱", label: "Wie gross ist deine Katze?" },
+                { icon: "🐱", label: "Wie groß ist deine Katze?" },
                 { icon: "💤", label: "Wie schläft sie am liebsten?" },
                 { icon: "✨", label: "Was ist dir wichtig?" },
               ].map((step, i) => (
