@@ -418,7 +418,7 @@ export default function ProductDetailPage() {
                 </h2>
                 <div className="prose max-w-none text-muted-foreground space-y-4 leading-relaxed">
                   <p>
-                    Das <strong className="text-foreground">{product.produktname}</strong> von{" "}
+                    Das <strong className="text-foreground">{realName}</strong> von{" "}
                     <strong className="text-foreground">{product.marke}</strong> ist ein {product.typ}-Katzenbett, das
                     sich durch {product.besonderheiten.toLowerCase()} auszeichnet. Mit Maßen von{" "}
                     {product.groesse} cm bietet es ausreichend Platz für die meisten Katzenrassen.
