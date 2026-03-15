@@ -492,10 +492,10 @@ export default function ProductDetailPage() {
                 <div className="flex items-end gap-4 mb-6">
                   <div className="text-center">
                     <div
-                      className="text-6xl font-bold leading-none"
+                    className="text-6xl font-bold leading-none"
                       style={{ fontFamily: "'DM Serif Display', serif", color: "hsl(var(--primary))" }}
                     >
-                      {product.bewertung}
+                      {realRating}
                     </div>
                     <div className="flex items-center gap-0.5 mt-1 justify-center">
                       {[1, 2, 3, 4, 5].map((i) => (
@@ -503,7 +503,7 @@ export default function ProductDetailPage() {
                           key={i}
                           size={14}
                           className={
-                            i <= Math.floor(product.bewertung)
+                            i <= Math.floor(realRating)
                               ? "fill-yellow-400 text-yellow-400"
                               : "fill-gray-200 text-gray-200"
                           }
@@ -514,8 +514,8 @@ export default function ProductDetailPage() {
                   </div>
                   <div className="flex-1">
                     <ReviewDistribution
-                      rating={product.bewertung}
-                      count={product.anzahlBewertungen}
+                      rating={realRating}
+                      count={realReviews}
                     />
                   </div>
                 </div>
