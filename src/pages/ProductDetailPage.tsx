@@ -217,8 +217,8 @@ export default function ProductDetailPage() {
   return (
     <>
       <SEO
-        title={`${product.produktname} – ${product.marke} Katzenbett kaufen`}
-        description={`${product.produktname} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${product.bewertung}/5 bei ${product.anzahlBewertungen.toLocaleString("de-DE")} Rezensionen. Ab ${product.preis.toFixed(2).replace(".", ",")} €.`}
+        title={`${realName} – ${product.marke} Katzenbett kaufen`}
+        description={`${realName} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${product.bewertung}/5 bei ${product.anzahlBewertungen.toLocaleString("de-DE")} Rezensionen. Ab ${product.preis.toFixed(2).replace(".", ",")} €.`}
         canonical={`https://katzenbett.de/katzenbett/${product.slug}`}
         type="product"
         priceAmount={product.preis.toFixed(2)}
