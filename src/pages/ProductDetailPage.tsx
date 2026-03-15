@@ -149,7 +149,7 @@ function ReviewDistribution({ rating, count }: { rating: number; count: number }
 }
 
 /* ── JSON-LD schema ─────────────────────────────────────────── */
-function ProductSchema({ product }: { product: Product }) {
+function ProductSchema({ product, realPrice, realRating, realReviews }: { product: Product; realPrice: number; realRating: number; realReviews: number }) {
   const schema = {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -158,14 +158,14 @@ function ProductSchema({ product }: { product: Product }) {
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
-      price: product.preis.toFixed(2),
+      price: realPrice.toFixed(2),
       availability: "https://schema.org/InStock",
       url: getAmazonUrl(product.rang),
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: product.bewertung,
-      reviewCount: product.anzahlBewertungen,
+      ratingValue: realRating,
+      reviewCount: realReviews,
       bestRating: 5,
     },
   };
