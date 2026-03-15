@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Clock, Calendar, Tag, ArrowRight, BookOpen, Star } from "lucide-react";
 import { guides } from "@/data/guides";
+import { SEO } from "@/components/SEO";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -33,6 +34,12 @@ export default function GuidesOverviewPage() {
 
   return (
     <>
+      <SEO
+        title="Ratgeber – Expertenwissen rund um Katzenbetten 2025"
+        description="Unsere Katzenbett-Ratgeber helfen dir beim Kauf: Größenratgeber, Materialvergleich, Kaufcheckliste und mehr – von Tierverhaltensexpertinnen verfasst."
+        canonical="https://katzenbett.de/ratgeber"
+        type="website"
+      />
       {/* JSON-LD: CollectionPage */}
       <script
         type="application/ld+json"

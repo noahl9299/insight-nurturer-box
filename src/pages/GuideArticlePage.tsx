@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Clock, Calendar, User, ArrowRight, ChevronRight, Star, BookOpen, Tag, List } from "lucide-react";
 import { getGuideBySlug, getRelatedGuides } from "@/data/guides";
+import { SEO } from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
   Breadcrumb,
@@ -83,6 +84,15 @@ export default function GuideArticlePage() {
 
   return (
     <>
+      <SEO
+        title={guide.metaTitle}
+        description={guide.metaDescription}
+        canonical={`https://katzenbett.de/ratgeber/${guide.slug}`}
+        type="article"
+        datePublished={guide.publishedAt}
+        dateModified={guide.updatedAt}
+        author={guide.author}
+      />
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

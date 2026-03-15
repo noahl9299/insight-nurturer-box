@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle } from "lucide-react";
 import { getBestsellers, searchProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
+import { SEO } from "@/components/SEO";
 import heroCat from "@/assets/hero-cat.jpg";
 import catCave from "@/assets/cat-cave.jpg";
 import catDonut from "@/assets/cat-donut.jpg";
@@ -79,6 +80,12 @@ export default function Index() {
 
   return (
     <>
+      <SEO
+        title="Die besten Katzenbetten im Vergleich 2025 | katzenbett.de"
+        description="Über 500 Katzenbetten verglichen und bewertet. Finde das perfekte Katzenbett für deine Katze – nach Größe, Material & Typ. Ehrlich, unabhängig, aktuell."
+        canonical="https://katzenbett.de/"
+        type="website"
+      />
       {/* HERO */}
       <section
         className="relative min-h-[88vh] flex items-center overflow-hidden pt-24"

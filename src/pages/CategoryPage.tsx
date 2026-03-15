@@ -5,6 +5,7 @@ import { ProductCard, StarRating } from "@/components/ProductCard";
 import { products, Product } from "@/data/products";
 import { getCategoryBySlug } from "@/data/categories";
 import NotFound from "@/pages/NotFound";
+import { SEO } from "@/components/SEO";
 
 // ── Filter types ──────────────────────────────────────────────────────────────
 type SortKey = "empfohlen" | "preis-asc" | "preis-desc" | "bewertung" | "beliebtheit";
@@ -240,6 +241,12 @@ export default function CategoryPage() {
 
   return (
     <>
+      <SEO
+        title={`${config.nameLong} kaufen 2025 – Top ${pool.length} Empfehlungen`}
+        description={`${config.description} Jetzt die besten ${config.nameLong} vergleichen – gefiltert nach Preis, Größe und Material.`}
+        canonical={`https://katzenbett.de${config.route}`}
+        type="website"
+      />
       {/* JSON-LD */}
       <script
         type="application/ld+json"
