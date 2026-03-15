@@ -1,7 +1,7 @@
 import { Star, ShoppingBag, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Product } from "@/data/products";
+import { Product, getAmazonLink } from "@/data/products";
 
 interface ProductCardProps {
   product: Product;
