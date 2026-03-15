@@ -374,7 +374,7 @@ export default function Index() {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
               style={{ background: "hsl(var(--primary))", boxShadow: "var(--shadow-cta)" }}
             >
-              Groessenberater starten
+              Größenberater starten
               <ArrowRight size={18} />
             </Link>
           </div>
