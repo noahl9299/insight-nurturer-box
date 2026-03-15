@@ -89,7 +89,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <div className="product-card-image w-full h-full">
-          <ProductImage bildUrl={product.bildUrl} produktname={product.produktname} typ={product.typ} />
+          <ProductImage rang={product.rang} bildUrl={product.bildUrl} produktname={product.produktname} typ={product.typ} />
         </div>
 
         {/* Badge */}
