@@ -130,7 +130,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
       <div className="p-4">
         <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1">{product.marke}</p>
         <h3 className="text-sm font-semibold text-foreground line-clamp-2 mb-1.5 leading-snug" style={{ fontFamily: "'Inter', sans-serif" }}>
-          {product.produktname}
+          {displayName}
         </h3>
         {product.besonderheiten && (
           <p className="text-xs text-muted-foreground line-clamp-1 mb-2">{product.besonderheiten}</p>
