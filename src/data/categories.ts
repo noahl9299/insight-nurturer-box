@@ -190,6 +190,42 @@ Memory Foam passt sich der Körperform an und verteilt das Gewicht gleichmäßig
 **Was du beachten solltest:**
 Achte auf einen niedrigen Einstieg (maximal 10–12 cm), damit alte oder kranke Katzen problemlos hineinsteigen können. Die Schaumstoffdicke sollte mindestens 5–8 cm betragen. Kombiniere das orthopädische Bett idealerweise mit einem beheizten Modell – Wärme lindert Gelenkschmerzen zusätzlich.`,
     },
+    buyingGuide: {
+      title: "Orthopädisches Katzenbett kaufen – wann es sich lohnt",
+      intro: "Memory Foam ist nicht Marketing – er macht bei bestimmten Katzen einen echten Unterschied. Diese Checkliste hilft dir bei der Entscheidung.",
+      steps: [
+        { title: "Wann ist ein orthopädisches Bett sinnvoll?", text: "Ab etwa 10 Jahren, bei Arthritis-Diagnose, nach Operationen oder bei Rassen mit bekannten Gelenkproblemen (Scottish Fold, Perser). Anzeichen: Katze springt weniger, bewegt sich langsamer, legt sich lieber auf harten Boden (Kühle lindert Schmerz)." },
+        { title: "Einstiegshöhe beachten", text: "Kranke und alte Katzen schaffen hohe Ränder nicht mehr. Wähle Modelle mit maximal 8–10 cm Einstiegshöhe. Manche Modelle bieten eine abflachende Seite als 'Rampe' – besonders praktisch." },
+        { title: "Schaumstoffqualität prüfen", text: "Mindestdicke: 5 cm für spürbare Wirkung, 8–10 cm optimal. Achte auf CertiPUR-zertifizierten Schaum (keine Schadstoffe). Drücke das Muster: Springt es langsam zurück, ist es echter Memory Foam – schnelles Zurückspringen ist normaler Schaumstoff." },
+        { title: "Kombination mit Wärme", text: "Wärme lindert Gelenkschmerzen zusätzlich zur Druckentlastung. Die beste Kombination: orthopädischer Memory Foam + beheizbares Kissen (z.B. Snugglesafe-Wärmeplatte) oder ein elektrisch beheiztes Memory-Foam-Bett." },
+      ],
+      proCon: {
+        pros: [
+          "Entlastet Gelenke, Wirbelsäule und Muskeln",
+          "Verbesserter Schlaf führt zu mehr Aktivität und Wohlbefinden",
+          "CertiPUR-zertifizierter Schaum ist schadstoffgeprüft",
+          "Ideal nach Operationen und bei Arthritis",
+          "Viele Modelle sind maschinenwaschbar",
+        ],
+        cons: [
+          "Teurer als normale Katzenbetten (ab 35 €)",
+          "Schwerer – nicht so leicht umzuräumen",
+          "Junge, gesunde Katzen spüren keinen Unterschied",
+          "Schlechte Modelle unter 4 cm haben kaum orthopädische Wirkung",
+        ],
+      },
+      table: {
+        title: "Memory Foam Qualitätsstufen im Vergleich",
+        headers: ["Qualitätsstufe", "Schaumstoffdicke", "Zertifizierung", "Preis", "Empfehlung"],
+        rows: [
+          ["Budget", "2–4 cm", "Keine", "20–30 €", "Kaum orthopädische Wirkung"],
+          ["Standard", "5–7 cm", "CE", "30–50 €", "Guter Einstieg ✓"],
+          ["Premium", "8–10 cm", "CertiPUR + CE", "50–80 €", "Beste Wirkung ⭐"],
+          ["Tierarzt-empfohlen", "10+ cm", "CertiPUR + GS", "80–120 €", "Für starke Gelenkprobleme"],
+        ],
+      },
+      editorTip: "Kombiniere ein orthopädisches Bett mit einer Snugglesafe-Wärmeplatte (mikrowellenfähig, 8h Wärme, kein Strom nötig). Diese Kombination kostet zusammen ca. 60–70 € und macht einen deutlich größeren Unterschied als ein teures Heizbett allein.",
+    },
     faqs: [
       { q: "Ab wann braucht eine Katze ein orthopädisches Bett?", a: "Ab etwa 10–12 Jahren oder bei erkennbaren Gelenkproblemen. Anzeichen: Die Katze springt seltener, bewegt sich langsamer, liegt lieber auf harten Böden (Kühle lindert Schmerzen)." },
       { q: "Was ist CertiPUR-zertifizierter Memory Foam?", a: "CertiPUR ist ein Gütesiegel für Schaumstoff, das bestätigt, dass keine schädlichen Chemikalien enthalten sind. Wichtig für Haustiere, die viel Zeit im Bett verbringen." },
