@@ -459,6 +459,42 @@ Echte Materialien (Eiche, Buche, Merinowolle, Canvas), handwerkliche Fertigung o
 
 **Sofa-Auflagen:** Eine günstigere Alternative sind Sofa-Auflagen, die per Klettverschluss am eigenen Sofa befestigt werden. So hat deine Katze ihren eigenen markierten Bereich – ohne eigenes Möbelstück.`,
     },
+    buyingGuide: {
+      title: "Katzensofa kaufen – das eigene Möbelstück für deinen Vierbeiner",
+      intro: "Katzensofas lösen das Sofa-Problem elegant. Diese Tipps helfen dir, das richtige Modell zu wählen.",
+      steps: [
+        { title: "Direkt neben das Menschensofa stellen", text: "Das Katzensofa sollte direkt neben oder vor das eigene Sofa. Katzen wollen die Nähe zu ihrem Menschen – ein Katzensofa in der Ecke wird ignoriert. Auf gleicher Höhe oder leicht erhöht macht es attraktiver." },
+        { title: "Größe großzügig wählen", text: "Mindestens 55×45 cm Liegefläche für eine normale Hauskatze. Für Maine Coon oder Ragdoll lieber 65×50 cm. Achte auf einen stabilen Schaumstoffkern – zu weiches Material wird schnell platt." },
+        { title: "Material zur Einrichtung passend", text: "Cord (Terracotta, Salbei, Beige) integriert sich in moderne Interiors. Für Skandinavisch: Canvas-Grau oder Natur. Für Klassisch: Plüsch in Anthrazit oder Dunkelgrau. Abnehmbarer, waschbarer Bezug ist Pflicht." },
+        { title: "Rutschfeste Füße wichtig", text: "Katzensofas ohne Rutschschutz verschieben sich bei jedem Sprung. Entweder Anti-Rutsch-Pads kaufen oder auf Modelle mit gummierten Füßen achten. Kleberückstände auf Holzböden vermeiden." },
+      ],
+      proCon: {
+        pros: [
+          "Löst das Sofa-Problem: Katze hat eigenen Platz daneben",
+          "Modern und wohnraumfreundlich (kein Plüsch-Chaos)",
+          "Erhöhte Position – Katzen lieben das Thronen",
+          "Cord und Canvas sind robust und langlebig",
+          "Gut für Katzen, die beim Menschen sein wollen",
+        ],
+        cons: [
+          "Teurer als normale Katzenbetten (ab 30 €)",
+          "Funktioniert nur wenn direkt neben Menschenmöbeln platziert",
+          "Sofa muss regelmäßig gesaugt werden (Haare)",
+          "Nicht ideal für scheue Katzen (zu exponiert)",
+        ],
+      },
+      table: {
+        title: "Katzensofas nach Stil und Material",
+        headers: ["Stil", "Material", "Preis", "Pflegeaufwand", "Empfohlen für"],
+        rows: [
+          ["Modern/Trend", "Cord (Terracotta, Salbei)", "25–50 €", "Abnehmbar, 30°C", "Design-Haushalte"],
+          ["Klassisch", "Plüsch/Velour", "20–40 €", "30°C Maschine", "Kuschel-Liebhaber"],
+          ["Premium", "Canvas + Holzfüße", "50–90 €", "Bezug abnehmbar", "Langlebigkeit"],
+          ["Budget", "Polyester/Schaum", "15–25 €", "30°C Maschine", "Einsteiger, Testen"],
+        ],
+      },
+      editorTip: "Stelle das neue Katzensofa direkt neben dein eigenes Sofa und lege dein T-Shirt hinein. Ignoriert deine Katze es trotzdem? Lege für 2 Wochen eine Sofa-Auflage auf deinem Sofa (unkomfortabel für sie) und das Katzensofa daneben. Die meisten Katzen wechseln dann freiwillig.",
+    },
     faqs: [
       { q: "Warum ein Katzensofa statt normales Katzenbett?", a: "Katzensofas bieten eine erhöhte Sitzposition, die Katzen lieben, und passen optisch besser ins Wohnzimmer. Ideal für Katzen, die gerne auf dem Sofa sitzen, aber ein eigenes Revier haben sollen." },
       { q: "Welche Größe sollte ein Katzensofa haben?", a: "Mindestens 55×45 cm Liegefläche für eine durchschnittliche Hauskatze (4–5 kg). Für Maine Coon oder andere große Rassen lieber 65×50 cm und mehr wählen." },
