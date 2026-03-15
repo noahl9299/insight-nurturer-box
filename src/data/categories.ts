@@ -322,6 +322,43 @@ GS-Zeichen (Geprüfte Sicherheit), automatische Abschaltung bei Überhitzung, T�
 
 **USB vs. Strom:** USB-beheizte Betten (5V) sind sicherer und günstiger im Betrieb, haben aber weniger Heizleistung. Strom-Heizbetten sind effizienter, benötigen aber eine Steckdose in der Nähe.`,
     },
+    buyingGuide: {
+      title: "Beheiztes Katzenbett kaufen – Sicherheit zuerst",
+      intro: "Beheizte Katzenbetten können einen echten gesundheitlichen Unterschied machen – aber nur wenn du auf die richtigen Sicherheitsmerkmale achtest.",
+      steps: [
+        { title: "Sicherheitszertifizierungen prüfen", text: "Pflicht: CE-Zeichen. Empfohlen: GS-Zeichen (Geprüfte Sicherheit, deutsches Prüfzeichen) und TÜV-Prüfung. Kaufe niemals unzertifizierte Elektrogeräte für Haustiere – Überhitzung kann lebensgefährlich sein." },
+        { title: "Thermostat und Abschaltautomatik", text: "Der Thermostat sollte auf maximal 38–40°C begrenzt sein (Körpertemperatur Katze). Automatische Abschaltung bei Überhitzung ist Pflicht. Kein Bett sollte dauerhaft auf maximaler Stufe betrieben werden." },
+        { title: "Kabel sicher verlegen", text: "Das Kabel muss aus dem Schlafbereich herausgeführt werden – nie unter dem Bett oder unter der Matratze. Katzen kauen an Kabeln. Verwende Kabelschutzschläuche oder verlege das Kabel hinter Möbeln." },
+        { title: "USB vs. Stromkabel", text: "USB-Heizbetten (5V) sind sicherer und günstiger im Betrieb, haben aber weniger Heizleistung – gut für bereits warme Räume. Strom-Heizbetten (230V, 15–40W) sind effizienter für kalte Räume und Winter-Freigänger." },
+      ],
+      proCon: {
+        pros: [
+          "Lindert Gelenkschmerzen bei älteren Katzen (Arthritis)",
+          "Ideal für Freigänger nach kalten Nächten",
+          "Wärme beruhigt ängstliche und kranke Katzen",
+          "Günstig im Betrieb (1–3 € pro Monat)",
+          "USB-Varianten extrem sicher und energiesparend",
+        ],
+        cons: [
+          "Kabelführung muss sorgfältig geplant werden",
+          "Strom-Modelle benötigen Steckdose in der Nähe",
+          "Nicht für alle Katzen nötig (gesunde Katzen regulieren Temperatur selbst)",
+          "Günstige Modelle ohne Thermostat können zu heiß werden",
+        ],
+      },
+      table: {
+        title: "USB vs. Strom – welches beheizte Bett passt zu dir?",
+        headers: ["Kriterium", "USB (5V)", "Strom (230V, 15–40W)", "Empfehlung"],
+        rows: [
+          ["Sicherheit", "⭐⭐⭐ Sehr hoch", "⭐⭐ Hoch (mit GS-Zeichen)", "USB für ängstliche Besitzer"],
+          ["Heizleistung", "Niedrig (sanfte Wärme)", "Hoch (effizient im Winter)", "Strom für kalte Räume"],
+          ["Betriebskosten/Monat", "< 0,50 €", "1–3 €", "Beide günstig"],
+          ["Kabelrisiko", "Niederspannung (sicher)", "Muss gesichert werden", "USB einfacher"],
+          ["Empfohlenes Modell", "K&H EZ Heated USB", "Snugglesafe Disc", "Je nach Bedarf"],
+        ],
+      },
+      editorTip: "Die günstigste und sicherste Wärmelösung für Katzen: Die Snugglesafe-Mikrowellen-Wärmeplatte (ca. 25 €). Sie braucht keinen Strom, kein Kabel, gibt 8–10 Stunden Wärme ab und ist TÜV-geprüft. Perfekt als Einstieg oder Reisebegleiter.",
+    },
     faqs: [
       { q: "Sind beheizte Katzenbetten sicher?", a: "Ja, bei CE-zugelassenen und GS-geprüften Modellen. Achte auf automatische Abschaltung, Überhitzungsschutz und einen thermostatgesteuerten Betrieb. Lass das Kabel nie unter dem Bett verlaufen." },
       { q: "Wie warm wird ein beheiztes Katzenbett?", a: "Gute Modelle heizen auf 38–40°C – genau die Körpertemperatur einer Katze. Das fühlt sich für sie an wie ein warmer Bauch. Zu hohe Temperaturen sind gefährlich – kaufe nur Modelle mit Thermostat." },
