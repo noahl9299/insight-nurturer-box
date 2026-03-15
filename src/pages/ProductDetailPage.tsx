@@ -53,29 +53,102 @@ function getTypMeta(typ: string): TypEmoji {
   return TYPE_META[typ] ?? TYPE_META.default;
 }
 
-/* ── Product image with real Amazon photo ───────────────────── */
-function ProductHeroImage({ product }: { product: Product }) {
+/* ── Amazon-style Product Gallery ───────────────────────────── */
+function GalleryImage({ imageId, alt }: { imageId: string; alt: string }) {
   const [error, setError] = useState(false);
-  const imgSrc = getProductImage(product.rang);
-  const meta = getTypMeta(product.typ);
+  const src = `https://m.media-amazon.com/images/I/${imageId}._AC_SL1500_.jpg`;
+  if (error) return null;
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="w-full h-full object-contain"
+      referrerPolicy="no-referrer"
+      onError={() => setError(true)}
+      loading="lazy"
+    />
+  );
+}
 
-  if (imgSrc && !error) {
+function ProductGallery({ product }: { product: Product }) {
+  const gallery = getProductGallery(product.rang);
+  const fallbackSrc = getProductImage(product.rang);
+  const meta = getTypMeta(product.typ);
+  const realName = getProductName(product.rang) || product.produktname;
+
+  // Build image list: gallery IDs take priority, fallback to productImages URL
+  const imageIds: Array<{ type: "asin"; id: string } | { type: "url"; src: string }> = [];
+  if (gallery && gallery.length > 0) {
+    gallery.forEach((id) => imageIds.push({ type: "asin", id }));
+  } else if (fallbackSrc) {
+    imageIds.push({ type: "url", src: fallbackSrc });
+  }
+
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  if (imageIds.length === 0) {
     return (
-      <img
-        src={imgSrc}
-        alt={product.produktname}
-        className="w-full h-full object-cover"
-        referrerPolicy="no-referrer"
-        onError={() => setError(true)}
-        loading="lazy"
-      />
+      <div className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}>
+        <span className="text-9xl mb-4 select-none">{meta.icon}</span>
+        <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">{realName}</p>
+      </div>
     );
   }
+
+  const current = imageIds[activeIdx] ?? imageIds[0];
+
   return (
-    <div className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}>
-      <span className="text-9xl mb-4 select-none">{meta.icon}</span>
-      <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">{product.produktname}</p>
-      <p className="mt-2 text-xs font-medium px-3 py-1 rounded-full bg-white/60 text-muted-foreground">{product.marke}</p>
+    <div className="flex gap-3 h-full">
+      {/* Vertical thumbnails */}
+      {imageIds.length > 1 && (
+        <div className="flex flex-col gap-2 shrink-0">
+          {imageIds.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIdx(i)}
+              className={`w-16 h-16 rounded-xl overflow-hidden border-2 transition-all bg-background flex items-center justify-center ${
+                i === activeIdx
+                  ? "border-primary shadow-md"
+                  : "border-border/40 hover:border-border"
+              }`}
+              aria-label={`Bild ${i + 1}`}
+            >
+              {img.type === "asin" ? (
+                <img
+                  src={`https://m.media-amazon.com/images/I/${img.id}._AC_SL160_.jpg`}
+                  alt={`${realName} Ansicht ${i + 1}`}
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
+              ) : (
+                <img
+                  src={img.src}
+                  alt={`${realName} Ansicht ${i + 1}`}
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Main image */}
+      <div className="flex-1 bg-white rounded-2xl overflow-hidden flex items-center justify-center">
+        {current.type === "asin" ? (
+          <GalleryImage imageId={current.id} alt={realName} />
+        ) : (
+          <img
+            src={current.src}
+            alt={realName}
+            className="w-full h-full object-contain"
+            referrerPolicy="no-referrer"
+            loading="lazy"
+          />
+        )}
+      </div>
     </div>
   );
 }
