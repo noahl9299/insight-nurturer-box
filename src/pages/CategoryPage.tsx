@@ -643,19 +643,135 @@ export default function CategoryPage() {
               <p key={i} className="text-base">{para}</p>
             ))}
           </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              to="/katzenbetten"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
-              style={{ background: "hsl(var(--primary))", boxShadow: "var(--shadow-cta)" }}
-            >
-              Alle Katzenbetten ansehen
-              <ArrowRight size={18} />
-            </Link>
-          </div>
         </div>
       </section>
+
+      {/* ── KAUFBERATUNG ──────────────────────────────────────────────────── */}
+      {config.buyingGuide && (
+        <section className="py-20 bg-background" aria-labelledby="buying-guide-heading">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Kaufberatung</p>
+              <h2 id="buying-guide-heading" className="text-heading-2 text-foreground mb-3">
+                {config.buyingGuide.title}
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{config.buyingGuide.intro}</p>
+            </div>
+
+            {/* Steps */}
+            {config.buyingGuide.steps && (
+              <div className="space-y-5 mb-12">
+                {config.buyingGuide.steps.map((step, i) => (
+                  <div key={i} className="flex gap-5 bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors">
+                    <div className="shrink-0 w-12 h-12 rounded-xl border-2 border-primary/20 flex items-center justify-center font-mono font-bold text-primary/40 text-sm">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground mb-1">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Pro/Con */}
+            {config.buyingGuide.proCon && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+                <div className="bg-card rounded-2xl border border-border p-6">
+                  <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                    <span className="text-green-500">✅</span> Vorteile
+                  </h3>
+                  <ul className="space-y-2">
+                    {config.buyingGuide.proCon.pros.map((pro, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-green-500 shrink-0 mt-0.5">✓</span> {pro}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-card rounded-2xl border border-border p-6">
+                  <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                    <span className="text-amber-500">⚠️</span> Worauf achten
+                  </h3>
+                  <ul className="space-y-2">
+                    {config.buyingGuide.proCon.cons.map((con, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-amber-500 shrink-0 mt-0.5">→</span> {con}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {/* Comparison table */}
+            {config.buyingGuide.table && (
+              <div className="bg-card rounded-2xl border border-border overflow-hidden mb-12">
+                <div className="px-6 py-4 border-b border-border bg-muted/40">
+                  <h3 className="font-bold text-foreground">{config.buyingGuide.table.title}</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border">
+                        {config.buyingGuide.table.headers.map((h, i) => (
+                          <th key={i} className="text-left px-4 py-3 font-semibold text-foreground">{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {config.buyingGuide.table.rows.map((row, i) => (
+                        <tr key={i} className={i % 2 === 0 ? "bg-muted/20" : ""}>
+                          {row.map((cell, j) => (
+                            <td key={j} className={`px-4 py-3 ${j === 0 ? "font-medium text-foreground" : "text-muted-foreground"}`}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Editor tip */}
+            {config.buyingGuide.editorTip && (
+              <div className="rounded-2xl p-6 flex gap-4 items-start border border-primary/20 bg-accent">
+                <div className="text-3xl shrink-0">💡</div>
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Redaktionstipp</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{config.buyingGuide.editorTip}</p>
+                </div>
+              </div>
+            )}
+
+            <div className="mt-10 text-center">
+              <Link
+                to="/katzenbetten"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
+                style={{ background: "hsl(var(--primary))", boxShadow: "var(--shadow-cta)" }}
+              >
+                Alle Katzenbetten ansehen
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Fallback CTA if no buyingGuide */}
+      {!config.buyingGuide && (
+        <div className="py-10 text-center">
+          <Link
+            to="/katzenbetten"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
+            style={{ background: "hsl(var(--primary))", boxShadow: "var(--shadow-cta)" }}
+          >
+            Alle Katzenbetten ansehen
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+      )}
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
       <FaqSection faqs={config.faqs} />

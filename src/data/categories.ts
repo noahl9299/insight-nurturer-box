@@ -8,6 +8,15 @@ import catHeated from "@/assets/cat-heated.jpg";
 import catHammock from "@/assets/cat-hammock.jpg";
 import heroCat from "@/assets/hero-cat.jpg";
 
+export interface BuyingGuide {
+  title: string;
+  intro: string;
+  steps?: { title: string; text: string }[];
+  proCon?: { pros: string[]; cons: string[] };
+  table?: { title: string; headers: string[]; rows: string[][] };
+  editorTip?: string;
+}
+
 export interface CategoryConfig {
   slug: string;
   route: string;
@@ -23,6 +32,7 @@ export interface CategoryConfig {
     h2: string;
     body: string;
   };
+  buyingGuide?: BuyingGuide;
   faqs: { q: string; a: string }[];
   produktKategorien: string[]; // maps to Product.kategorie
 }
@@ -47,6 +57,42 @@ export const categoryConfigs: CategoryConfig[] = [
 Die Höhle sollte groß genug sein, dass deine Katze sich darin umdrehen kann – mindestens 40×35 cm Innenmaß. Der Eingang sollte breit genug sein (ca. 15–20 cm), damit deine Katze bequem ein- und aussteigen kann. Achte auf waschbares Material: Plüsch und Polyester bei 30 Grad, Filz per Handwäsche. Für Senioren-Katzen eignen sich niedrige Eingänge besonders gut.
 
 **Filz vs. Plüsch:** Filzhöhlen (aus Wolle) sind atmungsaktiver, teurer, aber nachhaltiger. Plüschhöhlen sind günstiger, weicher und meist maschinenwaschbar.`,
+    },
+    buyingGuide: {
+      title: "Katzenhöhle kaufen – worauf es wirklich ankommt",
+      intro: "Nicht jede Höhle ist gleich. Diese 4 Punkte entscheiden, ob deine Katze das neue Rückzugsnest liebt oder ignoriert.",
+      steps: [
+        { title: "Richtige Größe wählen", text: "Innenmaß mindestens 40×35 cm – deine Katze muss sich darin umdrehen können. Für Maine Coon, Ragdoll oder Norwegische Waldkatze lieber 50×45 cm oder mehr. Ein zu enges Nest wird selten genutzt." },
+        { title: "Den besten Standort finden", text: "Erhöht und ruhig ist ideal. Katzen fühlen sich sicherer, wenn sie von oben das Geschehen beobachten können. Nicht direkt neben lauten Geräten oder stark befahrenen Türen aufstellen." },
+        { title: "Material und Pflegeleichtigkeit", text: "Plüsch: weich, günstig, bei 30 Grad waschbar – der Alltags-Favorit. Filz (Merinowolle): atmungsaktiv, temperaturregulierend, nur Handwäsche. Cord: modern, robust, pflegeleicht. Achte immer auf abnehmbares Innenkissen." },
+        { title: "Eingewöhnung planen", text: "Lege ein getragenes T-Shirt in die Höhle – dein Geruch beruhigt. Katzenminze am Eingang weckt die Neugier. Gib deiner Katze 2–3 Wochen Zeit. Zwinge sie nie hinein." },
+      ],
+      proCon: {
+        pros: [
+          "Gibt ängstlichen Katzen Sicherheit und Geborgenheit",
+          "Reduziert Stress (nach Tierarzt, Gewitter, Umzug)",
+          "Schützt vor Zugluft und Kälte",
+          "2-in-1-Modelle auch als offenes Bett nutzbar",
+          "Filz-Modelle sind nachhaltig und langlebig",
+        ],
+        cons: [
+          "Filzhöhlen sind nur per Hand waschbar",
+          "Zu kleine Höhlen werden oft nicht angenommen",
+          "Manche Katzen brauchen Wochen zur Eingewöhnung",
+          "Bei mehreren Katzen ggf. mehrere Höhlen nötig (Revierdenken)",
+        ],
+      },
+      table: {
+        title: "Katzenhöhlen-Materialien im Vergleich",
+        headers: ["Material", "Waschbar", "Haltbarkeit", "Preis", "Ideal für"],
+        rows: [
+          ["Plüsch / Polyester", "30°C Maschine", "1–3 Jahre", "ab 20 €", "Alltag, Budget"],
+          ["Filz (Merinowolle)", "Nur Handwäsche", "3–7 Jahre", "ab 40 €", "Nachhaltigkeit, Atmungsaktivität"],
+          ["Cord", "30°C Maschine", "2–4 Jahre", "ab 30 €", "Design, Robustheit"],
+          ["Kunstfell", "30°C Maschine", "1–2 Jahre", "ab 18 €", "Kuschel-Feeling, Budget"],
+        ],
+      },
+      editorTip: "Kaufe für eine neue Katze zuerst eine günstige Plüschhöhle zum Testen. Wenn sie das Höhlen-Konzept mag, lohnt sich danach das Upgrade auf eine langlebige Filz- oder Cord-Höhle. So sparst du Geld und weißt, was deine Katze wirklich möchte.",
     },
     faqs: [
       { q: "Wie groß sollte eine Katzenhöhle sein?", a: "Mindestens 40×35 cm Innenmaß, damit deine Katze sich bequem einrollen und umdrehen kann. Für größere Rassen (Maine Coon, Ragdoll) lieber 50×45 cm oder mehr wählen." },
@@ -79,6 +125,42 @@ Für Katzen bis 4 kg reichen 45–50 cm Durchmesser. Für Katzen von 4–6 kg si
 
 **Materialien:** Kunstfell (flauschig, günstig, maschinenwaschbar) ist Standard. Premium-Modelle verwenden Bio-Baumwolle oder nachhaltiges Polyester.`,
     },
+    buyingGuide: {
+      title: "Donut-Katzenbett kaufen – die wichtigsten Entscheidungskriterien",
+      intro: "Der Donut ist Deutschlands meistgekauftes Katzenbett. Doch nicht jedes Modell hält, was es verspricht. Das solltest du wissen.",
+      steps: [
+        { title: "Größe ist entscheidend", text: "Für Katzen bis 4 kg: 45–50 cm Durchmesser. Für 4–6 kg: 55 cm. Für Maine Coon, Ragdoll: 65–70 cm. Faustregel: Die eingerollte Katze muss bequem hineinpassen, ohne überzuhängen. Im Zweifelsfall lieber größer." },
+        { title: "Normal vs. Anti-Angst-Donut", text: "Anti-Angst-Donuts haben einen besonders hohen, weichen Rand (10–15 cm), der die Katze fast vollständig umschließt. Das 'Eingemauert-Sein'-Gefühl reduziert Stress erheblich – ideal für ängstliche Katzen, Gewitter oder Silvester." },
+        { title: "Material und Waschbarkeit prüfen", text: "Kunstfell und Plüsch sind Standard: weich, günstig, maschinenwaschbar bei 30 Grad. Achte auf Anti-Rutsch-Unterseite. Premium-Modelle verwenden Bio-Baumwolle oder recyceltes Polyester. Wäschenetz beim Waschen nutzen, damit die Form erhalten bleibt." },
+        { title: "Füllung macht den Unterschied", text: "Günstiger Polyesterwatte-Fill verliert nach wenigen Monaten Form. Hochwertige Modelle verwenden PP-Baumwolle (federartige Füllung, formstabil) oder Memory Foam-Flocken. Drücke das Bett zusammen: Springt es schnell zurück, ist die Qualität gut." },
+      ],
+      proCon: {
+        pros: [
+          "Erhöhter Rand gibt Geborgenheit und Anlehnmöglichkeit",
+          "Für alle Katzengrößen erhältlich (45–70 cm)",
+          "Meistens maschinenwaschbar bei 30 Grad",
+          "Anti-Angst-Varianten reduzieren Stress deutlich",
+          "Breite Auswahl: Budget bis Premium, viele Farben",
+        ],
+        cons: [
+          "Günstige Modelle verlieren schnell die Form",
+          "Nicht für Katzen geeignet, die lieber in einer Höhle schlafen",
+          "Zu kleine Donuts werden häufig ignoriert",
+          "Im Trockner kann die Form dauerhaft beschädigt werden",
+        ],
+      },
+      table: {
+        title: "Donut-Größentabelle nach Katzengewicht",
+        headers: ["Gewicht der Katze", "Empfohlener Durchmesser", "Typische Rassen", "Beispiel-Modell"],
+        rows: [
+          ["bis 3 kg", "45 cm", "Britisch Kurzhaar, Siamese", "Bedsure 45 cm"],
+          ["3–5 kg (Standard)", "50–55 cm", "Hauskatze, Europäisch Kurzhaar", "Bedsure 51 cm ⭐"],
+          ["5–7 kg", "55–60 cm", "Perser, Siam, Abessiner", "SCHLITZOHR 55 cm"],
+          ["über 7 kg (groß)", "65–70 cm", "Maine Coon, Ragdoll, Waldkatze", "JEMIDI XXL 70 cm"],
+        ],
+      },
+      editorTip: "Für die erste Katze empfehlen wir das Bedsure Donut in Grau oder Beige – über 7.000 Bewertungen bei Amazon, günstig, waschbar und wird von fast allen Katzen sofort angenommen. Erst danach ausprobieren, ob ein Anti-Angst-Donut oder ein anderer Typ besser passt.",
+    },
     faqs: [
       { q: "Was ist der Unterschied zwischen normalem Donut und Anti-Angst-Donut?", a: "Anti-Angst-Donuts haben einen besonders hohen, weichen Rand, der die Katze fast vollständig umschließt. Das Eingemauert-Sein-Gefühl reduziert Stress und Angst erheblich." },
       { q: "Welche Größe Donut-Bett für meine Katze?", a: "Für Katzen bis 4 kg: 45–50 cm. Für 4–6 kg: 55 cm. Für Maine Coon und Co.: 60–70 cm. Im Zweifelsfall lieber eine Nummer größer wählen." },
@@ -108,6 +190,42 @@ Memory Foam passt sich der Körperform an und verteilt das Gewicht gleichmäßig
 **Was du beachten solltest:**
 Achte auf einen niedrigen Einstieg (maximal 10–12 cm), damit alte oder kranke Katzen problemlos hineinsteigen können. Die Schaumstoffdicke sollte mindestens 5–8 cm betragen. Kombiniere das orthopädische Bett idealerweise mit einem beheizten Modell – Wärme lindert Gelenkschmerzen zusätzlich.`,
     },
+    buyingGuide: {
+      title: "Orthopädisches Katzenbett kaufen – wann es sich lohnt",
+      intro: "Memory Foam ist nicht Marketing – er macht bei bestimmten Katzen einen echten Unterschied. Diese Checkliste hilft dir bei der Entscheidung.",
+      steps: [
+        { title: "Wann ist ein orthopädisches Bett sinnvoll?", text: "Ab etwa 10 Jahren, bei Arthritis-Diagnose, nach Operationen oder bei Rassen mit bekannten Gelenkproblemen (Scottish Fold, Perser). Anzeichen: Katze springt weniger, bewegt sich langsamer, legt sich lieber auf harten Boden (Kühle lindert Schmerz)." },
+        { title: "Einstiegshöhe beachten", text: "Kranke und alte Katzen schaffen hohe Ränder nicht mehr. Wähle Modelle mit maximal 8–10 cm Einstiegshöhe. Manche Modelle bieten eine abflachende Seite als 'Rampe' – besonders praktisch." },
+        { title: "Schaumstoffqualität prüfen", text: "Mindestdicke: 5 cm für spürbare Wirkung, 8–10 cm optimal. Achte auf CertiPUR-zertifizierten Schaum (keine Schadstoffe). Drücke das Muster: Springt es langsam zurück, ist es echter Memory Foam – schnelles Zurückspringen ist normaler Schaumstoff." },
+        { title: "Kombination mit Wärme", text: "Wärme lindert Gelenkschmerzen zusätzlich zur Druckentlastung. Die beste Kombination: orthopädischer Memory Foam + beheizbares Kissen (z.B. Snugglesafe-Wärmeplatte) oder ein elektrisch beheiztes Memory-Foam-Bett." },
+      ],
+      proCon: {
+        pros: [
+          "Entlastet Gelenke, Wirbelsäule und Muskeln",
+          "Verbesserter Schlaf führt zu mehr Aktivität und Wohlbefinden",
+          "CertiPUR-zertifizierter Schaum ist schadstoffgeprüft",
+          "Ideal nach Operationen und bei Arthritis",
+          "Viele Modelle sind maschinenwaschbar",
+        ],
+        cons: [
+          "Teurer als normale Katzenbetten (ab 35 €)",
+          "Schwerer – nicht so leicht umzuräumen",
+          "Junge, gesunde Katzen spüren keinen Unterschied",
+          "Schlechte Modelle unter 4 cm haben kaum orthopädische Wirkung",
+        ],
+      },
+      table: {
+        title: "Memory Foam Qualitätsstufen im Vergleich",
+        headers: ["Qualitätsstufe", "Schaumstoffdicke", "Zertifizierung", "Preis", "Empfehlung"],
+        rows: [
+          ["Budget", "2–4 cm", "Keine", "20–30 €", "Kaum orthopädische Wirkung"],
+          ["Standard", "5–7 cm", "CE", "30–50 €", "Guter Einstieg ✓"],
+          ["Premium", "8–10 cm", "CertiPUR + CE", "50–80 €", "Beste Wirkung ⭐"],
+          ["Tierarzt-empfohlen", "10+ cm", "CertiPUR + GS", "80–120 €", "Für starke Gelenkprobleme"],
+        ],
+      },
+      editorTip: "Kombiniere ein orthopädisches Bett mit einer Snugglesafe-Wärmeplatte (mikrowellenfähig, 8h Wärme, kein Strom nötig). Diese Kombination kostet zusammen ca. 60–70 € und macht einen deutlich größeren Unterschied als ein teures Heizbett allein.",
+    },
     faqs: [
       { q: "Ab wann braucht eine Katze ein orthopädisches Bett?", a: "Ab etwa 10–12 Jahren oder bei erkennbaren Gelenkproblemen. Anzeichen: Die Katze springt seltener, bewegt sich langsamer, liegt lieber auf harten Böden (Kühle lindert Schmerzen)." },
       { q: "Was ist CertiPUR-zertifizierter Memory Foam?", a: "CertiPUR ist ein Gütesiegel für Schaumstoff, das bestätigt, dass keine schädlichen Chemikalien enthalten sind. Wichtig für Haustiere, die viel Zeit im Bett verbringen." },
@@ -136,6 +254,42 @@ Achte auf einen niedrigen Einstieg (maximal 10–12 cm), damit alte oder kranke 
 **Größe und Komfort:** Die Liegebehelf sollte mindestens 50×30 cm betragen. Modelle mit weichem Bezug oder abnehmbarem Kissen sind bequemer. Manche Katzen bevorzugen stabiles Metall-Gitter (Panorama-Sicht), andere liegen lieber auf weichem Stoff.
 
 **Tipp:** Platziere die Fensterliege an einem Fenster, das Sonnenlicht bekommt – am besten in Süd- oder Westausrichtung. So hat deine Katze ihr persönliches Sonnenbad.`,
+    },
+    buyingGuide: {
+      title: "Fensterliege kaufen – Montage, Sicherheit und die besten Tipps",
+      intro: "Eine Fensterliege ist das meistgenutzte Katzenzubehör überhaupt. Diese Punkte entscheiden über Sicherheit und Akzeptanz.",
+      steps: [
+        { title: "Saugnapf-Qualität ist entscheidend", text: "Mindestens 4 starke Saugnäpfe mit Hebelschloss (nicht einfache Saugnäpfe). Glas muss vor der Montage gründlich gereinigt und fettfrei sein. Kontrolliere die Haftung in den ersten Tagen täglich, danach wöchentlich." },
+        { title: "Tragkraft großzügig wählen", text: "Auch wenn deine Katze nur 4 kg wiegt: Wähle eine Fensterliege mit mindestens 15 kg Tragkraft. Das gibt Sicherheitspuffer bei Sprüngen und plötzlichen Bewegungen. Für Maine Coon (7–10 kg) mindestens 25 kg Tragkraft." },
+        { title: "Optimale Ausrichtung", text: "Süd- oder westausgerichtete Fenster geben nachmittags Sonne – perfekt für Sonnenanbeter. Fenster mit Blick auf Garten, Vögel oder belebte Straße werden intensiver genutzt. Keine Zugluft in der Nähe." },
+        { title: "Weich oder Gitter?", text: "Stoff/Plüsch-Liegen sind bequemer und wärmer. Metall-Gitter bieten bessere Luftzirkulation und freie Sicht nach unten. Manche Katzen sitzen lieber auf Gitter (spüren die Wärme besser), andere nur auf weicher Unterlage." },
+      ],
+      proCon: {
+        pros: [
+          "Kein Bohren nötig – Saugnapf-Montage in Minuten",
+          "Katzen lieben erhöhte Plätze mit Überblick",
+          "Sonnenenergie wärmt natürlich – kein Strom nötig",
+          "Visuelle Stimulation durch Vögel und Außenwelt",
+          "Platzsparend – nutzt bereits vorhandene Fensterfläche",
+        ],
+        cons: [
+          "Nur an Glasfenstern nutzbar (kein Kunststoff, kein Doppelrahmen)",
+          "Saugnäpfe müssen regelmäßig kontrolliert werden",
+          "Nicht für sehr schwere Katzen über 8 kg ohne Spezialmodell",
+          "Bei Frost kann Glas porös werden – Haftung prüfen",
+        ],
+      },
+      table: {
+        title: "Fensterliegen-Typen im Vergleich",
+        headers: ["Typ", "Material", "Tragkraft", "Besonderheit", "Preis"],
+        rows: [
+          ["Standard Saugnapf", "Metall + Plüsch", "15–20 kg", "Einfache Montage", "15–30 €"],
+          ["Premium Saugnapf", "Metall + Memory Foam", "20–25 kg", "Komfortableres Liegen", "30–55 €"],
+          ["Fenster-Hängematte", "Canvas/Stoff", "15–20 kg", "Leichtes Schaukeln", "20–40 €"],
+          ["Saugnapf-Regal", "Holz/Metall", "25–35 kg", "Stabil, auch für XXL-Katzen", "45–80 €"],
+        ],
+      },
+      editorTip: "Reinige die Saugnäpfe und die Glasfläche vor der Montage mit Isopropylalkohol-Tuch. Das entfernt unsichtbare Fette und verdoppelt die Haftkraft. Nach 24h Trockenzeit die Saugnäpfe nochmals fest andrücken – dann hält die Liege zuverlässig für Jahre.",
     },
     faqs: [
       { q: "Wie sicher sind Saugnapf-Fensterliegen?", a: "Bei sauberem Glas und korrekter Montage sehr sicher. Achte auf Saugnäpfe mit Hebelschloss. Kontrolliere die Haftung wöchentlich und reinige Glas und Saugnapf regelmäßig." },
@@ -167,6 +321,43 @@ Für Senioren-Katzen (Arthritis, schlechte Durchblutung), für kranke Katzen in 
 GS-Zeichen (Geprüfte Sicherheit), automatische Abschaltung bei Überhitzung, TÜV-Prüfung, CE-Zertifizierung. Das Kabel muss aus dem Schlafbereich herausgeführt werden – nie unter dem Bett. Der Thermostat sollte auf maximal 40°C begrenzt sein.
 
 **USB vs. Strom:** USB-beheizte Betten (5V) sind sicherer und günstiger im Betrieb, haben aber weniger Heizleistung. Strom-Heizbetten sind effizienter, benötigen aber eine Steckdose in der Nähe.`,
+    },
+    buyingGuide: {
+      title: "Beheiztes Katzenbett kaufen – Sicherheit zuerst",
+      intro: "Beheizte Katzenbetten können einen echten gesundheitlichen Unterschied machen – aber nur wenn du auf die richtigen Sicherheitsmerkmale achtest.",
+      steps: [
+        { title: "Sicherheitszertifizierungen prüfen", text: "Pflicht: CE-Zeichen. Empfohlen: GS-Zeichen (Geprüfte Sicherheit, deutsches Prüfzeichen) und TÜV-Prüfung. Kaufe niemals unzertifizierte Elektrogeräte für Haustiere – Überhitzung kann lebensgefährlich sein." },
+        { title: "Thermostat und Abschaltautomatik", text: "Der Thermostat sollte auf maximal 38–40°C begrenzt sein (Körpertemperatur Katze). Automatische Abschaltung bei Überhitzung ist Pflicht. Kein Bett sollte dauerhaft auf maximaler Stufe betrieben werden." },
+        { title: "Kabel sicher verlegen", text: "Das Kabel muss aus dem Schlafbereich herausgeführt werden – nie unter dem Bett oder unter der Matratze. Katzen kauen an Kabeln. Verwende Kabelschutzschläuche oder verlege das Kabel hinter Möbeln." },
+        { title: "USB vs. Stromkabel", text: "USB-Heizbetten (5V) sind sicherer und günstiger im Betrieb, haben aber weniger Heizleistung – gut für bereits warme Räume. Strom-Heizbetten (230V, 15–40W) sind effizienter für kalte Räume und Winter-Freigänger." },
+      ],
+      proCon: {
+        pros: [
+          "Lindert Gelenkschmerzen bei älteren Katzen (Arthritis)",
+          "Ideal für Freigänger nach kalten Nächten",
+          "Wärme beruhigt ängstliche und kranke Katzen",
+          "Günstig im Betrieb (1–3 € pro Monat)",
+          "USB-Varianten extrem sicher und energiesparend",
+        ],
+        cons: [
+          "Kabelführung muss sorgfältig geplant werden",
+          "Strom-Modelle benötigen Steckdose in der Nähe",
+          "Nicht für alle Katzen nötig (gesunde Katzen regulieren Temperatur selbst)",
+          "Günstige Modelle ohne Thermostat können zu heiß werden",
+        ],
+      },
+      table: {
+        title: "USB vs. Strom – welches beheizte Bett passt zu dir?",
+        headers: ["Kriterium", "USB (5V)", "Strom (230V, 15–40W)", "Empfehlung"],
+        rows: [
+          ["Sicherheit", "⭐⭐⭐ Sehr hoch", "⭐⭐ Hoch (mit GS-Zeichen)", "USB für ängstliche Besitzer"],
+          ["Heizleistung", "Niedrig (sanfte Wärme)", "Hoch (effizient im Winter)", "Strom für kalte Räume"],
+          ["Betriebskosten/Monat", "< 0,50 €", "1–3 €", "Beide günstig"],
+          ["Kabelrisiko", "Niederspannung (sicher)", "Muss gesichert werden", "USB einfacher"],
+          ["Empfohlenes Modell", "K&H EZ Heated USB", "Snugglesafe Disc", "Je nach Bedarf"],
+        ],
+      },
+      editorTip: "Die günstigste und sicherste Wärmelösung für Katzen: Die Snugglesafe-Mikrowellen-Wärmeplatte (ca. 25 €). Sie braucht keinen Strom, kein Kabel, gibt 8–10 Stunden Wärme ab und ist TÜV-geprüft. Perfekt als Einstieg oder Reisebegleiter.",
     },
     faqs: [
       { q: "Sind beheizte Katzenbetten sicher?", a: "Ja, bei CE-zugelassenen und GS-geprüften Modellen. Achte auf automatische Abschaltung, Überhitzungsschutz und einen thermostatgesteuerten Betrieb. Lass das Kabel nie unter dem Bett verlaufen." },
@@ -202,6 +393,43 @@ Echte Materialien (Eiche, Buche, Merinowolle, Canvas), handwerkliche Fertigung o
 
 **Investition oder Luxus?** Ein hochwertiges Katzenbett aus echten Materialien hält 5–10 Jahre. Günstiges Plüsch muss oft jährlich ersetzt werden. Langfristig ist Premium oft günstiger.`,
     },
+    buyingGuide: {
+      title: "Design-Katzenbett kaufen – Qualität erkennen, richtig investieren",
+      intro: "Premium-Katzenmöbel sind langfristig oft günstiger als jährlich erneuerter Plüsch. Diese Tipps helfen dir, echte Qualität von teurem Marketing zu unterscheiden.",
+      steps: [
+        { title: "Echte vs. unechte Materialien", text: "Eiche, Buche, Birke: langlebig, hygienisch, pflegeleicht. Merinowolle: temperaturregulierend, natürlich, nachhaltig. Canvas und Cord: robust, modern, maschinenwaschbar. Vermeide Spanplatten (splittern), minderwertigen Kunstfell (verliert schnell Form) und synthetische Füllungen bei teuren Modellen." },
+        { title: "Verarbeitung prüfen", text: "Gute Zeichen: saubere Nähte, keine abstehenden Schrauben, stabile Verbindungen, Gewicht (schwerer = stabiler). Schlechte Zeichen: wackliges Gestell, scharfe Kanten, Klebstoffgeruch, dünne Polsterung." },
+        { title: "Haltbarkeit einschätzen", text: "Faustregel: Gib pro Jahr maximal 10% des Kaufpreises aus. Ein 80€-Bett sollte mindestens 8 Jahre halten. Hochwertige Marken (MiaCara, LucyBalu, CasaLoba) bieten oft Ersatzteile und Bezüge an – gutes Zeichen für Langlebigkeit." },
+        { title: "Integration ins Wohnkonzept", text: "Design-Katzenbetten fügen sich am besten ein, wenn sie zur Einrichtung passen: Holz-Bett zu Holzmöbeln, Cord zu modernem Interior, Filz zu naturellem/skandinavischem Stil. Die Katze nimmt das Bett schneller an, wenn es nicht in einer Ecke versteckt ist, sondern gut platziert und sichtbar ist." },
+      ],
+      proCon: {
+        pros: [
+          "Langlebig: 5–10 Jahre bei guter Verarbeitung",
+          "Wertet die Einrichtung auf – kein hässlicher Fremdkörper",
+          "Echte Materialien (Wolle, Holz) sind nachhaltiger",
+          "Oft europäische Handarbeit mit besserer Qualitätskontrolle",
+          "Ersatzteile und Bezüge oft erhältlich",
+        ],
+        cons: [
+          "Hoher Anschaffungspreis (50–200 €)",
+          "Katze garantiert keine bevorzugte Nutzung",
+          "Holzmöbel können kratzen – Katzenverhalten berücksichtigen",
+          "Weniger Farbauswahl als bei günstigeren Modellen",
+        ],
+      },
+      table: {
+        title: "Design-Marken im Vergleich",
+        headers: ["Marke", "Stil", "Material", "Preisrange", "Bekannt für"],
+        rows: [
+          ["MiaCara", "Skandinavisch", "Eiche + Baumwolle", "80–180 €", "Holz-Design, langlebig"],
+          ["LucyBalu", "Modern Deutsch", "Canvas + Cord", "60–130 €", "DINGHY, SNUGGLE"],
+          ["CasaLoba", "Natürlich/Öko", "100% Merinowolle", "70–150 €", "Handgefertigt, nachhaltig"],
+          ["Meyou Paris", "Luxus/Statement", "Birke + Wolle", "150–300 €", "The Cube, Lifestyle"],
+          ["FUKUMARU", "Japanisch/Minimal", "Birkenholz + Leinen", "30–60 €", "Günstiger Einstieg in Holz"],
+        ],
+      },
+      editorTip: "Nicht sicher, ob deine Katze ein offenes Holzbett annimmt? Kaufe zuerst einen günstigen Plüsch-Donut und stelle ihn auf das neue Holzbett. Wenn die Katze das Bett nutzt, weißt du: Standort und Typ passen. Dann kannst du in das Design investieren.",
+    },
     faqs: [
       { q: "Lohnt sich ein teures Design-Katzenbett?", a: "Ja, bei Qualitäts-Marken definitiv. Echte Materialien (Wolle, Eiche, Canvas) halten 5–10 Jahre. Günstiger Plüsch verliert nach 1–2 Jahren Form und Flauschigkeit." },
       { q: "Nehmen Katzen teure Design-Betten auch wirklich an?", a: "Katzen reagieren auf Komfort, nicht den Preis. Entscheidend sind: Platzierung (erhöht, ruhig), vertrauter Geruch (dein T-Shirt hineinlegen), und ob das Modell zum Schlafstil passt (Höhle vs. offenes Bett)." },
@@ -231,6 +459,42 @@ Echte Materialien (Eiche, Buche, Merinowolle, Canvas), handwerkliche Fertigung o
 
 **Sofa-Auflagen:** Eine günstigere Alternative sind Sofa-Auflagen, die per Klettverschluss am eigenen Sofa befestigt werden. So hat deine Katze ihren eigenen markierten Bereich – ohne eigenes Möbelstück.`,
     },
+    buyingGuide: {
+      title: "Katzensofa kaufen – das eigene Möbelstück für deinen Vierbeiner",
+      intro: "Katzensofas lösen das Sofa-Problem elegant. Diese Tipps helfen dir, das richtige Modell zu wählen.",
+      steps: [
+        { title: "Direkt neben das Menschensofa stellen", text: "Das Katzensofa sollte direkt neben oder vor das eigene Sofa. Katzen wollen die Nähe zu ihrem Menschen – ein Katzensofa in der Ecke wird ignoriert. Auf gleicher Höhe oder leicht erhöht macht es attraktiver." },
+        { title: "Größe großzügig wählen", text: "Mindestens 55×45 cm Liegefläche für eine normale Hauskatze. Für Maine Coon oder Ragdoll lieber 65×50 cm. Achte auf einen stabilen Schaumstoffkern – zu weiches Material wird schnell platt." },
+        { title: "Material zur Einrichtung passend", text: "Cord (Terracotta, Salbei, Beige) integriert sich in moderne Interiors. Für Skandinavisch: Canvas-Grau oder Natur. Für Klassisch: Plüsch in Anthrazit oder Dunkelgrau. Abnehmbarer, waschbarer Bezug ist Pflicht." },
+        { title: "Rutschfeste Füße wichtig", text: "Katzensofas ohne Rutschschutz verschieben sich bei jedem Sprung. Entweder Anti-Rutsch-Pads kaufen oder auf Modelle mit gummierten Füßen achten. Kleberückstände auf Holzböden vermeiden." },
+      ],
+      proCon: {
+        pros: [
+          "Löst das Sofa-Problem: Katze hat eigenen Platz daneben",
+          "Modern und wohnraumfreundlich (kein Plüsch-Chaos)",
+          "Erhöhte Position – Katzen lieben das Thronen",
+          "Cord und Canvas sind robust und langlebig",
+          "Gut für Katzen, die beim Menschen sein wollen",
+        ],
+        cons: [
+          "Teurer als normale Katzenbetten (ab 30 €)",
+          "Funktioniert nur wenn direkt neben Menschenmöbeln platziert",
+          "Sofa muss regelmäßig gesaugt werden (Haare)",
+          "Nicht ideal für scheue Katzen (zu exponiert)",
+        ],
+      },
+      table: {
+        title: "Katzensofas nach Stil und Material",
+        headers: ["Stil", "Material", "Preis", "Pflegeaufwand", "Empfohlen für"],
+        rows: [
+          ["Modern/Trend", "Cord (Terracotta, Salbei)", "25–50 €", "Abnehmbar, 30°C", "Design-Haushalte"],
+          ["Klassisch", "Plüsch/Velour", "20–40 €", "30°C Maschine", "Kuschel-Liebhaber"],
+          ["Premium", "Canvas + Holzfüße", "50–90 €", "Bezug abnehmbar", "Langlebigkeit"],
+          ["Budget", "Polyester/Schaum", "15–25 €", "30°C Maschine", "Einsteiger, Testen"],
+        ],
+      },
+      editorTip: "Stelle das neue Katzensofa direkt neben dein eigenes Sofa und lege dein T-Shirt hinein. Ignoriert deine Katze es trotzdem? Lege für 2 Wochen eine Sofa-Auflage auf deinem Sofa (unkomfortabel für sie) und das Katzensofa daneben. Die meisten Katzen wechseln dann freiwillig.",
+    },
     faqs: [
       { q: "Warum ein Katzensofa statt normales Katzenbett?", a: "Katzensofas bieten eine erhöhte Sitzposition, die Katzen lieben, und passen optisch besser ins Wohnzimmer. Ideal für Katzen, die gerne auf dem Sofa sitzen, aber ein eigenes Revier haben sollen." },
       { q: "Welche Größe sollte ein Katzensofa haben?", a: "Mindestens 55×45 cm Liegefläche für eine durchschnittliche Hauskatze (4–5 kg). Für Maine Coon oder andere große Rassen lieber 65×50 cm und mehr wählen." },
@@ -259,6 +523,42 @@ Echte Materialien (Eiche, Buche, Merinowolle, Canvas), handwerkliche Fertigung o
 **Freistehende Hängematten:** Benötigen ein Gestell (Bäume, Halterungen). Besonders beliebt für Zimmer ohne passende Heizkörper oder als Ergänzung zum Kratzbaum.
 
 **Doppel-Hängematten:** Zwei-Ebenen-Modelle sparen Platz und ermöglichen es, dass zwei Katzen gleichzeitig ihren Lieblingsplatz haben.`,
+    },
+    buyingGuide: {
+      title: "Katzenhängematte kaufen – Heizkörper, Fenster oder freistehend?",
+      intro: "Die Hängematte ist das kosteneffizienteste Katzen-Upgrade überhaupt – wenn du den richtigen Typ für deinen Heizkörper wählst.",
+      steps: [
+        { title: "Heizkörpertyp messen", text: "Miss zuerst: Breite des Heizkörpers (Standard: 40–80 cm), Tiefe der Rippen (9–11 cm = Standard, >12 cm = tief), Abstand Unterkante zum Boden. Notiere die Maße vor dem Kauf. Flachheizkörper und Design-Heizkörper brauchen spezielle Adapter." },
+        { title: "Tragkraft und Haken-Qualität", text: "Mindestens 10 kg Tragkraft, auch wenn deine Katze nur 4 kg wiegt (Sprünge erzeugen Stoßkräfte). Haken aus Metall (nicht Kunststoff). Prüfe nach Montage durch sanften Zug – wackelt nichts, sitzt alles korrekt." },
+        { title: "Liegematerial wählen", text: "Plüsch/Fleece: warm, weich, waschbar – Favorit für kalte Räume. Baumwoll-Canvas: atmungsaktiv, kühler – besser im Sommer. Gitter/Netz: maximale Luftzirkulation, manche Katzen mögen die offene Struktur. Achte auf abnehmbares Kissen." },
+        { title: "Position optimieren", text: "Hängematte auf Heizkörpermitte oder leicht erhöht montieren, nicht zu nah an heißen Rippenflächen. Katze sollte den Raum im Blick haben (Blickrichtung Tür oder Fenster). Doppel-Hängematten bei zwei Katzen – vermeidet Revierstreit." },
+      ],
+      proCon: {
+        pros: [
+          "Natürliche Wärmequelle (Heizkörper) ohne Stromkosten",
+          "Sehr platzsparend – nutzt sonst ungenutzte Fläche",
+          "Günstig (ab 15 €) und einfach zu montieren",
+          "Erhöhte Position – ideal für beobachtungsfreudige Katzen",
+          "Doppel-Modelle für zwei Katzen gleichzeitig",
+        ],
+        cons: [
+          "Passt nicht an alle Heizkörpertypen (Flachheizkörper problematisch)",
+          "Im Sommer ohne Heizung weniger attraktiv",
+          "Haken müssen regelmäßig kontrolliert werden",
+          "Kleine Liegefläche – für sehr große Katzen ggf. zu eng",
+        ],
+      },
+      table: {
+        title: "Heizkörper-Kompatibilitätstabelle",
+        headers: ["Heizkörpertyp", "Kompatibilität", "Adapter nötig?", "Empfohlener Typ"],
+        rows: [
+          ["Rippenheizung (Standard)", "✅ Sehr gut", "Nein", "Standard-Hängematte"],
+          ["Plattenheizkörper (flach)", "⚠️ Eingeschränkt", "Ja (Klemmen-Adapter)", "Spezial-Hängematte"],
+          ["Design-Heizkörper", "❌ Meist nicht", "Oft nicht möglich", "Fensterliege als Alternative"],
+          ["Handtuchwärmer", "✅ Gut", "Spezial-Haken", "Schmale Hängematte"],
+        ],
+      },
+      editorTip: "Kauf eine günstige Hängematte (15–20 €) zum Testen. Manche Katzen lieben Hängematten sofort, andere nie. Erst wenn sie die Hängematte regelmäßig nutzt, lohnt sich ein Upgrade auf ein hochwertiges Modell mit Memory Foam-Kissen.",
     },
     faqs: [
       { q: "Passen Heizkörper-Hängematten an jeden Heizkörper?", a: "Nein. Prüfe vor dem Kauf die Breite und Tiefe deines Heizkörpers. Standard-Heizkörper (Rippenheizkörper) passen zu den meisten Modellen. Flachheizkörper und Design-Heizkörper benötigen spezielle Halterungen." },
