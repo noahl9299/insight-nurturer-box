@@ -321,7 +321,7 @@ export default function ProductDetailPage() {
 
             {/* Rating row */}
             <div className="flex items-center gap-4 mb-5">
-              <StarRating rating={product.bewertung} count={product.anzahlBewertungen} />
+              <StarRating rating={realRating} count={realReviews} />
               <span className="text-xs text-muted-foreground">
                 Rang #{product.rang} auf katzenbett.de
               </span>
