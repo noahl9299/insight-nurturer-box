@@ -224,69 +224,6 @@ export default function CategoryPage() {
 
   if (!config) return <NotFound />;
 
-  // Pool of products for this category
-  const pool = useMemo(() => {
-    if (config.produktKategorien.length === 0) return products;
-    return products.filter((p) =>
-      config.produktKategorien.includes(p.kategorie)
-    );
-  }, [config]);
-
-  const materialOptions = useMemo(() => getMaterialOptions(pool), [pool]);
-  const groesseOptions = useMemo(() => getGroesseOptions(pool), [pool]);
-
-  // Apply filters
-  const filtered = useMemo(() => {
-    let result = pool.filter((p) => {
-      if (p.preis < filters.preis[0] || p.preis > filters.preis[1]) return false;
-      if (
-        filters.materialien.length > 0 &&
-        !filters.materialien.some((m) =>
-          p.material.toLowerCase().includes(m.toLowerCase())
-        )
-      )
-        return false;
-      if (!matchesGroesse(p, filters.groessen)) return false;
-      if (filters.waschbar === true && !p.waschbar.toLowerCase().startsWith("ja")) return false;
-      return true;
-    });
-    return sortProducts(result, sort);
-  }, [pool, filters, sort]);
-
-  const totalPages = Math.ceil(filtered.length / PER_PAGE);
-  const paginated = filtered.slice(0, page * PER_PAGE);
-
-  const activeFilterCount =
-    (filters.materialien.length > 0 ? 1 : 0) +
-    (filters.groessen.length > 0 ? 1 : 0) +
-    (filters.waschbar !== null ? 1 : 0) +
-    (filters.preis[0] > 0 || filters.preis[1] < 250 ? 1 : 0);
-
-  const resetFilters = useCallback(() => {
-    setFilters(DEFAULT_FILTERS);
-    setPage(1);
-  }, []);
-
-  const toggleMaterial = useCallback((m: string) => {
-    setFilters((f) => ({
-      ...f,
-      materialien: f.materialien.includes(m)
-        ? f.materialien.filter((x) => x !== m)
-        : [...f.materialien, m],
-    }));
-    setPage(1);
-  }, []);
-
-  const toggleGroesse = useCallback((g: string) => {
-    setFilters((f) => ({
-      ...f,
-      groessen: f.groessen.includes(g)
-        ? f.groessen.filter((x) => x !== g)
-        : [...f.groessen, g],
-    }));
-    setPage(1);
-  }, []);
-
   const badgeMap: Record<number, "bestseller" | "neu" | "tipp"> = {
     0: "bestseller", 1: "bestseller", 4: "tipp", 7: "bestseller",
   };
