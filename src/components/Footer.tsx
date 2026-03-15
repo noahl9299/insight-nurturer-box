@@ -15,9 +15,9 @@ const footerCategories = [
 
 const footerRatgeber = [
   { name: "Welches Katzenbett?", slug: "/ratgeber/katzenbett-test" },
-  { name: "Groessen-Guide", slug: "/ratgeber/katzenbett-groesse" },
+  { name: "Größen-Guide", slug: "/ratgeber/katzenbett-groesse" },
   { name: "Reinigungstipps", slug: "/ratgeber/katzenbett-waschen" },
-  { name: "Fuer Senior-Katzen", slug: "/ratgeber/katzenbett-senioren" },
+  { name: "Für Senior-Katzen", slug: "/ratgeber/katzenbett-senioren" },
   { name: "Wie viel schlafen Katzen?", slug: "/ratgeber/katzen-schlafverhalten" },
   { name: "Katzenbett selber machen", slug: "/ratgeber/katzenbett-selber-machen" },
 ];
