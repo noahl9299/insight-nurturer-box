@@ -393,6 +393,43 @@ Echte Materialien (Eiche, Buche, Merinowolle, Canvas), handwerkliche Fertigung o
 
 **Investition oder Luxus?** Ein hochwertiges Katzenbett aus echten Materialien hält 5–10 Jahre. Günstiges Plüsch muss oft jährlich ersetzt werden. Langfristig ist Premium oft günstiger.`,
     },
+    buyingGuide: {
+      title: "Design-Katzenbett kaufen – Qualität erkennen, richtig investieren",
+      intro: "Premium-Katzenmöbel sind langfristig oft günstiger als jährlich erneuerter Plüsch. Diese Tipps helfen dir, echte Qualität von teurem Marketing zu unterscheiden.",
+      steps: [
+        { title: "Echte vs. unechte Materialien", text: "Eiche, Buche, Birke: langlebig, hygienisch, pflegeleicht. Merinowolle: temperaturregulierend, natürlich, nachhaltig. Canvas und Cord: robust, modern, maschinenwaschbar. Vermeide Spanplatten (splittern), minderwertigen Kunstfell (verliert schnell Form) und synthetische Füllungen bei teuren Modellen." },
+        { title: "Verarbeitung prüfen", text: "Gute Zeichen: saubere Nähte, keine abstehenden Schrauben, stabile Verbindungen, Gewicht (schwerer = stabiler). Schlechte Zeichen: wackliges Gestell, scharfe Kanten, Klebstoffgeruch, dünne Polsterung." },
+        { title: "Haltbarkeit einschätzen", text: "Faustregel: Gib pro Jahr maximal 10% des Kaufpreises aus. Ein 80€-Bett sollte mindestens 8 Jahre halten. Hochwertige Marken (MiaCara, LucyBalu, CasaLoba) bieten oft Ersatzteile und Bezüge an – gutes Zeichen für Langlebigkeit." },
+        { title: "Integration ins Wohnkonzept", text: "Design-Katzenbetten fügen sich am besten ein, wenn sie zur Einrichtung passen: Holz-Bett zu Holzmöbeln, Cord zu modernem Interior, Filz zu naturellem/skandinavischem Stil. Die Katze nimmt das Bett schneller an, wenn es nicht in einer Ecke versteckt ist, sondern gut platziert und sichtbar ist." },
+      ],
+      proCon: {
+        pros: [
+          "Langlebig: 5–10 Jahre bei guter Verarbeitung",
+          "Wertet die Einrichtung auf – kein hässlicher Fremdkörper",
+          "Echte Materialien (Wolle, Holz) sind nachhaltiger",
+          "Oft europäische Handarbeit mit besserer Qualitätskontrolle",
+          "Ersatzteile und Bezüge oft erhältlich",
+        ],
+        cons: [
+          "Hoher Anschaffungspreis (50–200 €)",
+          "Katze garantiert keine bevorzugte Nutzung",
+          "Holzmöbel können kratzen – Katzenverhalten berücksichtigen",
+          "Weniger Farbauswahl als bei günstigeren Modellen",
+        ],
+      },
+      table: {
+        title: "Design-Marken im Vergleich",
+        headers: ["Marke", "Stil", "Material", "Preisrange", "Bekannt für"],
+        rows: [
+          ["MiaCara", "Skandinavisch", "Eiche + Baumwolle", "80–180 €", "Holz-Design, langlebig"],
+          ["LucyBalu", "Modern Deutsch", "Canvas + Cord", "60–130 €", "DINGHY, SNUGGLE"],
+          ["CasaLoba", "Natürlich/Öko", "100% Merinowolle", "70–150 €", "Handgefertigt, nachhaltig"],
+          ["Meyou Paris", "Luxus/Statement", "Birke + Wolle", "150–300 €", "The Cube, Lifestyle"],
+          ["FUKUMARU", "Japanisch/Minimal", "Birkenholz + Leinen", "30–60 €", "Günstiger Einstieg in Holz"],
+        ],
+      },
+      editorTip: "Nicht sicher, ob deine Katze ein offenes Holzbett annimmt? Kaufe zuerst einen günstigen Plüsch-Donut und stelle ihn auf das neue Holzbett. Wenn die Katze das Bett nutzt, weißt du: Standort und Typ passen. Dann kannst du in das Design investieren.",
+    },
     faqs: [
       { q: "Lohnt sich ein teures Design-Katzenbett?", a: "Ja, bei Qualitäts-Marken definitiv. Echte Materialien (Wolle, Eiche, Canvas) halten 5–10 Jahre. Günstiger Plüsch verliert nach 1–2 Jahren Form und Flauschigkeit." },
       { q: "Nehmen Katzen teure Design-Betten auch wirklich an?", a: "Katzen reagieren auf Komfort, nicht den Preis. Entscheidend sind: Platzierung (erhöht, ruhig), vertrauter Geruch (dein T-Shirt hineinlegen), und ob das Modell zum Schlafstil passt (Höhle vs. offenes Bett)." },
