@@ -417,6 +417,68 @@ export default function Index() {
         </div>
       </section>
 
+      {/* BLOG PREVIEW */}
+      {(() => {
+        const latestGuides = [...guides]
+          .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+          .slice(0, 3);
+        return (
+          <section className="py-20 bg-muted/30" aria-labelledby="blog-heading">
+            <div className="container mx-auto px-4">
+              <div className="flex items-end justify-between mb-10">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Ratgeber & Tipps</p>
+                  <h2 id="blog-heading" className="text-heading-2 text-foreground">Aktuelle Artikel</h2>
+                </div>
+                <Link
+                  to="/ratgeber"
+                  className="hidden sm:flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                >
+                  Alle Ratgeber <ArrowRight size={15} />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {latestGuides.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    to={`/ratgeber/${guide.slug}`}
+                    className="group bg-card rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
+                  >
+                    <div className="aspect-[16/9] bg-accent/40 flex items-center justify-center overflow-hidden">
+                      {guide.heroImage && guide.heroImage !== "/placeholder.svg" ? (
+                        <img src={guide.heroImage} alt={guide.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      ) : (
+                        <span className="text-5xl">📖</span>
+                      )}
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary">{guide.category}</span>
+                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Clock size={12} /> {guide.readingTime} Min.
+                        </span>
+                      </div>
+                      <h3 className="font-semibold text-foreground leading-snug mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                        {guide.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-4">{guide.excerpt}</p>
+                      <div className="flex items-center gap-1.5 text-xs font-medium text-primary">
+                        <BookOpen size={13} /> Artikel lesen
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-6 text-center sm:hidden">
+                <Link to="/ratgeber" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                  Alle Ratgeber ansehen <ArrowRight size={15} />
+                </Link>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* FAQ */}
       <section className="py-20 bg-background" aria-labelledby="faq-heading">
         <div className="container mx-auto px-4 max-w-3xl">
