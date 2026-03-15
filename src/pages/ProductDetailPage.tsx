@@ -203,13 +203,16 @@ export default function ProductDetailPage() {
   const similar = getSimilarProducts(product);
   const features = buildFeatures(product);
   const catInfo = CATEGORY_ROUTES[product.kategorie] ?? { name: "Katzenbetten", route: "/katzenbetten" };
-  const formattedPrice = product.preis.toFixed(2).replace(".", ",");
+  const realPrice = getProductPrice(product.rang) ?? product.preis;
+  const realRating = getProductRating(product.rang) ?? product.bewertung;
+  const realReviews = getProductReviews(product.rang) ?? product.anzahlBewertungen;
+  const formattedPrice = realPrice.toFixed(2).replace(".", ",");
   const typMeta = getTypMeta(product.typ);
   const realName = getProductName(product.rang) || product.produktname;
 
   const keyBenefits = [
     product.besonderheiten,
-    `Bewertung: ${product.bewertung} / 5 (${product.anzahlBewertungen.toLocaleString("de-DE")} Bewertungen)`,
+    `Bewertung: ${realRating} / 5 (${realReviews.toLocaleString("de-DE")} Bewertungen)`,
     `Material: ${product.material}`,
     product.waschbar === "Ja" ? "✓ Maschinenwaschbar bei 30°C" : `Pflege: ${product.waschbar}`,
     product.groesse ? `Maße: ${product.groesse} cm` : null,
