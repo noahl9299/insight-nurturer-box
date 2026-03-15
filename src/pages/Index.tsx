@@ -39,19 +39,19 @@ const problems = [
   "Deine Katze schläft überall - nur nicht in ihrem Bett?",
   "Das letzte Katzenbett war nach 3 Wochen platt?",
   "Du findest kein Bett, das zur Einrichtung passt?",
-  "Du bist unsicher, welche Groesse die richtige ist?",
+  "Du bist unsicher, welche Größe die richtige ist?",
 ];
 
 const solutions = [
   "Wir vergleichen über 500 Katzenbetten - ehrlich und unabhängig",
   "Nur Produkte mit Top-Bewertungen kommen in unsere Auswahl",
   "Design-Betten, die auch DIR gefallen",
-  "Unser Groessenberater findet die perfekte Passform",
+  "Unser Größenberater findet die perfekte Passform",
 ];
 
 const faqs = [
-  { q: "Welches Katzenbett ist das beste?", a: "Das beste Katzenbett gibt es nicht pauschal - es hängt von deiner Katze ab. Für ängstliche Katzen empfehlen wir Donut-Betten oder Höhlen, für Senioren orthopädische Modelle mit Memory Foam. Schaue dir unsere Kategorien an und nutze den Groessenberater." },
-  { q: "Wie gross sollte ein Katzenbett sein?", a: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Als Faustregel: Das Bett sollte mindestens 1,5x so gross sein wie deine eingerollte Katze. Bei 4-5 kg empfehlen wir 50 cm Durchmesser, bei grossen Rassen wie Maine Coon mindestens 60-70 cm." },
+  { q: "Welches Katzenbett ist das beste?", a: "Das beste Katzenbett gibt es nicht pauschal - es hängt von deiner Katze ab. Für ängstliche Katzen empfehlen wir Donut-Betten oder Höhlen, für Senioren orthopädische Modelle mit Memory Foam. Schaue dir unsere Kategorien an und nutze den Größenberater." },
+  { q: "Wie groß sollte ein Katzenbett sein?", a: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Als Faustregel: Das Bett sollte mindestens 1,5x so groß sein wie deine eingerollte Katze. Bei 4-5 kg empfehlen wir 50 cm Durchmesser, bei großen Rassen wie Maine Coon mindestens 60-70 cm." },
   { q: "Warum nimmt meine Katze das Bett nicht an?", a: "Katzen sind Gewohnheitstiere. Stelle das Bett an einen ruhigen, erhöhten Ort, lege ein getragenes T-Shirt hinein und verwende Katzenminze. Gib deiner Katze 2-3 Wochen Zeit. Manchmal hilft ein Betttyp-Wechsel: Manche Katzen mögen lieber offene Betten, andere Höhlen." },
   { q: "Kann ich ein Katzenbett in der Waschmaschine waschen?", a: "Die meisten modernen Katzenbetten sind bei 30 Grad waschbar. Filzbetten solltest du nur per Hand waschen. Achte beim Kauf auf das Waschbarkeitslabel. Tipp: Wasch das Bett mit einem Wäschenetz und lass es an der Luft trocknen - so bleibt es flauschig." },
   { q: "Welches Katzenbett für alte Katzen mit Gelenkproblemen?", a: "Für Senioren-Katzen empfehlen wir orthopädische Katzenbetten mit Memory Foam. Diese passen sich dem Körper an und entlasten Gelenke und Wirbelsäule. Wichtig: niedriger Einstieg und ein beheizbares Modell für Katzen, die besonders frieren." },
