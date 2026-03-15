@@ -396,9 +396,9 @@ export default function Index() {
               </p>
             </div>
             <div>
-              <h3 className="text-heading-3 text-foreground mb-3">Welche Groesse braucht meine Katze?</h3>
+              <h3 className="text-heading-3 text-foreground mb-3">Welche Größe braucht meine Katze?</h3>
               <p>
-                Ein Katzenkorb oder Katzenbett sollte gross genug sein, dass sich deine Katze bequem einrollen kann. Für eine durchschnittliche Hauskatze (3-5 kg) empfehlen wir einen Durchmesser von mindestens 50 cm. Bei grossen Rassen wie Maine Coon oder Norwegische Waldkatze solltest du zu 60-70 cm greifen. Unser <Link to="/ratgeber/katzenbett-groesse" className="text-primary hover:underline">Groessen-Guide</Link> hilft dir bei der Auswahl.
+                Ein Katzenkorb oder Katzenbett sollte groß genug sein, dass sich deine Katze bequem einrollen kann. Für eine durchschnittliche Hauskatze (3-5 kg) empfehlen wir einen Durchmesser von mindestens 50 cm. Bei großen Rassen wie Maine Coon oder Norwegische Waldkatze solltest du zu 60-70 cm greifen. Unser <Link to="/ratgeber/katzenbett-groesse" className="text-primary hover:underline">Größen-Guide</Link> hilft dir bei der Auswahl.
               </p>
             </div>
             <div>
