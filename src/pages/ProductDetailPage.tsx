@@ -158,7 +158,7 @@ function ProductSchema({ product }: { product: Product }) {
       priceCurrency: "EUR",
       price: product.preis.toFixed(2),
       availability: "https://schema.org/InStock",
-      url: product.affiliateLink,
+      url: getAmazonUrl(product.rang),
     },
     aggregateRating: {
       "@type": "AggregateRating",
