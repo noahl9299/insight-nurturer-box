@@ -61,7 +61,7 @@ const faqs = [
 const brands = ["Bedsure", "Trixie", "FEANDREA", "LucyBalu", "MiaCara", "Navaris", "FUKUMARU", "Catit", "Dehner", "HUNTER", "West Paw", "Amazon Basics", "PAWZ Road", "Bedsure", "Trixie", "FEANDREA", "LucyBalu", "MiaCara"];
 
 export default function Index() {
-  const bestsellers = getBestsellers();
+  const bestsellers = [...products].sort((a, b) => a.rang - b.rang).slice(0, 8);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<ReturnType<typeof searchProducts>>([]);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
