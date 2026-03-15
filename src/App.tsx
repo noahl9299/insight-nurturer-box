@@ -5,9 +5,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/Layout";
 import Index from "./pages/Index.tsx";
+import CategoryPage from "./pages/CategoryPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
+
+// Wrapper that passes a fixed slug to CategoryPage via route params
+function CategoryRoute({ slug }: { slug: string }) {
+  return <CategoryPage />;
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -18,17 +24,21 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
-            <Route path="/katzenbetten" element={<Index />} />
-            <Route path="/katzenhoehlen" element={<Index />} />
-            <Route path="/donut-katzenbetten" element={<Index />} />
-            <Route path="/orthopaedische-katzenbetten" element={<Index />} />
-            <Route path="/fensterliegen-katzen" element={<Index />} />
-            <Route path="/haengematten-katzen" element={<Index />} />
-            <Route path="/beheizte-katzenbetten" element={<Index />} />
-            <Route path="/design-katzenbetten" element={<Index />} />
-            <Route path="/katzensofas" element={<Index />} />
-            <Route path="/kratzbetten" element={<Index />} />
-            <Route path="/katzenbett-zubehoer" element={<Index />} />
+
+            {/* All category pages */}
+            <Route path="/katzenbetten" element={<CategoryPage />} />
+            <Route path="/katzenhoehlen" element={<CategoryPage />} />
+            <Route path="/donut-katzenbetten" element={<CategoryPage />} />
+            <Route path="/orthopaedische-katzenbetten" element={<CategoryPage />} />
+            <Route path="/fensterliegen-katzen" element={<CategoryPage />} />
+            <Route path="/beheizte-katzenbetten" element={<CategoryPage />} />
+            <Route path="/design-katzenbetten" element={<CategoryPage />} />
+            <Route path="/katzensofas" element={<CategoryPage />} />
+            <Route path="/haengematten-katzen" element={<CategoryPage />} />
+            <Route path="/kratzbetten" element={<CategoryPage />} />
+            <Route path="/katzenbett-zubehoer" element={<CategoryPage />} />
+
+            {/* Product detail, guide, about */}
             <Route path="/katzenbett/:slug" element={<Index />} />
             <Route path="/ratgeber" element={<Index />} />
             <Route path="/ratgeber/:slug" element={<Index />} />
