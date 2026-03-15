@@ -2,6 +2,7 @@ import { Star, ShoppingBag, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Product, getAmazonLink } from "@/data/products";
+import { getProductImage } from "@/data/productImages";
 
 interface ProductCardProps {
   product: Product;
@@ -37,17 +38,18 @@ function PlaceholderImage({ typ, produktname }: { typ: string; produktname: stri
   );
 }
 
-function ProductImage({ bildUrl, produktname, typ }: { bildUrl?: string; produktname: string; typ: string }) {
+function ProductImage({ rang, bildUrl, produktname, typ }: { rang: number; bildUrl?: string; produktname: string; typ: string }) {
   const [error, setError] = useState(false);
+  const imgSrc = getProductImage(rang) || bildUrl;
 
-  if (bildUrl && !error) {
+  if (imgSrc && !error) {
     return (
       <img
-        src={bildUrl}
+        src={imgSrc}
         alt={produktname}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         referrerPolicy="no-referrer"
-        onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.svg"; setError(true); }}
+        onError={() => setError(true)}
         loading="lazy"
       />
     );
@@ -87,7 +89,7 @@ export function ProductCard({ product, badge }: ProductCardProps) {
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <div className="product-card-image w-full h-full">
-          <ProductImage bildUrl={product.bildUrl} produktname={product.produktname} typ={product.typ} />
+          <ProductImage rang={product.rang} bildUrl={product.bildUrl} produktname={product.produktname} typ={product.typ} />
         </div>
 
         {/* Badge */}
