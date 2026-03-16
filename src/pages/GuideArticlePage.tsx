@@ -414,7 +414,7 @@ export default function GuideArticlePage() {
               className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
               style={{ background: "hsl(var(--primary))" }}
             >
-              🐾 Katzenbetten entdecken
+              <PawIcon size={16} className="text-primary-foreground" /> Katzenbetten entdecken
             </Link>
           </aside>
         </div>
