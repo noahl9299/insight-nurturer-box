@@ -406,7 +406,7 @@ export default function Index() {
               {
                 step: "01",
                 title: "Den richtigen Typ finden",
-                icon: "🐾",
+                icon: <PawIcon size={22} className="text-primary" />,
                 content: "Der wichtigste Schritt: Welcher Schlafstil hat deine Katze? Kugelschläfer lieben Donut-Betten mit erhöhtem Rand. Ängstliche oder scheue Katzen brauchen eine Katzenhöhle mit rundum Schutz. Neugierige Sonnenanbeter freuen sich über eine Fensterliege. Ältere Katzen mit Gelenkproblemen brauchen orthopädischen Memory Foam.",
                 links: [
                   { label: "Katzenhöhlen", to: "/katzenhoehlen" },
@@ -417,23 +417,23 @@ export default function Index() {
               {
                 step: "02",
                 title: "Die richtige Größe wählen",
-                icon: "📐",
+                icon: <RulerIcon size={22} className="text-primary" />,
                 content: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Faustregel: Das Bett sollte mindestens 1,5× so groß sein wie die eingerollte Katze. Für Hauskatzen (3–5 kg) empfehlen wir 50 cm Durchmesser. Für große Rassen wie Maine Coon oder Norwegische Waldkatze mindestens 60–70 cm. Im Zweifelsfall lieber eine Nummer größer.",
                 links: [
-                  { label: "📏 Größenberater starten", to: "/groessenberater" },
+                  { label: "Größenberater starten", to: "/groessenberater" },
                 ],
               },
               {
                 step: "03",
                 title: "Das passende Material",
-                icon: "🧶",
+                icon: <YarnIcon size={22} className="text-primary" />,
                 content: "Plüsch & Kunstfell: weich, günstig, maschinenwaschbar – der Klassiker. Filz (Merinowolle): naturbelassen, atmungsaktiv, temperaturregulierend – ideal für Höhlen. Memory Foam: druckentlastend, für ältere und kranke Katzen. Cord & Canvas: modisch, robust, pflegeleicht. Holz/Birke: langlebig, hygienisch, fürs Design-Bewusste.",
                 links: [],
               },
               {
                 step: "04",
                 title: "Waschbarkeit & Hygiene",
-                icon: "🧺",
+                icon: <LaundryIcon size={22} className="text-primary" />,
                 content: "Ein waschbares Katzenbett ist kein Luxus, sondern Pflicht. Katzen verlieren täglich Haare und hinterlassen Hautschuppen – ein regelmäßiges Waschen bei 30–40 Grad reduziert Bakterien und Gerüche. Achte auf Modelle mit abnehmbarem Bezug: So muss nicht das komplette Bett in die Maschine. Filzhöhlen nur per Handwäsche.",
                 links: [],
               },
@@ -444,7 +444,7 @@ export default function Index() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">{item.icon}</span>
+                    {item.icon}
                     <h3 className="text-base font-bold text-foreground">{item.title}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.content}</p>
