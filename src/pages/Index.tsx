@@ -393,7 +393,7 @@ export default function Index() {
           <div className="text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Kaufberatung</p>
             <h2 id="guide-heading" className="text-heading-2 text-foreground mb-4">
-              Katzenbett kaufen – worauf wirklich ankommt
+              Katzenbett kaufen - worauf wirklich ankommt
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Unsere Redaktion hat über 500 Katzenbetten analysiert. Hier sind die wichtigsten Entscheidungskriterien.
