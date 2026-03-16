@@ -482,7 +482,7 @@ export default function GrössenberaterPage() {
                   <p className="font-semibold text-foreground mb-1">Empfohlene Bettgröße</p>
                   <p className="text-2xl font-display font-bold text-primary mb-1">{recommendedSize}</p>
                   <p className="text-xs text-muted-foreground">
-                    Für das beste Ergebnis: Körperlänge deiner Katze + 10–15 cm Komfortpuffer.
+                    Für das beste Ergebnis: Körperlänge deiner Katze + 10-15 cm Komfortpuffer.
                   </p>
                 </div>
               </div>
