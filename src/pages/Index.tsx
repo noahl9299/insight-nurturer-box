@@ -88,7 +88,7 @@ export default function Index() {
   return (
     <>
       <SEO
-        title="Die besten Katzenbetten im Vergleich 2025 | katzenbett.de"
+        title="Die besten Katzenbetten im Vergleich 2026 | katzenbett.de"
         description="Über 500 Katzenbetten verglichen und bewertet. Finde das perfekte Katzenbett für deine Katze - nach Größe, Material & Typ. Ehrlich, unabhängig, aktuell."
         canonical="https://katzenbett.de/"
         type="website"

@@ -242,7 +242,7 @@ export default function CategoryPage() {
   return (
     <>
       <SEO
-        title={`${config.nameLong} kaufen 2025 – Top ${pool.length} Empfehlungen`}
+        title={`${config.nameLong} kaufen 2026 – Top ${pool.length} Empfehlungen`}
         description={`${config.description} Jetzt die besten ${config.nameLong} vergleichen – gefiltert nach Preis, Größe und Material.`}
         canonical={`https://katzenbett.de${config.route}`}
         type="website"
