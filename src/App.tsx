@@ -38,7 +38,7 @@ const App = () => (
             <Route path="/katzenbett-zubehoer" element={<CategoryPage />} />
 
             {/* Product detail, guide, about */}
-            <Route path="/katzenbett/:slug" element={<ProductDetailPage />} />
+            <Route path="/:slug" element={<ProductDetailPage />} />
             <Route path="/ratgeber" element={<GuidesOverviewPage />} />
             <Route path="/ratgeber/:slug" element={<GuideArticlePage />} />
             <Route path="/groessenberater" element={<GrössenberaterPage />} />

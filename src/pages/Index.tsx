@@ -150,7 +150,7 @@ export default function Index() {
                   {searchResults.map((p) => (
                     <Link
                       key={p.slug}
-                      to={`/katzenbett/${p.slug}`}
+                      to={`/${p.slug}`}
                       className="flex items-center justify-between px-4 py-3 hover:bg-accent/50 transition-colors border-b border-border/30 last:border-0"
                     >
                       <div>
