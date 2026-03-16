@@ -93,7 +93,9 @@ function ProductGallery({ product }: { product: Product }) {
   if (imageIds.length === 0) {
     return (
       <div className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}>
-        <span className="text-9xl mb-4 select-none">{meta.icon}</span>
+        <div className="w-24 h-24 mb-4 text-primary/30 flex items-center justify-center">
+          {getBedTypeIcon(product.typ, 80)}
+        </div>
         <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">{realName}</p>
       </div>
     );
