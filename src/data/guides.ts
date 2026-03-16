@@ -1,3 +1,7 @@
+import guideGroesseImg from "@/assets/guide-groesse.jpg";
+import guideMaterialienImg from "@/assets/guide-materialien.jpg";
+import guideChecklisteImg from "@/assets/guide-checkliste.jpg";
+
 export interface GuideSection {
   id: string;
   title: string;
@@ -46,7 +50,7 @@ export const guides: Guide[] = [
     updatedAt: "2025-01-10",
     author: "Laura Meier",
     authorRole: "Tierverhaltensexpertin & Redakteurin",
-    heroImage: "/src/assets/guide-groesse.jpg",
+    heroImage: guideGroesseImg,
     tags: ["Größe", "Kaufratgeber", "Tipps", "Maße"],
     ratings: [
       { label: "Informationsgehalt", score: 9.5 },
@@ -144,7 +148,7 @@ export const guides: Guide[] = [
     updatedAt: "2025-01-20",
     author: "Jonas Weber",
     authorRole: "Produkttester & Redakteur",
-    heroImage: "/src/assets/guide-materialien.jpg",
+    heroImage: guideMaterialienImg,
     tags: ["Material", "Plüsch", "Filz", "Memory Foam", "Cord"],
     ratings: [
       { label: "Informationsgehalt", score: 9.0 },
@@ -261,7 +265,7 @@ export const guides: Guide[] = [
     updatedAt: "2025-01-28",
     author: "Laura Meier",
     authorRole: "Tierverhaltensexpertin & Redakteurin",
-    heroImage: "/src/assets/guide-checkliste.jpg",
+    heroImage: guideChecklisteImg,
     tags: ["Checkliste", "Kaufratgeber", "Tipps", "2025"],
     ratings: [
       { label: "Informationsgehalt", score: 9.0 },

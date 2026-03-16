@@ -98,65 +98,74 @@ export default function GuideArticlePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      {/* Hero Image */}
-      {guide.heroImage && guide.heroImage !== "/placeholder.svg" ? (
-        <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden pt-16">
+      {/* Hero Banner with image + overlay + title */}
+      <div className="relative w-full h-72 md:h-96 lg:h-[480px] overflow-hidden pt-16">
+        {guide.heroImage ? (
           <img
             src={guide.heroImage}
             alt={guide.title}
             className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
+            onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.svg"; }}
           />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-accent to-background" />
+        )}
+        {/* Gradient overlay bottom-to-top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
+
+        {/* Content overlay */}
+        <div className="absolute inset-0 flex flex-col justify-end px-4 pb-8 md:pb-10">
+          <div className="container mx-auto max-w-4xl">
+            <Breadcrumb className="mb-4">
+              <BreadcrumbList className="[&_*]:text-white/70 [&_a:hover]:text-white">
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild><Link to="/">Startseite</Link></BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild><Link to="/ratgeber">Ratgeber</Link></BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="line-clamp-1 text-white/60">{guide.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur-sm mb-3">
+              {guide.category}
+            </span>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-white leading-tight mb-3 drop-shadow-lg max-w-3xl">
+              {guide.title}
+            </h1>
+
+            {/* Meta row */}
+            <div className="flex flex-wrap items-center gap-4 text-sm text-white/80">
+              <span className="flex items-center gap-1.5">
+                <User size={14} />
+                <strong className="text-white">{guide.author}</strong>
+                <span className="hidden sm:inline opacity-70">· {guide.authorRole}</span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} />
+                {new Date(guide.updatedAt).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" })}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} /> {guide.readingTime} Min. Lesezeit
+              </span>
+            </div>
+          </div>
         </div>
-      ) : null}
+      </div>
 
-      {/* Hero */}
-      <section className={`bg-gradient-to-b from-accent/60 to-background ${guide.heroImage && guide.heroImage !== "/placeholder.svg" ? "pt-8" : "pt-28"} pb-10 px-4`}>
+      {/* Excerpt + Tags bar */}
+      <section className="bg-gradient-to-b from-accent/40 to-background pt-6 pb-8 px-4">
         <div className="container mx-auto max-w-4xl">
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild><Link to="/">Startseite</Link></BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild><Link to="/ratgeber">Ratgeber</Link></BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage className="line-clamp-1">{guide.title}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary mb-4">
-            {guide.category}
-          </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight mb-5">
-            {guide.title}
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mb-6">
+          <p className="text-base text-muted-foreground max-w-2xl mb-4">
             {guide.excerpt}
           </p>
-
-          {/* Meta row */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <User size={14} />
-              <strong className="text-foreground">{guide.author}</strong>
-              <span className="hidden sm:inline">· {guide.authorRole}</span>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Calendar size={14} />
-              Aktualisiert: {new Date(guide.updatedAt).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" })}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Clock size={14} /> {guide.readingTime} Min. Lesezeit
-            </span>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex flex-wrap gap-2">
             {guide.tags.map((tag) => (
               <span key={tag} className="flex items-center gap-1 px-2.5 py-1 bg-muted rounded-full text-xs text-muted-foreground">
                 <Tag size={10} /> {tag}
