@@ -1,7 +1,7 @@
 const names: Record<number, string> = {
   1: "BEDSURE Katzenbett waschbar - 51x41cm",
   2: "CheerPals Katzen Fensterliege mit Wendebezug",
-  3: "FEANDREA Hundebett & Katzenkissen 76 cm",
+  3: "BEDSURE Katzenbett waschbar flauschig - Ø 50 cm",
   4: "Katzenbett 50 cm Waschbar Orthopädisch",
   5: "BEDSURE Katzenbett waschbar - 51x48x15cm",
   6: "FEANDREA Donut Katzenbett flauschig",
