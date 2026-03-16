@@ -357,7 +357,7 @@ export default function GrössenberaterPage() {
   return (
     <>
       <SEO
-        title="Katzenbett Größenberater – Welches Bett passt zu deiner Katze?"
+        title="Katzenbett Größenberater - Welches Bett passt zu deiner Katze?"
         description="In 3 Schritten zur perfekten Empfehlung: Unser Größenberater findet das ideale Katzenbett basierend auf Gewicht, Schlafstil und deinen Wünschen."
         canonical="https://katzenbett.de/groessenberater"
         type="website"
