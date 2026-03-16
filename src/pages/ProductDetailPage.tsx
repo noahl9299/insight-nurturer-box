@@ -303,7 +303,7 @@ export default function ProductDetailPage() {
   return (
     <>
       <SEO
-        title={`${realName} – ${product.marke} Katzenbett kaufen`}
+        title={`${realName} - ${product.marke} Katzenbett kaufen`}
         description={`${realName} von ${product.marke} kaufen. ${product.besonderheiten}. Bewertung: ${realRating}/5 bei ${realReviews.toLocaleString("de-DE")} Rezensionen. Ab ${formattedPrice} €.`}
         canonical={`https://katzenbett.de/katzenbett/${product.slug}`}
         type="product"
@@ -661,8 +661,8 @@ export default function ProductDetailPage() {
                    {[
                      { dt: "Marke", dd: product.marke },
                      { dt: "Kategorie", dd: product.typ },
-                     { dt: "Maße", dd: realSize || product.groesse || "–" },
-                     { dt: "Material", dd: realMaterial || product.material || "–" },
+                      { dt: "Maße", dd: realSize || product.groesse || "-" },
+                      { dt: "Material", dd: realMaterial || product.material || "-" },
                      { dt: "Waschbar", dd: product.waschbar },
                      { dt: "Farben", dd: product.farben },
                      { dt: "ASIN", dd: product.asin },

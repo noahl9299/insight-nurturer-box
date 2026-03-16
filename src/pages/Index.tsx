@@ -89,7 +89,7 @@ export default function Index() {
     <>
       <SEO
         title="Die besten Katzenbetten im Vergleich 2025 | katzenbett.de"
-        description="Über 500 Katzenbetten verglichen und bewertet. Finde das perfekte Katzenbett für deine Katze – nach Größe, Material & Typ. Ehrlich, unabhängig, aktuell."
+        description="Über 500 Katzenbetten verglichen und bewertet. Finde das perfekte Katzenbett für deine Katze - nach Größe, Material & Typ. Ehrlich, unabhängig, aktuell."
         canonical="https://katzenbett.de/"
         type="website"
       />
@@ -393,7 +393,7 @@ export default function Index() {
           <div className="text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Kaufberatung</p>
             <h2 id="guide-heading" className="text-heading-2 text-foreground mb-4">
-              Katzenbett kaufen – worauf wirklich ankommt
+              Katzenbett kaufen - worauf wirklich ankommt
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Unsere Redaktion hat über 500 Katzenbetten analysiert. Hier sind die wichtigsten Entscheidungskriterien.
@@ -418,7 +418,7 @@ export default function Index() {
                 step: "02",
                 title: "Die richtige Größe wählen",
                 icon: <RulerIcon size={22} className="text-primary" />,
-                content: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Faustregel: Das Bett sollte mindestens 1,5× so groß sein wie die eingerollte Katze. Für Hauskatzen (3–5 kg) empfehlen wir 50 cm Durchmesser. Für große Rassen wie Maine Coon oder Norwegische Waldkatze mindestens 60–70 cm. Im Zweifelsfall lieber eine Nummer größer.",
+                content: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Faustregel: Das Bett sollte mindestens 1,5× so groß sein wie die eingerollte Katze. Für Hauskatzen (3-5 kg) empfehlen wir 50 cm Durchmesser. Für große Rassen wie Maine Coon oder Norwegische Waldkatze mindestens 60-70 cm. Im Zweifelsfall lieber eine Nummer größer.",
                 links: [
                   { label: "Größenberater starten", to: "/groessenberater" },
                 ],
@@ -427,14 +427,14 @@ export default function Index() {
                 step: "03",
                 title: "Das passende Material",
                 icon: <YarnIcon size={22} className="text-primary" />,
-                content: "Plüsch & Kunstfell: weich, günstig, maschinenwaschbar – der Klassiker. Filz (Merinowolle): naturbelassen, atmungsaktiv, temperaturregulierend – ideal für Höhlen. Memory Foam: druckentlastend, für ältere und kranke Katzen. Cord & Canvas: modisch, robust, pflegeleicht. Holz/Birke: langlebig, hygienisch, fürs Design-Bewusste.",
+                content: "Plüsch & Kunstfell: weich, günstig, maschinenwaschbar - der Klassiker. Filz (Merinowolle): naturbelassen, atmungsaktiv, temperaturregulierend - ideal für Höhlen. Memory Foam: druckentlastend, für ältere und kranke Katzen. Cord & Canvas: modisch, robust, pflegeleicht. Holz/Birke: langlebig, hygienisch, fürs Design-Bewusste.",
                 links: [],
               },
               {
                 step: "04",
                 title: "Waschbarkeit & Hygiene",
                 icon: <LaundryIcon size={22} className="text-primary" />,
-                content: "Ein waschbares Katzenbett ist kein Luxus, sondern Pflicht. Katzen verlieren täglich Haare und hinterlassen Hautschuppen – ein regelmäßiges Waschen bei 30–40 Grad reduziert Bakterien und Gerüche. Achte auf Modelle mit abnehmbarem Bezug: So muss nicht das komplette Bett in die Maschine. Filzhöhlen nur per Handwäsche.",
+                content: "Ein waschbares Katzenbett ist kein Luxus, sondern Pflicht. Katzen verlieren täglich Haare und hinterlassen Hautschuppen - ein regelmäßiges Waschen bei 30-40 Grad reduziert Bakterien und Gerüche. Achte auf Modelle mit abnehmbarem Bezug: So muss nicht das komplette Bett in die Maschine. Filzhöhlen nur per Handwäsche.",
                 links: [],
               },
             ].map((item) => (
@@ -513,7 +513,7 @@ export default function Index() {
             <div>
               <p className="font-semibold text-foreground mb-1">Redaktionstipp: So gewöhnt deine Katze sich schneller an das neue Bett</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Stelle das neue Bett an einem ruhigen, erhöhten Ort auf – Katzen mögen den Überblick. Lege ein getragenes T-Shirt hinein, damit das Bett nach dir riecht. Katzenminze am Eingang oder auf dem Kissen kann die Neugier wecken. Gib deiner Katze 2–3 Wochen Zeit. Manche Katzen brauchen länger – sei geduldig und locke sie nie mit Gewalt.
+                Stelle das neue Bett an einem ruhigen, erhöhten Ort auf - Katzen mögen den Überblick. Lege ein getragenes T-Shirt hinein, damit das Bett nach dir riecht. Katzenminze am Eingang oder auf dem Kissen kann die Neugier wecken. Gib deiner Katze 2-3 Wochen Zeit. Manche Katzen brauchen länger - sei geduldig und locke sie nie mit Gewalt.
               </p>
             </div>
           </div>
@@ -534,10 +534,10 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: <AnxiousCatIcon size={30} className="text-primary" />, title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier – braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
+              { icon: <AnxiousCatIcon size={30} className="text-primary" />, title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier - braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
               { icon: <SunCatIcon size={30} className="text-primary" />, title: "Der Sonnenanbeter", desc: "Liegt immer am Fenster, beobachtet alles, liebt Wärme.", rec: "Fensterliege oder beheiztes Bett", link: "/fensterliegen-katzen", badge: "Tipp" },
               { icon: <CrownIcon size={30} className="text-primary" />, title: "Die Diva", desc: "Hält dein Sofa für ihr Eigentum und lässt das alle wissen.", rec: "Katzensofa direkt daneben", link: "/katzensofas", badge: "Tipp" },
-              { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze – braucht Platz.", rec: "XL-Donut (60–70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
+              { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze - braucht Platz.", rec: "XL-Donut (60-70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
               { icon: <SeniorCatIcon size={30} className="text-primary" />, title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
               { icon: <SparkleIcon size={30} className="text-primary" />, title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
             ].map((item) => (

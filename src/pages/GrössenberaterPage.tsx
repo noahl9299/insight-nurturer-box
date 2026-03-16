@@ -29,15 +29,15 @@ const STEPS: Step[] = [
     hint: "Das Gewicht bestimmt die richtige Bettgröße.",
     choices: [
       { id: "xs",  emoji: "🐱", label: "Unter 3 kg",  sublabel: "Kitten / Kleine Rassen" },
-      { id: "s",   emoji: "😺", label: "3 – 5 kg",    sublabel: "Durchschnittliche Hauskatze" },
-      { id: "m",   emoji: "🐈", label: "5 – 7 kg",    sublabel: "Großes EKH / Kater" },
+      { id: "s",   emoji: "😺", label: "3 - 5 kg",    sublabel: "Durchschnittliche Hauskatze" },
+      { id: "m",   emoji: "🐈", label: "5 - 7 kg",    sublabel: "Großes EKH / Kater" },
       { id: "xl",  emoji: "🦁", label: "Über 7 kg",   sublabel: "Maine Coon / Ragdoll" },
     ],
   },
   {
     id: "schlafstil",
     question: "Wie schläft deine Katze am liebsten?",
-    hint: "Beobachte deine Katze – das verrät dir viel über den richtigen Typ.",
+    hint: "Beobachte deine Katze - das verrät dir viel über den richtigen Typ.",
     choices: [
       { id: "eingerollt",  emoji: "🌀", label: "Eingerollt",     sublabel: "Kleine Kugel, eng und warm" },
       { id: "ausgestreckt",emoji: "😴", label: "Ausgestreckt",   sublabel: "Beine von sich gestreckt" },
@@ -67,7 +67,7 @@ interface Answers {
 }
 
 function getRecommendedSize(gewicht: string): string {
-  return { xs: "40–45 cm", s: "50–55 cm", m: "55–60 cm", xl: "60–70 cm" }[gewicht] ?? "50–55 cm";
+  return { xs: "40-45 cm", s: "50-55 cm", m: "55-60 cm", xl: "60-70 cm" }[gewicht] ?? "50-55 cm";
 }
 
 function scoreProduct(product: Product, answers: Answers): number {
@@ -350,14 +350,14 @@ export default function GrössenberaterPage() {
   const recommendedSize = wizardState === "result" ? getRecommendedSize(allAnswers.gewicht) : "";
   const bedTypeLabel = wizardState === "result" ? getBedTypeLabel(allAnswers) : "";
 
-  const sizeLabels: Record<string, string> = { xs: "Unter 3 kg", s: "3 – 5 kg", m: "5 – 7 kg", xl: "Über 7 kg" };
+  const sizeLabels: Record<string, string> = { xs: "Unter 3 kg", s: "3 - 5 kg", m: "5 - 7 kg", xl: "Über 7 kg" };
   const sleepLabels: Record<string, string> = { eingerollt: "Eingerollt", ausgestreckt: "Ausgestreckt", versteckt: "Versteckt", fenster: "Am Fenster" };
   const prefLabels: Record<string, string> = { weich: "Extra weich", design: "Schönes Design", gesundheit: "Gesundheit", budget: "Gutes Preis-Leistung" };
 
   return (
     <>
       <SEO
-        title="Katzenbett Größenberater – Welches Bett passt zu deiner Katze?"
+        title="Katzenbett Größenberater - Welches Bett passt zu deiner Katze?"
         description="In 3 Schritten zur perfekten Empfehlung: Unser Größenberater findet das ideale Katzenbett basierend auf Gewicht, Schlafstil und deinen Wünschen."
         canonical="https://katzenbett.de/groessenberater"
         type="website"
@@ -380,7 +380,7 @@ export default function GrössenberaterPage() {
                 Der Katzenbett-Größenberater
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-                3 kurze Fragen – wir empfehlen dir das perfekte Katzenbett für deinen Liebling. Kein Registrieren, keine E-Mail.
+                3 kurze Fragen - wir empfehlen dir das perfekte Katzenbett für deinen Liebling. Kein Registrieren, keine E-Mail.
               </p>
 
               {/* What to expect */}
@@ -470,9 +470,9 @@ export default function GrössenberaterPage() {
 
               {/* Answer summary */}
               <div className="grid grid-cols-3 gap-2 mb-8">
-                <SummaryBadge emoji="⚖️" label="Gewicht" value={sizeLabels[allAnswers.gewicht] ?? "–"} />
-                <SummaryBadge emoji="😴" label="Schlafstil" value={sleepLabels[allAnswers.schlafstil] ?? "–"} />
-                <SummaryBadge emoji="✨" label="Wunsch" value={prefLabels[allAnswers.praeferenzen] ?? "–"} />
+                <SummaryBadge emoji="⚖️" label="Gewicht" value={sizeLabels[allAnswers.gewicht] ?? "-"} />
+                <SummaryBadge emoji="😴" label="Schlafstil" value={sleepLabels[allAnswers.schlafstil] ?? "-"} />
+                <SummaryBadge emoji="✨" label="Wunsch" value={prefLabels[allAnswers.praeferenzen] ?? "-"} />
               </div>
 
               {/* Size recommendation card */}
@@ -482,7 +482,7 @@ export default function GrössenberaterPage() {
                   <p className="font-semibold text-foreground mb-1">Empfohlene Bettgröße</p>
                   <p className="text-2xl font-display font-bold text-primary mb-1">{recommendedSize}</p>
                   <p className="text-xs text-muted-foreground">
-                    Für das beste Ergebnis: Körperlänge deiner Katze + 10–15 cm Komfortpuffer.
+                    Für das beste Ergebnis: Körperlänge deiner Katze + 10-15 cm Komfortpuffer.
                   </p>
                 </div>
               </div>
@@ -516,7 +516,7 @@ export default function GrössenberaterPage() {
 
               {/* Disclaimer */}
               <p className="text-xs text-muted-foreground text-center mt-5">
-                ℹ️ Empfehlungen basieren auf Produktdaten & Bewertungen. Bei Kauf über unsere Links erhalten wir eine Provision – für dich bleibt der Preis gleich.
+                ℹ️ Empfehlungen basieren auf Produktdaten & Bewertungen. Bei Kauf über unsere Links erhalten wir eine Provision - für dich bleibt der Preis gleich.
               </p>
             </div>
           )}
