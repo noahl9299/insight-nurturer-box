@@ -25,31 +25,35 @@ import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
 import { getProductPrice, getProductRating, getProductReviews, getProductSize, getProductMaterial } from "@/data/productPrices";
 import { getProductGallery } from "@/data/productGallery";
+import {
+  getBedTypeIcon, StarFilledIcon, SparkleIcon,
+  CheckIcon, RulerIcon, MaterialIcon, WashIcon, ColorsIcon,
+} from "@/components/CatIcons";
 
 /* ── Type helpers ─────────────────────────────────────────── */
-type TypEmoji = { icon: string; gradient: string };
-const TYPE_META: Record<string, TypEmoji> = {
-  Donut:            { icon: "🍩", gradient: "from-orange-100 to-amber-100" },
-  "Anti-Angst-Donut": { icon: "🍩", gradient: "from-orange-100 to-amber-100" },
-  "Katzenhöhle":    { icon: "🏠", gradient: "from-stone-100 to-zinc-100" },
-  "Höhle":          { icon: "🏠", gradient: "from-stone-100 to-zinc-100" },
-  "Filz-Höhle":     { icon: "🏠", gradient: "from-stone-200 to-zinc-200" },
-  "2-in-1 Höhle":   { icon: "🏠", gradient: "from-stone-100 to-slate-100" },
-  "Iglu":           { icon: "🏠", gradient: "from-zinc-100 to-slate-100" },
-  "Orthopädisch":   { icon: "💙", gradient: "from-blue-50 to-indigo-100" },
-  "Memory Foam":    { icon: "💙", gradient: "from-blue-50 to-indigo-100" },
-  "Fensterliege":   { icon: "🪟", gradient: "from-sky-50 to-cyan-100" },
-  "Katzensofa":     { icon: "🛋️", gradient: "from-emerald-50 to-teal-100" },
-  "Sofa":           { icon: "🛋️", gradient: "from-emerald-50 to-teal-100" },
-  "Beheizt":        { icon: "🔥", gradient: "from-red-50 to-orange-100" },
-  "Heizkörper-Hängematte": { icon: "🪢", gradient: "from-yellow-50 to-amber-100" },
-  "Hängematte":     { icon: "🪢", gradient: "from-yellow-50 to-amber-100" },
-  "Erhöhtes Bett":  { icon: "🪵", gradient: "from-amber-50 to-stone-100" },
-  "Premium Daybed": { icon: "✨", gradient: "from-yellow-50 to-amber-50" },
-  default:          { icon: "😺", gradient: "from-amber-50 to-orange-50" },
+type TypMeta = { gradient: string };
+const TYPE_META: Record<string, TypMeta> = {
+  Donut:            { gradient: "from-orange-100 to-amber-100" },
+  "Anti-Angst-Donut": { gradient: "from-orange-100 to-amber-100" },
+  "Katzenhöhle":    { gradient: "from-stone-100 to-zinc-100" },
+  "Höhle":          { gradient: "from-stone-100 to-zinc-100" },
+  "Filz-Höhle":     { gradient: "from-stone-200 to-zinc-200" },
+  "2-in-1 Höhle":   { gradient: "from-stone-100 to-slate-100" },
+  "Iglu":           { gradient: "from-zinc-100 to-slate-100" },
+  "Orthopädisch":   { gradient: "from-blue-50 to-indigo-100" },
+  "Memory Foam":    { gradient: "from-blue-50 to-indigo-100" },
+  "Fensterliege":   { gradient: "from-sky-50 to-cyan-100" },
+  "Katzensofa":     { gradient: "from-emerald-50 to-teal-100" },
+  "Sofa":           { gradient: "from-emerald-50 to-teal-100" },
+  "Beheizt":        { gradient: "from-red-50 to-orange-100" },
+  "Heizkörper-Hängematte": { gradient: "from-yellow-50 to-amber-100" },
+  "Hängematte":     { gradient: "from-yellow-50 to-amber-100" },
+  "Erhöhtes Bett":  { gradient: "from-amber-50 to-stone-100" },
+  "Premium Daybed": { gradient: "from-yellow-50 to-amber-50" },
+  default:          { gradient: "from-amber-50 to-orange-50" },
 };
 
-function getTypMeta(typ: string): TypEmoji {
+function getTypMeta(typ: string): TypMeta {
   return TYPE_META[typ] ?? TYPE_META.default;
 }
 
@@ -89,7 +93,9 @@ function ProductGallery({ product }: { product: Product }) {
   if (imageIds.length === 0) {
     return (
       <div className={`w-full h-full bg-gradient-to-br ${meta.gradient} flex flex-col items-center justify-center`}>
-        <span className="text-9xl mb-4 select-none">{meta.icon}</span>
+        <div className="w-24 h-24 mb-4 text-primary/30 flex items-center justify-center">
+          {getBedTypeIcon(product.typ, 80)}
+        </div>
         <p className="text-sm text-muted-foreground text-center px-6 max-w-xs leading-relaxed">{realName}</p>
       </div>
     );
@@ -341,7 +347,7 @@ export default function ProductDetailPage() {
                   className="absolute top-4 left-[76px] z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-primary-foreground"
                   style={{ background: "hsl(var(--primary))" }}
                 >
-                  ⭐ Top {product.rang} Bestseller
+                  <StarFilledIcon size={13} className="text-primary-foreground" /> Top {product.rang} Bestseller
                 </div>
               )}
               {/* Wishlist */}
@@ -382,8 +388,9 @@ export default function ProductDetailPage() {
                 {product.marke}
               </span>
               <span className="text-muted-foreground/40">·</span>
-              <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-accent text-foreground">
-                {typMeta.icon} {product.typ}
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full bg-accent text-foreground">
+                <span className="text-primary/60">{getBedTypeIcon(product.typ, 14)}</span>
+                {product.typ}
               </span>
             </div>
 
@@ -546,18 +553,18 @@ export default function ProductDetailPage() {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    { icon: "✅", text: product.besonderheiten },
-                    { icon: "📐", text: `Maße: ${product.groesse} cm` },
-                    { icon: "🧵", text: `Material: ${product.material}` },
-                    { icon: "🫧", text: `Pflege: ${product.waschbar}` },
-                    { icon: "🎨", text: `Farben: ${product.farben}` },
-                    { icon: "⭐", text: `${realRating} von 5 Sternen` },
+                    { icon: <CheckIcon size={18} className="text-secondary shrink-0 mt-0.5" />, text: product.besonderheiten },
+                    { icon: <RulerIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Maße: ${product.groesse} cm` },
+                    { icon: <MaterialIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Material: ${product.material}` },
+                    { icon: <WashIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Pflege: ${product.waschbar}` },
+                    { icon: <ColorsIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Farben: ${product.farben}` },
+                    { icon: <StarFilledIcon size={18} className="text-yellow-400 shrink-0 mt-0.5" />, text: `${realRating} von 5 Sternen` },
                   ].map((item) => (
                     <div
                       key={item.text}
                       className="flex items-start gap-3 p-3.5 rounded-xl bg-card border border-border/50"
                     >
-                      <span className="text-base shrink-0">{item.icon}</span>
+                      {item.icon}
                       <span className="text-sm text-muted-foreground">{item.text}</span>
                     </div>
                   ))}

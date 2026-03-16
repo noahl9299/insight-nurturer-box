@@ -12,6 +12,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
+import { PawIcon, FaqIcon, CartIcon, MaterialIcon } from "@/components/CatIcons";
 
 export default function GuideArticlePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -200,7 +201,9 @@ export default function GuideArticlePage() {
                     {guide.faq.length > 0 && (
                       <li>
                         <a href="#faq" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                          <span className="w-5 h-5 rounded-full bg-muted text-xs flex items-center justify-center font-medium shrink-0">❓</span>
+                          <span className="w-5 h-5 rounded-full bg-muted flex items-center justify-center shrink-0">
+                            <FaqIcon size={12} className="text-muted-foreground" />
+                          </span>
                           Häufige Fragen
                         </a>
                       </li>
@@ -237,7 +240,9 @@ export default function GuideArticlePage() {
             {guide.faq.length > 0 && (
               <div id="faq" className="scroll-mt-24 mb-10">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-sm">❓</div>
+                  <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                    <FaqIcon size={18} className="text-primary" />
+                  </div>
                   <h2 className="text-xl md:text-2xl font-display font-bold text-foreground">Häufige Fragen</h2>
                 </div>
                 <Accordion type="single" collapsible className="space-y-2">
@@ -272,8 +277,8 @@ export default function GuideArticlePage() {
                       to={`/ratgeber/${related.slug}`}
                       className="group flex items-start gap-3 p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-md transition-all"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-xl">
-                        {related.category === "Kaufratgeber" ? "🛒" : "🧵"}
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+                        {related.category === "Kaufratgeber" ? <CartIcon size={20} /> : <MaterialIcon size={20} />}
                       </div>
                       <div className="min-w-0">
                         <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">
@@ -331,7 +336,9 @@ export default function GuideArticlePage() {
                             : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                         }`}
                       >
-                        <span className="w-4 h-4 rounded-full bg-muted text-xs flex items-center justify-center shrink-0">❓</span>
+                        <span className="w-4 h-4 rounded-full bg-muted flex items-center justify-center shrink-0">
+                            <FaqIcon size={10} className="text-muted-foreground" />
+                          </span>
                         <span className="text-xs">Häufige Fragen</span>
                       </a>
                     </li>
@@ -407,7 +414,7 @@ export default function GuideArticlePage() {
               className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5"
               style={{ background: "hsl(var(--primary))" }}
             >
-              🐾 Katzenbetten entdecken
+              <PawIcon size={16} className="text-primary-foreground" /> Katzenbetten entdecken
             </Link>
           </aside>
         </div>

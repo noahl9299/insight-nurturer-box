@@ -14,13 +14,19 @@ import catDesign from "@/assets/cat-design.jpg";
 import catSofa from "@/assets/cat-sofa.jpg";
 import catHeated from "@/assets/cat-heated.jpg";
 import catHammock from "@/assets/cat-hammock.jpg";
+import {
+  CatFaceIcon, StarFilledIcon, ShopIcon, BoxIcon, ReturnIcon,
+  PawIcon, SparkleIcon, SleepIcon, RulerIcon, YarnIcon, LaundryIcon,
+  TipIcon, AnxiousCatIcon, SunCatIcon, CrownIcon, BigCatIcon, SeniorCatIcon,
+  CartIcon, CheckIcon, WarningIcon,
+} from "@/components/CatIcons";
 
 const trustItems = [
-  { icon: "🐱", text: "500+ Katzenbetten verglichen" },
-  { icon: "⭐", text: "Nur Top-bewertete Produkte" },
-  { icon: "🏪", text: "Sichere Partnershops" },
-  { icon: "📦", text: "Schneller Versand" },
-  { icon: "↩️", text: "Einfache Rückgabe" },
+  { icon: <CatFaceIcon size={20} />, text: "500+ Katzenbetten verglichen" },
+  { icon: <StarFilledIcon size={20} />, text: "Nur Top-bewertete Produkte" },
+  { icon: <ShopIcon size={20} />, text: "Sichere Partnershops" },
+  { icon: <BoxIcon size={20} />, text: "Schneller Versand" },
+  { icon: <ReturnIcon size={20} />, text: "Einfache Rückgabe" },
 ];
 
 const categories = [
@@ -110,7 +116,7 @@ export default function Index() {
           <div className="max-w-xl">
             {/* Pill badge */}
             <div className="inline-flex items-center gap-2 bg-accent rounded-full px-4 py-1.5 text-sm font-medium text-foreground mb-6 animate-fade-up">
-              🐱 Über 500 Katzenbetten im Vergleich
+              <CatFaceIcon size={18} className="text-primary" /> Über 500 Katzenbetten im Vergleich
             </div>
 
             {/* H1 */}
@@ -200,9 +206,9 @@ export default function Index() {
       <section className="bg-card border-y border-accent/60 py-5" aria-label="Vertrauensmerkmale">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-around gap-4 md:gap-0">
-            {trustItems.map((item) => (
+              {trustItems.map((item) => (
               <div key={item.text} className="trust-item flex items-center gap-2.5">
-                <span className="trust-icon text-xl">{item.icon}</span>
+                <span className="trust-icon text-primary">{item.icon}</span>
                 <span className="text-sm font-medium text-foreground">{item.text}</span>
               </div>
             ))}
@@ -311,7 +317,7 @@ export default function Index() {
               <ul className="space-y-4">
                 {problems.map((p) => (
                   <li key={p} className="flex items-start gap-3">
-                    <span className="text-lg mt-0.5">😿</span>
+                    <AnxiousCatIcon size={20} className="text-muted-foreground shrink-0 mt-0.5" />
                     <p className="text-muted-foreground">{p}</p>
                   </li>
                 ))}
@@ -352,16 +358,16 @@ export default function Index() {
             <h2 className="text-heading-2 text-foreground mb-2">
               Welches Katzenbett passt zu deiner Katze?
             </h2>
-            <p className="font-caveat text-2xl text-primary mt-1 mb-8">In nur 3 Fragen zum perfekten Bett ✨</p>
+            <p className="font-caveat text-2xl text-primary mt-1 mb-8">In nur 3 Fragen zum perfekten Bett <SparkleIcon size={20} className="inline text-primary" /></p>
 
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               {[
-                { icon: "🐱", label: "Wie groß ist deine Katze?" },
-                { icon: "💤", label: "Wie schläft sie am liebsten?" },
-                { icon: "✨", label: "Was ist dir wichtig?" },
+                { icon: <CatFaceIcon size={28} className="text-primary" />, label: "Wie groß ist deine Katze?" },
+                { icon: <SleepIcon size={28} className="text-primary" />, label: "Wie schläft sie am liebsten?" },
+                { icon: <SparkleIcon size={28} className="text-primary" />, label: "Was ist dir wichtig?" },
               ].map((step, i) => (
                 <div key={i} className="flex flex-col items-center gap-2">
-                  <div className="w-14 h-14 rounded-full bg-white shadow-card flex items-center justify-center text-2xl">
+                  <div className="w-14 h-14 rounded-full bg-white shadow-card flex items-center justify-center">
                     {step.icon}
                   </div>
                   <span className="text-sm font-medium text-foreground">{step.label}</span>
@@ -400,7 +406,7 @@ export default function Index() {
               {
                 step: "01",
                 title: "Den richtigen Typ finden",
-                icon: "🐾",
+                icon: <PawIcon size={22} className="text-primary" />,
                 content: "Der wichtigste Schritt: Welcher Schlafstil hat deine Katze? Kugelschläfer lieben Donut-Betten mit erhöhtem Rand. Ängstliche oder scheue Katzen brauchen eine Katzenhöhle mit rundum Schutz. Neugierige Sonnenanbeter freuen sich über eine Fensterliege. Ältere Katzen mit Gelenkproblemen brauchen orthopädischen Memory Foam.",
                 links: [
                   { label: "Katzenhöhlen", to: "/katzenhoehlen" },
@@ -411,23 +417,23 @@ export default function Index() {
               {
                 step: "02",
                 title: "Die richtige Größe wählen",
-                icon: "📐",
+                icon: <RulerIcon size={22} className="text-primary" />,
                 content: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Faustregel: Das Bett sollte mindestens 1,5× so groß sein wie die eingerollte Katze. Für Hauskatzen (3–5 kg) empfehlen wir 50 cm Durchmesser. Für große Rassen wie Maine Coon oder Norwegische Waldkatze mindestens 60–70 cm. Im Zweifelsfall lieber eine Nummer größer.",
                 links: [
-                  { label: "📏 Größenberater starten", to: "/groessenberater" },
+                  { label: "Größenberater starten", to: "/groessenberater" },
                 ],
               },
               {
                 step: "03",
                 title: "Das passende Material",
-                icon: "🧶",
+                icon: <YarnIcon size={22} className="text-primary" />,
                 content: "Plüsch & Kunstfell: weich, günstig, maschinenwaschbar – der Klassiker. Filz (Merinowolle): naturbelassen, atmungsaktiv, temperaturregulierend – ideal für Höhlen. Memory Foam: druckentlastend, für ältere und kranke Katzen. Cord & Canvas: modisch, robust, pflegeleicht. Holz/Birke: langlebig, hygienisch, fürs Design-Bewusste.",
                 links: [],
               },
               {
                 step: "04",
                 title: "Waschbarkeit & Hygiene",
-                icon: "🧺",
+                icon: <LaundryIcon size={22} className="text-primary" />,
                 content: "Ein waschbares Katzenbett ist kein Luxus, sondern Pflicht. Katzen verlieren täglich Haare und hinterlassen Hautschuppen – ein regelmäßiges Waschen bei 30–40 Grad reduziert Bakterien und Gerüche. Achte auf Modelle mit abnehmbarem Bezug: So muss nicht das komplette Bett in die Maschine. Filzhöhlen nur per Handwäsche.",
                 links: [],
               },
@@ -438,7 +444,7 @@ export default function Index() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">{item.icon}</span>
+                    {item.icon}
                     <h3 className="text-base font-bold text-foreground">{item.title}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.content}</p>
@@ -481,8 +487,16 @@ export default function Index() {
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                       <td className="px-4 py-3 font-medium text-foreground">{row.mat}</td>
-                      <td className="px-4 py-3 text-muted-foreground">✅ {row.pros}</td>
-                      <td className="px-4 py-3 text-muted-foreground">⚠️ {row.cons}</td>
+                      <td className="px-4 py-3 text-muted-foreground">
+                        <span className="inline-flex items-center gap-1.5">
+                          <CheckIcon size={14} className="text-secondary shrink-0" /> {row.pros}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground">
+                        <span className="inline-flex items-center gap-1.5">
+                          <WarningIcon size={14} className="text-yellow-500 shrink-0" /> {row.cons}
+                        </span>
+                      </td>
                       <td className="px-4 py-3 text-muted-foreground">{row.best}</td>
                     </tr>
                   ))}
@@ -493,7 +507,9 @@ export default function Index() {
 
           {/* Editor tip */}
           <div className="rounded-2xl p-6 flex gap-4 items-start border border-primary/20" style={{ background: "hsl(var(--accent))" }}>
-            <div className="text-3xl shrink-0">💡</div>
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <TipIcon size={26} className="text-primary" />
+            </div>
             <div>
               <p className="font-semibold text-foreground mb-1">Redaktionstipp: So gewöhnt deine Katze sich schneller an das neue Bett</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -518,16 +534,16 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { emoji: "😰", title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier – braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
-              { emoji: "🌞", title: "Der Sonnenanbeter", desc: "Liegt immer am Fenster, beobachtet alles, liebt Wärme.", rec: "Fensterliege oder beheiztes Bett", link: "/fensterliegen-katzen", badge: "Tipp" },
-              { emoji: "👑", title: "Die Diva", desc: "Hält dein Sofa für ihr Eigentum und lässt das alle wissen.", rec: "Katzensofa direkt daneben", link: "/katzensofas", badge: "Tipp" },
-              { emoji: "🦁", title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze – braucht Platz.", rec: "XL-Donut (60–70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
-              { emoji: "🧓", title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
-              { emoji: "✨", title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
+              { icon: <AnxiousCatIcon size={30} className="text-primary" />, title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier – braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
+              { icon: <SunCatIcon size={30} className="text-primary" />, title: "Der Sonnenanbeter", desc: "Liegt immer am Fenster, beobachtet alles, liebt Wärme.", rec: "Fensterliege oder beheiztes Bett", link: "/fensterliegen-katzen", badge: "Tipp" },
+              { icon: <CrownIcon size={30} className="text-primary" />, title: "Die Diva", desc: "Hält dein Sofa für ihr Eigentum und lässt das alle wissen.", rec: "Katzensofa direkt daneben", link: "/katzensofas", badge: "Tipp" },
+              { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze – braucht Platz.", rec: "XL-Donut (60–70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
+              { icon: <SeniorCatIcon size={30} className="text-primary" />, title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
+              { icon: <SparkleIcon size={30} className="text-primary" />, title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
             ].map((item) => (
               <Link key={item.link} to={item.link} className="group bg-card rounded-2xl border border-border p-5 hover:border-primary/40 hover:shadow-md transition-all hover:-translate-y-0.5">
                 <div className="flex items-start justify-between mb-3">
-                  <span className="text-3xl">{item.emoji}</span>
+                  <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">{item.icon}</div>
                   <span className="text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-semibold">{item.badge}</span>
                 </div>
                 <h3 className="font-bold text-foreground mb-1">{item.title}</h3>

@@ -6,6 +6,7 @@ import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
 import { getProductPrice, getProductRating, getProductReviews } from "@/data/productPrices";
+import { getBedTypeIcon, StarFilledIcon, SparkleIcon, TipIcon } from "@/components/CatIcons";
 
 interface ProductCardProps {
   product: Product;
@@ -26,15 +27,8 @@ function PlaceholderImage({ typ, produktname }: { typ: string; produktname: stri
   const gradient = CAT_BED_COLORS[typ] || CAT_BED_COLORS.default;
   return (
     <div className={`w-full h-full bg-gradient-to-br ${gradient} flex flex-col items-center justify-center`}>
-      <div className="text-5xl mb-2">
-        {typ.includes("Donut") ? "🍩" :
-         typ.includes("Höhle") || typ.includes("Iglu") ? "🏠" :
-         typ.includes("Fenster") ? "🪟" :
-         typ.includes("Sofa") ? "🛋️" :
-         typ.includes("Ortho") || typ.includes("Memory") ? "💙" :
-         typ.includes("Beheizt") ? "🔥" :
-         typ.includes("Hänge") || typ.includes("Radiator") ? "🪢" :
-         "😺"}
+      <div className="w-14 h-14 mb-2 text-primary/40 flex items-center justify-center">
+        {getBedTypeIcon(typ, 48)}
       </div>
       <span className="text-xs text-muted-foreground text-center px-2 line-clamp-2">{produktname}</span>
     </div>
@@ -103,18 +97,18 @@ export function ProductCard({ product, badge }: ProductCardProps) {
         {badge && (
           <div className="absolute top-3 left-3">
             {badge === "bestseller" && (
-              <span className="badge-bestseller inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full">
-                ⭐ Bestseller
+              <span className="badge-bestseller inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full">
+                <StarFilledIcon size={11} /> Bestseller
               </span>
             )}
             {badge === "neu" && (
-              <span className="badge-neu inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full">
-                ✨ Neu
+              <span className="badge-neu inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full">
+                <SparkleIcon size={11} /> Neu
               </span>
             )}
             {badge === "tipp" && (
-              <span className="badge-tipp inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full">
-                💡 Tipp
+              <span className="badge-tipp inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full">
+                <TipIcon size={11} /> Tipp
               </span>
             )}
           </div>
