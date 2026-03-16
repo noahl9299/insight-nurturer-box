@@ -201,7 +201,9 @@ export default function GuideArticlePage() {
                     {guide.faq.length > 0 && (
                       <li>
                         <a href="#faq" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                          <span className="w-5 h-5 rounded-full bg-muted text-xs flex items-center justify-center font-medium shrink-0">❓</span>
+                          <span className="w-5 h-5 rounded-full bg-muted flex items-center justify-center shrink-0">
+                            <FaqIcon size={12} className="text-muted-foreground" />
+                          </span>
                           Häufige Fragen
                         </a>
                       </li>
