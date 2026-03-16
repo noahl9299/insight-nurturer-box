@@ -487,8 +487,16 @@ export default function Index() {
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                       <td className="px-4 py-3 font-medium text-foreground">{row.mat}</td>
-                      <td className="px-4 py-3 text-muted-foreground">✅ {row.pros}</td>
-                      <td className="px-4 py-3 text-muted-foreground">⚠️ {row.cons}</td>
+                      <td className="px-4 py-3 text-muted-foreground">
+                        <span className="inline-flex items-center gap-1.5">
+                          <CheckIcon size={14} className="text-secondary shrink-0" /> {row.pros}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground">
+                        <span className="inline-flex items-center gap-1.5">
+                          <WarningIcon size={14} className="text-yellow-500 shrink-0" /> {row.cons}
+                        </span>
+                      </td>
                       <td className="px-4 py-3 text-muted-foreground">{row.best}</td>
                     </tr>
                   ))}
