@@ -513,7 +513,7 @@ export default function Index() {
             <div>
               <p className="font-semibold text-foreground mb-1">Redaktionstipp: So gewöhnt deine Katze sich schneller an das neue Bett</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Stelle das neue Bett an einem ruhigen, erhöhten Ort auf – Katzen mögen den Überblick. Lege ein getragenes T-Shirt hinein, damit das Bett nach dir riecht. Katzenminze am Eingang oder auf dem Kissen kann die Neugier wecken. Gib deiner Katze 2–3 Wochen Zeit. Manche Katzen brauchen länger – sei geduldig und locke sie nie mit Gewalt.
+                Stelle das neue Bett an einem ruhigen, erhöhten Ort auf - Katzen mögen den Überblick. Lege ein getragenes T-Shirt hinein, damit das Bett nach dir riecht. Katzenminze am Eingang oder auf dem Kissen kann die Neugier wecken. Gib deiner Katze 2-3 Wochen Zeit. Manche Katzen brauchen länger - sei geduldig und locke sie nie mit Gewalt.
               </p>
             </div>
           </div>
