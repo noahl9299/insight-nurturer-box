@@ -336,7 +336,9 @@ export default function GuideArticlePage() {
                             : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                         }`}
                       >
-                        <span className="w-4 h-4 rounded-full bg-muted text-xs flex items-center justify-center shrink-0">❓</span>
+                        <span className="w-4 h-4 rounded-full bg-muted flex items-center justify-center shrink-0">
+                            <FaqIcon size={10} className="text-muted-foreground" />
+                          </span>
                         <span className="text-xs">Häufige Fragen</span>
                       </a>
                     </li>
