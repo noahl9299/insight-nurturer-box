@@ -127,9 +127,6 @@ export function Navigation() {
           <Link to="/groessenberater" className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors">
             📏 Größenberater
           </Link>
-          <Link to="/ueber-uns" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-            Über uns
-          </Link>
         </div>
 
         {/* Right side */}
@@ -239,7 +236,7 @@ export function Navigation() {
             <div className="grid grid-cols-1 gap-2 border-t border-border pt-4">
               <Link to="/ratgeber" className="px-4 py-2.5 text-sm font-medium text-center hover:bg-accent/50 rounded-xl transition-colors">Ratgeber</Link>
               <Link to="/groessenberater" className="px-4 py-2.5 text-sm font-medium text-center hover:bg-accent/50 rounded-xl transition-colors">📏 Größenberater</Link>
-              <Link to="/ueber-uns" className="px-4 py-2.5 text-sm font-medium text-center hover:bg-accent/50 rounded-xl transition-colors">Über uns</Link>
+              
               <Link
                 to="/katzenbetten"
                 className="w-full py-3 rounded-full text-sm font-semibold text-primary-foreground text-center transition-all"
