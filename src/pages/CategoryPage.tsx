@@ -576,7 +576,7 @@ export default function CategoryPage() {
                   {paginated.map((product, i) => (
                     <Link
                       key={product.slug}
-                      to={`/katzenbett/${product.slug}`}
+                      to={`/${product.slug}`}
                       className="product-card flex gap-4 p-4 group"
                     >
                       <div className="w-24 h-24 rounded-xl bg-muted overflow-hidden shrink-0 flex items-center justify-center text-3xl">

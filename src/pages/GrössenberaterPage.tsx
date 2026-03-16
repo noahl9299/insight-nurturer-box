@@ -261,7 +261,7 @@ function ResultCard({ product, rank }: { product: Product; rank: number }) {
             {product.preis.toFixed(2).replace(".", ",")} €
           </span>
           <Link
-            to={`/katzenbett/${product.slug}`}
+            to={`/${product.slug}`}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-colors"
           >
             Details <ArrowRight size={11} />
