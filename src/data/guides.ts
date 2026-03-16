@@ -265,7 +265,7 @@ export const guides: Guide[] = [
     updatedAt: "2025-01-28",
     author: "Laura Meier",
     authorRole: "Tierverhaltensexpertin & Redakteurin",
-    heroImage: "/src/assets/guide-checkliste.jpg",
+    heroImage: guideChecklisteImg,
     tags: ["Checkliste", "Kaufratgeber", "Tipps", "2025"],
     ratings: [
       { label: "Informationsgehalt", score: 9.0 },
