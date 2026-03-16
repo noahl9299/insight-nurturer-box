@@ -116,8 +116,14 @@ export default function GuidesOverviewPage() {
             className="group block rounded-2xl overflow-hidden bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
             <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-56 md:h-auto bg-gradient-to-br from-primary/20 via-accent to-secondary/20 flex items-center justify-center overflow-hidden">
-                <div className="text-7xl">📏</div>
+              <div className="relative h-56 md:h-auto overflow-hidden">
+                <img
+                  src={featuredGuide.heroImage}
+                  alt={featuredGuide.title}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.svg"; }}
+                />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary text-primary-foreground">
                     Featured
