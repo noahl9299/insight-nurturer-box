@@ -4,7 +4,7 @@ const names: Record<number, string> = {
   3: "SONGMICS Katzenbett orthopädisch weich",
   4: "Katzenbett 50 cm Waschbar Orthopädisch",
   5: "BEDSURE Katzenbett waschbar - 51x48x15cm",
-  6: "PAWZ Road Katzenbett Donut Plüsch 65 cm",
+  6: "Nobleza Katzenbett rund flauschig waschbar",
   7: "Pet Prime Katzen Fensterliege WARM",
   8: "Dracarys Katzen Hängematte Fenster bis 20kg",
   9: "CheerPals Katzenliege für Schreibtisch",
