@@ -206,9 +206,9 @@ export default function Index() {
       <section className="bg-card border-y border-accent/60 py-5" aria-label="Vertrauensmerkmale">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-around gap-4 md:gap-0">
-            {trustItems.map((item) => (
+              {trustItems.map((item) => (
               <div key={item.text} className="trust-item flex items-center gap-2.5">
-                <span className="trust-icon text-xl">{item.icon}</span>
+                <span className="trust-icon text-primary">{item.icon}</span>
                 <span className="text-sm font-medium text-foreground">{item.text}</span>
               </div>
             ))}
