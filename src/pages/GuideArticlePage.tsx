@@ -143,11 +143,6 @@ export default function GuideArticlePage() {
             {/* Meta row */}
             <div className="flex flex-wrap items-center gap-4 text-sm text-white/80">
               <span className="flex items-center gap-1.5">
-                <User size={14} />
-                <strong className="text-white">{guide.author}</strong>
-                <span className="hidden sm:inline opacity-70">· {guide.authorRole}</span>
-              </span>
-              <span className="flex items-center gap-1.5">
                 <Calendar size={14} />
                 {new Date(guide.updatedAt).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" })}
               </span>
@@ -401,19 +396,6 @@ export default function GuideArticlePage() {
                   ))}
                 </div>
 
-                {/* Author */}
-                <div className="mt-5 pt-4 border-t border-border">
-                  <p className="text-xs text-muted-foreground mb-1">Verfasst von</p>
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
-                      {guide.author.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-foreground">{guide.author}</p>
-                      <p className="text-xs text-muted-foreground">{guide.authorRole}</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
