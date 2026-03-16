@@ -553,18 +553,18 @@ export default function ProductDetailPage() {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
-                    { icon: "✅", text: product.besonderheiten },
-                    { icon: "📐", text: `Maße: ${product.groesse} cm` },
-                    { icon: "🧵", text: `Material: ${product.material}` },
-                    { icon: "🫧", text: `Pflege: ${product.waschbar}` },
-                    { icon: "🎨", text: `Farben: ${product.farben}` },
-                    { icon: "⭐", text: `${realRating} von 5 Sternen` },
+                    { icon: <CheckIcon size={18} className="text-secondary shrink-0 mt-0.5" />, text: product.besonderheiten },
+                    { icon: <RulerIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Maße: ${product.groesse} cm` },
+                    { icon: <MaterialIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Material: ${product.material}` },
+                    { icon: <WashIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Pflege: ${product.waschbar}` },
+                    { icon: <ColorsIcon size={18} className="text-primary/60 shrink-0 mt-0.5" />, text: `Farben: ${product.farben}` },
+                    { icon: <StarFilledIcon size={18} className="text-yellow-400 shrink-0 mt-0.5" />, text: `${realRating} von 5 Sternen` },
                   ].map((item) => (
                     <div
                       key={item.text}
                       className="flex items-start gap-3 p-3.5 rounded-xl bg-card border border-border/50"
                     >
-                      <span className="text-base shrink-0">{item.icon}</span>
+                      {item.icon}
                       <span className="text-sm text-muted-foreground">{item.text}</span>
                     </div>
                   ))}
