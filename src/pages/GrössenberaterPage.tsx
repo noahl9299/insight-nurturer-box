@@ -380,7 +380,7 @@ export default function GrössenberaterPage() {
                 Der Katzenbett-Größenberater
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-                3 kurze Fragen – wir empfehlen dir das perfekte Katzenbett für deinen Liebling. Kein Registrieren, keine E-Mail.
+                3 kurze Fragen - wir empfehlen dir das perfekte Katzenbett für deinen Liebling. Kein Registrieren, keine E-Mail.
               </p>
 
               {/* What to expect */}
