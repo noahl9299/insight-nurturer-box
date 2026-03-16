@@ -46,7 +46,7 @@ export const guides: Guide[] = [
     updatedAt: "2025-01-10",
     author: "Laura Meier",
     authorRole: "Tierverhaltensexpertin & Redakteurin",
-    heroImage: "/placeholder.svg",
+    heroImage: "/src/assets/guide-groesse.jpg",
     tags: ["Größe", "Kaufratgeber", "Tipps", "Maße"],
     ratings: [
       { label: "Informationsgehalt", score: 9.5 },
