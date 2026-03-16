@@ -76,7 +76,7 @@ function ProductGallery({ product }: { product: Product }) {
   const meta = getTypMeta(product.typ);
   const realName = getProductName(product.rang) || product.produktname;
 
-  // Build image list: gallery IDs take priority, fallback to productImages URL
+  // Build image list: if gallery exists use ONLY gallery images; never prepend fallback to avoid duplicates
   const imageIds: Array<{ type: "asin"; id: string } | { type: "url"; src: string }> = [];
   if (gallery && gallery.length > 0) {
     gallery.forEach((id) => imageIds.push({ type: "asin", id }));
@@ -321,7 +321,7 @@ export default function ProductDetailPage() {
             </Link>
           </li>
           <ChevronRight size={14} />
-          <li className="text-foreground font-medium line-clamp-1 max-w-[260px]">
+          <li className="text-foreground font-medium">
             {realName}
           </li>
         </ol>
