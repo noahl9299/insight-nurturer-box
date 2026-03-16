@@ -97,18 +97,18 @@ export function ProductCard({ product, badge }: ProductCardProps) {
         {badge && (
           <div className="absolute top-3 left-3">
             {badge === "bestseller" && (
-              <span className="badge-bestseller inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full">
-                ⭐ Bestseller
+              <span className="badge-bestseller inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full">
+                <StarFilledIcon size={11} /> Bestseller
               </span>
             )}
             {badge === "neu" && (
-              <span className="badge-neu inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full">
-                ✨ Neu
+              <span className="badge-neu inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full">
+                <SparkleIcon size={11} /> Neu
               </span>
             )}
             {badge === "tipp" && (
-              <span className="badge-tipp inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full">
-                💡 Tipp
+              <span className="badge-tipp inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full">
+                <TipIcon size={11} /> Tipp
               </span>
             )}
           </div>
