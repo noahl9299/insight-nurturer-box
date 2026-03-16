@@ -1,10 +1,10 @@
 const galleryData: Record<number, string[]> = {
   1: ["81NRMz-z--L", "51pJDOzrrrL", "51Wn5sFaNbL", "41BWuN0PGYL", "51FB9eFzZxL"],
   2: ["71CMt6WMMSL", "419OhwAAwuL", "511Ex7+IZdL", "51UgouvY-uL", "41Kp07nGgEL"],
-  3: ["71lbzDL2CML", "71TLF6KG5dL", "61Rb9iRRXsL", "71xD2jfRPDL", "61d6fmjL6eL"],
+  3: ["91MMpICFXiL", "71gqTzRKHGL", "71A5H3QCUPL", "71Hm5QLGTML", "71R5JFZSWBL"],
   4: ["9188iTHhVML", "51K5SBYNcLL", "51X5Y2aoTLL", "41cMk0IqgxL", "51KMwojjkTL"],
   5: ["61KzuQguXML", "413ROWFSgmL", "518usbWB1RL", "51DGTajqcAL", "41mn3ioXOQL"],
-  6: ["81AkRZ6uKxL", "71fqDWmqDSL", "61z5MNFBSBL", "71UNs1IJJFL", "71W+ckNRInL"],
+  6: ["91VNcRuu9TL", "71gVZdw2pZL", "51oH-NIXXZL", "514wctJ5oOL", "51sT-24VIBL"],
   7: ["61UwLL4V7nL", "41Vv7D5n3aL", "41qEJCr+lzL", "411ykBmgP1L", "41Hv8+y1GkL"],
   8: ["71cj0o7c5RL", "5128nbdehqL", "51y6saodqML", "51QznnqIbLL", "51N3c1xoxuL"],
   9: ["71sE7uboTSL", "513FKOVyPcL", "510IwhyX0kL", "51ELr2cNKML", "51XoWBfhaXL"],
