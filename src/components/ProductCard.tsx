@@ -6,6 +6,7 @@ import { getProductImage } from "@/data/productImages";
 import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
 import { getProductPrice, getProductRating, getProductReviews } from "@/data/productPrices";
+import { getBedTypeIcon } from "@/components/CatIcons";
 
 interface ProductCardProps {
   product: Product;
@@ -26,15 +27,8 @@ function PlaceholderImage({ typ, produktname }: { typ: string; produktname: stri
   const gradient = CAT_BED_COLORS[typ] || CAT_BED_COLORS.default;
   return (
     <div className={`w-full h-full bg-gradient-to-br ${gradient} flex flex-col items-center justify-center`}>
-      <div className="text-5xl mb-2">
-        {typ.includes("Donut") ? "🍩" :
-         typ.includes("Höhle") || typ.includes("Iglu") ? "🏠" :
-         typ.includes("Fenster") ? "🪟" :
-         typ.includes("Sofa") ? "🛋️" :
-         typ.includes("Ortho") || typ.includes("Memory") ? "💙" :
-         typ.includes("Beheizt") ? "🔥" :
-         typ.includes("Hänge") || typ.includes("Radiator") ? "🪢" :
-         "😺"}
+      <div className="w-14 h-14 mb-2 text-primary/40 flex items-center justify-center">
+        {getBedTypeIcon(typ, 48)}
       </div>
       <span className="text-xs text-muted-foreground text-center px-2 line-clamp-2">{produktname}</span>
     </div>

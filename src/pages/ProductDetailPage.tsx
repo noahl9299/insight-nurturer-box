@@ -25,31 +25,35 @@ import { getAmazonUrl } from "@/data/productAsins";
 import { getProductName } from "@/data/productNames";
 import { getProductPrice, getProductRating, getProductReviews, getProductSize, getProductMaterial } from "@/data/productPrices";
 import { getProductGallery } from "@/data/productGallery";
+import {
+  getBedTypeIcon, StarFilledIcon, SparkleIcon,
+  CheckIcon, RulerIcon, MaterialIcon, WashIcon, ColorsIcon,
+} from "@/components/CatIcons";
 
 /* ── Type helpers ─────────────────────────────────────────── */
-type TypEmoji = { icon: string; gradient: string };
-const TYPE_META: Record<string, TypEmoji> = {
-  Donut:            { icon: "🍩", gradient: "from-orange-100 to-amber-100" },
-  "Anti-Angst-Donut": { icon: "🍩", gradient: "from-orange-100 to-amber-100" },
-  "Katzenhöhle":    { icon: "🏠", gradient: "from-stone-100 to-zinc-100" },
-  "Höhle":          { icon: "🏠", gradient: "from-stone-100 to-zinc-100" },
-  "Filz-Höhle":     { icon: "🏠", gradient: "from-stone-200 to-zinc-200" },
-  "2-in-1 Höhle":   { icon: "🏠", gradient: "from-stone-100 to-slate-100" },
-  "Iglu":           { icon: "🏠", gradient: "from-zinc-100 to-slate-100" },
-  "Orthopädisch":   { icon: "💙", gradient: "from-blue-50 to-indigo-100" },
-  "Memory Foam":    { icon: "💙", gradient: "from-blue-50 to-indigo-100" },
-  "Fensterliege":   { icon: "🪟", gradient: "from-sky-50 to-cyan-100" },
-  "Katzensofa":     { icon: "🛋️", gradient: "from-emerald-50 to-teal-100" },
-  "Sofa":           { icon: "🛋️", gradient: "from-emerald-50 to-teal-100" },
-  "Beheizt":        { icon: "🔥", gradient: "from-red-50 to-orange-100" },
-  "Heizkörper-Hängematte": { icon: "🪢", gradient: "from-yellow-50 to-amber-100" },
-  "Hängematte":     { icon: "🪢", gradient: "from-yellow-50 to-amber-100" },
-  "Erhöhtes Bett":  { icon: "🪵", gradient: "from-amber-50 to-stone-100" },
-  "Premium Daybed": { icon: "✨", gradient: "from-yellow-50 to-amber-50" },
-  default:          { icon: "😺", gradient: "from-amber-50 to-orange-50" },
+type TypMeta = { gradient: string };
+const TYPE_META: Record<string, TypMeta> = {
+  Donut:            { gradient: "from-orange-100 to-amber-100" },
+  "Anti-Angst-Donut": { gradient: "from-orange-100 to-amber-100" },
+  "Katzenhöhle":    { gradient: "from-stone-100 to-zinc-100" },
+  "Höhle":          { gradient: "from-stone-100 to-zinc-100" },
+  "Filz-Höhle":     { gradient: "from-stone-200 to-zinc-200" },
+  "2-in-1 Höhle":   { gradient: "from-stone-100 to-slate-100" },
+  "Iglu":           { gradient: "from-zinc-100 to-slate-100" },
+  "Orthopädisch":   { gradient: "from-blue-50 to-indigo-100" },
+  "Memory Foam":    { gradient: "from-blue-50 to-indigo-100" },
+  "Fensterliege":   { gradient: "from-sky-50 to-cyan-100" },
+  "Katzensofa":     { gradient: "from-emerald-50 to-teal-100" },
+  "Sofa":           { gradient: "from-emerald-50 to-teal-100" },
+  "Beheizt":        { gradient: "from-red-50 to-orange-100" },
+  "Heizkörper-Hängematte": { gradient: "from-yellow-50 to-amber-100" },
+  "Hängematte":     { gradient: "from-yellow-50 to-amber-100" },
+  "Erhöhtes Bett":  { gradient: "from-amber-50 to-stone-100" },
+  "Premium Daybed": { gradient: "from-yellow-50 to-amber-50" },
+  default:          { gradient: "from-amber-50 to-orange-50" },
 };
 
-function getTypMeta(typ: string): TypEmoji {
+function getTypMeta(typ: string): TypMeta {
   return TYPE_META[typ] ?? TYPE_META.default;
 }
 

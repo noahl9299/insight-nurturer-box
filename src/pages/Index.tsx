@@ -14,13 +14,19 @@ import catDesign from "@/assets/cat-design.jpg";
 import catSofa from "@/assets/cat-sofa.jpg";
 import catHeated from "@/assets/cat-heated.jpg";
 import catHammock from "@/assets/cat-hammock.jpg";
+import {
+  CatFaceIcon, StarFilledIcon, ShopIcon, BoxIcon, ReturnIcon,
+  PawIcon, SparkleIcon, SleepIcon, RulerIcon, YarnIcon, LaundryIcon,
+  TipIcon, AnxiousCatIcon, SunCatIcon, CrownIcon, BigCatIcon, SeniorCatIcon,
+  CartIcon, CheckIcon, WarningIcon,
+} from "@/components/CatIcons";
 
 const trustItems = [
-  { icon: "🐱", text: "500+ Katzenbetten verglichen" },
-  { icon: "⭐", text: "Nur Top-bewertete Produkte" },
-  { icon: "🏪", text: "Sichere Partnershops" },
-  { icon: "📦", text: "Schneller Versand" },
-  { icon: "↩️", text: "Einfache Rückgabe" },
+  { icon: <CatFaceIcon size={20} />, text: "500+ Katzenbetten verglichen" },
+  { icon: <StarFilledIcon size={20} />, text: "Nur Top-bewertete Produkte" },
+  { icon: <ShopIcon size={20} />, text: "Sichere Partnershops" },
+  { icon: <BoxIcon size={20} />, text: "Schneller Versand" },
+  { icon: <ReturnIcon size={20} />, text: "Einfache Rückgabe" },
 ];
 
 const categories = [

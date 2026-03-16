@@ -12,6 +12,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
+import { PawIcon, FaqIcon, CartIcon, MaterialIcon } from "@/components/CatIcons";
 
 export default function GuideArticlePage() {
   const { slug } = useParams<{ slug: string }>();
