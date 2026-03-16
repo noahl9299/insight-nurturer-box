@@ -22,7 +22,7 @@ const footerRatgeber = [
   { name: "Katzenbett selber machen", slug: "/ratgeber/katzenbett-selber-machen" },
 ];
 
-const partners = ["Amazon", "Zooplus", "Fressnapf", "Otto", "Tiierisch"];
+const partners = ["Amazon"];
 
 export function Footer() {
   return (
