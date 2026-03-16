@@ -275,8 +275,8 @@ export default function GuideArticlePage() {
                       to={`/ratgeber/${related.slug}`}
                       className="group flex items-start gap-3 p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-md transition-all"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-xl">
-                        {related.category === "Kaufratgeber" ? "🛒" : "🧵"}
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+                        {related.category === "Kaufratgeber" ? <CartIcon size={20} /> : <MaterialIcon size={20} />}
                       </div>
                       <div className="min-w-0">
                         <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">
