@@ -507,7 +507,9 @@ export default function Index() {
 
           {/* Editor tip */}
           <div className="rounded-2xl p-6 flex gap-4 items-start border border-primary/20" style={{ background: "hsl(var(--accent))" }}>
-            <div className="text-3xl shrink-0">💡</div>
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <TipIcon size={26} className="text-primary" />
+            </div>
             <div>
               <p className="font-semibold text-foreground mb-1">Redaktionstipp: So gewöhnt deine Katze sich schneller an das neue Bett</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
