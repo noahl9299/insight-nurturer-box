@@ -198,10 +198,15 @@ export default function GuidesOverviewPage() {
                 className="group bg-card rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
               >
                 {/* Card image area */}
-                <div className="h-40 bg-gradient-to-br from-accent via-background to-primary/10 flex items-center justify-center relative">
-                  <div className="text-5xl">
-                    {guide.category === "Kaufratgeber" ? "🛒" : guide.category === "Materialien" ? "🧵" : "📖"}
-                  </div>
+                <div className="h-40 relative overflow-hidden">
+                  <img
+                    src={guide.heroImage}
+                    alt={guide.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.svg"; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   <div className="absolute top-3 left-3">
                     <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${categoryColors[guide.category] ?? "bg-muted text-muted-foreground"}`}>
                       {guide.category}
