@@ -347,7 +347,7 @@ export default function ProductDetailPage() {
                   className="absolute top-4 left-[76px] z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-primary-foreground"
                   style={{ background: "hsl(var(--primary))" }}
                 >
-                  ⭐ Top {product.rang} Bestseller
+                  <StarFilledIcon size={13} className="text-primary-foreground" /> Top {product.rang} Bestseller
                 </div>
               )}
               {/* Wishlist */}
