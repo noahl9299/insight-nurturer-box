@@ -37,7 +37,7 @@ const STEPS: Step[] = [
   {
     id: "schlafstil",
     question: "Wie schläft deine Katze am liebsten?",
-    hint: "Beobachte deine Katze – das verrät dir viel über den richtigen Typ.",
+    hint: "Beobachte deine Katze - das verrät dir viel über den richtigen Typ.",
     choices: [
       { id: "eingerollt",  emoji: "🌀", label: "Eingerollt",     sublabel: "Kleine Kugel, eng und warm" },
       { id: "ausgestreckt",emoji: "😴", label: "Ausgestreckt",   sublabel: "Beine von sich gestreckt" },
