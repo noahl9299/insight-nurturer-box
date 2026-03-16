@@ -470,9 +470,9 @@ export default function GrössenberaterPage() {
 
               {/* Answer summary */}
               <div className="grid grid-cols-3 gap-2 mb-8">
-                <SummaryBadge emoji="⚖️" label="Gewicht" value={sizeLabels[allAnswers.gewicht] ?? "–"} />
-                <SummaryBadge emoji="😴" label="Schlafstil" value={sleepLabels[allAnswers.schlafstil] ?? "–"} />
-                <SummaryBadge emoji="✨" label="Wunsch" value={prefLabels[allAnswers.praeferenzen] ?? "–"} />
+                <SummaryBadge emoji="⚖️" label="Gewicht" value={sizeLabels[allAnswers.gewicht] ?? "-"} />
+                <SummaryBadge emoji="😴" label="Schlafstil" value={sleepLabels[allAnswers.schlafstil] ?? "-"} />
+                <SummaryBadge emoji="✨" label="Wunsch" value={prefLabels[allAnswers.praeferenzen] ?? "-"} />
               </div>
 
               {/* Size recommendation card */}
