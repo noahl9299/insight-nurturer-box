@@ -49,7 +49,7 @@ function matchesGroesse(p: Product, selected: string[]): boolean {
   const dim = parseInt(p.groesse);
   if (isNaN(dim)) return selected.includes("Sonstige");
   if (dim <= 45) return selected.includes("Klein (≤45 cm)");
-  if (dim <= 55) return selected.includes("Mittel (46–55 cm)");
+  if (dim <= 55) return selected.includes("Mittel (46-55 cm)");
   return selected.includes("Groß (≥56 cm)");
 }
 
