@@ -388,8 +388,9 @@ export default function ProductDetailPage() {
                 {product.marke}
               </span>
               <span className="text-muted-foreground/40">·</span>
-              <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-accent text-foreground">
-                {typMeta.icon} {product.typ}
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full bg-accent text-foreground">
+                <span className="text-primary/60">{getBedTypeIcon(product.typ, 14)}</span>
+                {product.typ}
               </span>
             </div>
 
