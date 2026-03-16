@@ -307,7 +307,7 @@ export default function ProductDetailPage() {
       <ProductSchema product={product} realPrice={realPrice} realRating={realRating} realReviews={realReviews} />
 
       {/* BREADCRUMBS */}
-      <nav className="container mx-auto px-4 pt-6 pb-2" aria-label="Breadcrumb">
+      <nav className="container mx-auto px-4 pt-24 pb-2" aria-label="Breadcrumb">
         <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link to="/" className="hover:text-foreground transition-colors">
