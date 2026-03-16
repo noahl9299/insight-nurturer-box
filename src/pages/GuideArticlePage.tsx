@@ -396,19 +396,6 @@ export default function GuideArticlePage() {
                   ))}
                 </div>
 
-                {/* Author */}
-                <div className="mt-5 pt-4 border-t border-border">
-                  <p className="text-xs text-muted-foreground mb-1">Verfasst von</p>
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
-                      {guide.author.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-foreground">{guide.author}</p>
-                      <p className="text-xs text-muted-foreground">{guide.authorRole}</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
