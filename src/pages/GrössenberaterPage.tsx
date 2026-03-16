@@ -67,7 +67,7 @@ interface Answers {
 }
 
 function getRecommendedSize(gewicht: string): string {
-  return { xs: "40–45 cm", s: "50–55 cm", m: "55–60 cm", xl: "60–70 cm" }[gewicht] ?? "50–55 cm";
+  return { xs: "40-45 cm", s: "50-55 cm", m: "55-60 cm", xl: "60-70 cm" }[gewicht] ?? "50-55 cm";
 }
 
 function scoreProduct(product: Product, answers: Answers): number {
