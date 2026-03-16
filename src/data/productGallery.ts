@@ -1,5 +1,5 @@
 const galleryData: Record<number, string[]> = {
-  1: ["81NRMz-z--L","41m4bF7C6hL","51Wn5sFaNbL","41BWuN0PGYL","51FB9eFzZxL"],
+  1: ["81NRMz-z--L","51pJDOzrrrL","51Wn5sFaNbL","41BWuN0PGYL","51FB9eFzZxL"],
   2: ["71CMt6WMMSL","41GZIGv3jWL","511Ex7+IZdL","51UgouvY-uL","41Kp07nGgEL"],
   3: ["81BaH7NhciL","41Zigqt1rtL","51eJC42AriL","41FBZjnXXML","411no+5NFSL"],
   4: ["9188iTHhVML","51cgRdC312L","51X5Y2aoTLL","41cMk0IqgxL","51KMwojjkTL"],
