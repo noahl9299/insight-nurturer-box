@@ -358,16 +358,16 @@ export default function Index() {
             <h2 className="text-heading-2 text-foreground mb-2">
               Welches Katzenbett passt zu deiner Katze?
             </h2>
-            <p className="font-caveat text-2xl text-primary mt-1 mb-8">In nur 3 Fragen zum perfekten Bett ✨</p>
+            <p className="font-caveat text-2xl text-primary mt-1 mb-8">In nur 3 Fragen zum perfekten Bett <SparkleIcon size={20} className="inline text-primary" /></p>
 
             <div className="flex flex-wrap justify-center gap-8 mb-10">
               {[
-                { icon: "🐱", label: "Wie groß ist deine Katze?" },
-                { icon: "💤", label: "Wie schläft sie am liebsten?" },
-                { icon: "✨", label: "Was ist dir wichtig?" },
+                { icon: <CatFaceIcon size={28} className="text-primary" />, label: "Wie groß ist deine Katze?" },
+                { icon: <SleepIcon size={28} className="text-primary" />, label: "Wie schläft sie am liebsten?" },
+                { icon: <SparkleIcon size={28} className="text-primary" />, label: "Was ist dir wichtig?" },
               ].map((step, i) => (
                 <div key={i} className="flex flex-col items-center gap-2">
-                  <div className="w-14 h-14 rounded-full bg-white shadow-card flex items-center justify-center text-2xl">
+                  <div className="w-14 h-14 rounded-full bg-white shadow-card flex items-center justify-center">
                     {step.icon}
                   </div>
                   <span className="text-sm font-medium text-foreground">{step.label}</span>
