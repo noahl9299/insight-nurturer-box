@@ -116,7 +116,7 @@ export default function Index() {
           <div className="max-w-xl">
             {/* Pill badge */}
             <div className="inline-flex items-center gap-2 bg-accent rounded-full px-4 py-1.5 text-sm font-medium text-foreground mb-6 animate-fade-up">
-              🐱 Über 500 Katzenbetten im Vergleich
+              <CatFaceIcon size={18} className="text-primary" /> Über 500 Katzenbetten im Vergleich
             </div>
 
             {/* H1 */}
