@@ -427,7 +427,7 @@ export default function Index() {
                 step: "03",
                 title: "Das passende Material",
                 icon: <YarnIcon size={22} className="text-primary" />,
-                content: "Plüsch & Kunstfell: weich, günstig, maschinenwaschbar – der Klassiker. Filz (Merinowolle): naturbelassen, atmungsaktiv, temperaturregulierend – ideal für Höhlen. Memory Foam: druckentlastend, für ältere und kranke Katzen. Cord & Canvas: modisch, robust, pflegeleicht. Holz/Birke: langlebig, hygienisch, fürs Design-Bewusste.",
+                content: "Plüsch & Kunstfell: weich, günstig, maschinenwaschbar - der Klassiker. Filz (Merinowolle): naturbelassen, atmungsaktiv, temperaturregulierend - ideal für Höhlen. Memory Foam: druckentlastend, für ältere und kranke Katzen. Cord & Canvas: modisch, robust, pflegeleicht. Holz/Birke: langlebig, hygienisch, fürs Design-Bewusste.",
                 links: [],
               },
               {
