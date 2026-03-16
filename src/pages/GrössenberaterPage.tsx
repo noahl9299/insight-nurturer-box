@@ -29,8 +29,8 @@ const STEPS: Step[] = [
     hint: "Das Gewicht bestimmt die richtige Bettgröße.",
     choices: [
       { id: "xs",  emoji: "🐱", label: "Unter 3 kg",  sublabel: "Kitten / Kleine Rassen" },
-      { id: "s",   emoji: "😺", label: "3 – 5 kg",    sublabel: "Durchschnittliche Hauskatze" },
-      { id: "m",   emoji: "🐈", label: "5 – 7 kg",    sublabel: "Großes EKH / Kater" },
+      { id: "s",   emoji: "😺", label: "3 - 5 kg",    sublabel: "Durchschnittliche Hauskatze" },
+      { id: "m",   emoji: "🐈", label: "5 - 7 kg",    sublabel: "Großes EKH / Kater" },
       { id: "xl",  emoji: "🦁", label: "Über 7 kg",   sublabel: "Maine Coon / Ragdoll" },
     ],
   },
