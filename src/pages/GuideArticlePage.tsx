@@ -143,11 +143,6 @@ export default function GuideArticlePage() {
             {/* Meta row */}
             <div className="flex flex-wrap items-center gap-4 text-sm text-white/80">
               <span className="flex items-center gap-1.5">
-                <User size={14} />
-                <strong className="text-white">{guide.author}</strong>
-                <span className="hidden sm:inline opacity-70">· {guide.authorRole}</span>
-              </span>
-              <span className="flex items-center gap-1.5">
                 <Calendar size={14} />
                 {new Date(guide.updatedAt).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" })}
               </span>
