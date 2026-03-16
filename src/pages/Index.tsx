@@ -418,7 +418,7 @@ export default function Index() {
                 step: "02",
                 title: "Die richtige Größe wählen",
                 icon: <RulerIcon size={22} className="text-primary" />,
-                content: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Faustregel: Das Bett sollte mindestens 1,5× so groß sein wie die eingerollte Katze. Für Hauskatzen (3–5 kg) empfehlen wir 50 cm Durchmesser. Für große Rassen wie Maine Coon oder Norwegische Waldkatze mindestens 60–70 cm. Im Zweifelsfall lieber eine Nummer größer.",
+                content: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Faustregel: Das Bett sollte mindestens 1,5× so groß sein wie die eingerollte Katze. Für Hauskatzen (3-5 kg) empfehlen wir 50 cm Durchmesser. Für große Rassen wie Maine Coon oder Norwegische Waldkatze mindestens 60-70 cm. Im Zweifelsfall lieber eine Nummer größer.",
                 links: [
                   { label: "Größenberater starten", to: "/groessenberater" },
                 ],
