@@ -148,7 +148,7 @@ export const guides: Guide[] = [
     updatedAt: "2025-01-20",
     author: "Jonas Weber",
     authorRole: "Produkttester & Redakteur",
-    heroImage: "/src/assets/guide-materialien.jpg",
+    heroImage: guideMaterialienImg,
     tags: ["Material", "Plüsch", "Filz", "Memory Foam", "Cord"],
     ratings: [
       { label: "Informationsgehalt", score: 9.0 },
