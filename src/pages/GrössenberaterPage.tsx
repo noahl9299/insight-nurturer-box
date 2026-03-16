@@ -350,7 +350,7 @@ export default function GrössenberaterPage() {
   const recommendedSize = wizardState === "result" ? getRecommendedSize(allAnswers.gewicht) : "";
   const bedTypeLabel = wizardState === "result" ? getBedTypeLabel(allAnswers) : "";
 
-  const sizeLabels: Record<string, string> = { xs: "Unter 3 kg", s: "3 – 5 kg", m: "5 – 7 kg", xl: "Über 7 kg" };
+  const sizeLabels: Record<string, string> = { xs: "Unter 3 kg", s: "3 - 5 kg", m: "5 - 7 kg", xl: "Über 7 kg" };
   const sleepLabels: Record<string, string> = { eingerollt: "Eingerollt", ausgestreckt: "Ausgestreckt", versteckt: "Versteckt", fenster: "Am Fenster" };
   const prefLabels: Record<string, string> = { weich: "Extra weich", design: "Schönes Design", gesundheit: "Gesundheit", budget: "Gutes Preis-Leistung" };
 
