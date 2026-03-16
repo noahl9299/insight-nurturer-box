@@ -516,7 +516,7 @@ export default function GrössenberaterPage() {
 
               {/* Disclaimer */}
               <p className="text-xs text-muted-foreground text-center mt-5">
-                ℹ️ Empfehlungen basieren auf Produktdaten & Bewertungen. Bei Kauf über unsere Links erhalten wir eine Provision – für dich bleibt der Preis gleich.
+                ℹ️ Empfehlungen basieren auf Produktdaten & Bewertungen. Bei Kauf über unsere Links erhalten wir eine Provision - für dich bleibt der Preis gleich.
               </p>
             </div>
           )}
