@@ -158,7 +158,7 @@ export function Navigation() {
                     {searchResults.map((p) => (
                       <Link
                         key={p.slug}
-                        to={`/katzenbett/${p.slug}`}
+                        to={`/${p.slug}`}
                         onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
                         className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-accent/50 transition-colors"
                       >
