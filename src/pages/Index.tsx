@@ -534,10 +534,10 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: <AnxiousCatIcon size={30} className="text-primary" />, title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier – braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
+              { icon: <AnxiousCatIcon size={30} className="text-primary" />, title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier - braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
               { icon: <SunCatIcon size={30} className="text-primary" />, title: "Der Sonnenanbeter", desc: "Liegt immer am Fenster, beobachtet alles, liebt Wärme.", rec: "Fensterliege oder beheiztes Bett", link: "/fensterliegen-katzen", badge: "Tipp" },
               { icon: <CrownIcon size={30} className="text-primary" />, title: "Die Diva", desc: "Hält dein Sofa für ihr Eigentum und lässt das alle wissen.", rec: "Katzensofa direkt daneben", link: "/katzensofas", badge: "Tipp" },
-              { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze – braucht Platz.", rec: "XL-Donut (60–70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
+              { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze - braucht Platz.", rec: "XL-Donut (60-70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
               { icon: <SeniorCatIcon size={30} className="text-primary" />, title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
               { icon: <SparkleIcon size={30} className="text-primary" />, title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
             ].map((item) => (
