@@ -98,8 +98,8 @@ export default function GuideArticlePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero Image */}
-      {guide.heroImage && guide.heroImage !== "/placeholder.svg" && (
-        <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden mt-16">
+      {guide.heroImage && guide.heroImage !== "/placeholder.svg" ? (
+        <div className="w-full h-64 md:h-80 lg:h-96 overflow-hidden pt-16">
           <img
             src={guide.heroImage}
             alt={guide.title}
@@ -107,10 +107,10 @@ export default function GuideArticlePage() {
             referrerPolicy="no-referrer"
           />
         </div>
-      )}
+      ) : null}
 
       {/* Hero */}
-      <section className={`bg-gradient-to-b from-accent/60 to-background ${guide.heroImage && guide.heroImage !== "/placeholder.svg" ? "pt-10" : "pt-28"} pb-10 px-4`}>
+      <section className={`bg-gradient-to-b from-accent/60 to-background ${guide.heroImage && guide.heroImage !== "/placeholder.svg" ? "pt-8" : "pt-28"} pb-10 px-4`}>
         <div className="container mx-auto max-w-4xl">
           <Breadcrumb className="mb-6">
             <BreadcrumbList>
