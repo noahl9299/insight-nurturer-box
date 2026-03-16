@@ -1,3 +1,7 @@
+import guideGroesseImg from "@/assets/guide-groesse.jpg";
+import guideMaterialienImg from "@/assets/guide-materialien.jpg";
+import guideChecklisteImg from "@/assets/guide-checkliste.jpg";
+
 export interface GuideSection {
   id: string;
   title: string;
@@ -46,7 +50,7 @@ export const guides: Guide[] = [
     updatedAt: "2025-01-10",
     author: "Laura Meier",
     authorRole: "Tierverhaltensexpertin & Redakteurin",
-    heroImage: "/src/assets/guide-groesse.jpg",
+    heroImage: guideGroesseImg,
     tags: ["Größe", "Kaufratgeber", "Tipps", "Maße"],
     ratings: [
       { label: "Informationsgehalt", score: 9.5 },
