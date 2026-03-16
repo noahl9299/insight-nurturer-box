@@ -317,7 +317,7 @@ export default function Index() {
               <ul className="space-y-4">
                 {problems.map((p) => (
                   <li key={p} className="flex items-start gap-3">
-                    <span className="text-lg mt-0.5">😿</span>
+                    <AnxiousCatIcon size={20} className="text-muted-foreground shrink-0 mt-0.5" />
                     <p className="text-muted-foreground">{p}</p>
                   </li>
                 ))}
