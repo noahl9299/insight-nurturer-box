@@ -238,7 +238,9 @@ export default function GuideArticlePage() {
             {guide.faq.length > 0 && (
               <div id="faq" className="scroll-mt-24 mb-10">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-sm">❓</div>
+                  <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                    <FaqIcon size={18} className="text-primary" />
+                  </div>
                   <h2 className="text-xl md:text-2xl font-display font-bold text-foreground">Häufige Fragen</h2>
                 </div>
                 <Accordion type="single" collapsible className="space-y-2">
