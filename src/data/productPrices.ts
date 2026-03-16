@@ -9,10 +9,10 @@ interface ProductData {
 const productData: Record<number, ProductData> = {
   1: { price: 16.99, rating: 4.8, reviews: 452, size: "51x41 cm", material: "Polyester" },
   2: { price: 32.99, rating: 4.7, reviews: 85, size: "M", material: "Stahl, Stoff" },
-  3: { price: 34.99, rating: 4.5, reviews: 789, size: "76L x 51B x 18D cm", material: "Flanell, Samt, Noppenschaumstoff" },
+  3: { price: 20.60, rating: 4.4, reviews: 21198, size: "50L x 50B x 13D cm", material: "Polyester" },
   4: { price: 15.29, rating: 4.6, reviews: 229, size: "50L x 50B x 18D cm", material: "PV Plush Fabric" },
   5: { price: 20.19, rating: 4.5, reviews: 3008, size: "51L x 48B x 15D cm", material: "Polyester" },
-  6: { price: 13.99, rating: 4.4, reviews: 21810, size: "60L x 60B x 20D cm", material: "Plüsch, PP-Füllung" },
+  6: { price: 18.99, rating: 4.5, reviews: 4230, size: "65L x 65B x 22D cm", material: "Plüsch, PP-Füllung" },
   7: { price: 11.89, rating: 4.4, reviews: 499, size: "90L x 28B x 2D cm", material: "Polyester" },
   8: { price: 18.69, rating: 4.3, reviews: 1473, size: "73L x 39B x 63H cm", material: "PVC" },
   9: { price: 32.99, rating: 5.0, reviews: 5, size: "M", material: "Metall, Stoff" },
