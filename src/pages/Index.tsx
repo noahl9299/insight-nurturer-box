@@ -594,6 +594,13 @@ export default function Index() {
                 content: "Ein waschbares Katzenbett ist kein Luxus, sondern Pflicht. Katzen verlieren täglich Haare und hinterlassen Hautschuppen - ein regelmäßiges Waschen bei 30-40 Grad reduziert Bakterien und Gerüche. Achte auf Modelle mit abnehmbarem Bezug: So muss nicht das komplette Bett in die Maschine. Filzhöhlen nur per Handwäsche.",
                 links: [],
               },
+              {
+                step: "05",
+                title: "Sicherheit und Schadstoff-Prüfung",
+                icon: <ShieldCheck size={22} className="text-primary" />,
+                content: "Achte auf Prüf-Siegel: OEKO-TEX Standard 100 (textile Schadstoff-Prüfung), GS-Zeichen (geprüfte Sicherheit, vor allem bei beheizten Betten) und TÜV-geprüft. Vermeide Modelle mit chemischem Geruch - das deutet auf Lösungsmittel-Reste hin. Bei beheizten Betten muss eine automatische Abschaltung vorhanden sein (Überhitzungsschutz).",
+                links: [],
+              },
             ].map((item) => (
               <div key={item.step} className="flex gap-6 bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors">
                 <div className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold text-primary/20 border-2 border-primary/20 font-mono">
