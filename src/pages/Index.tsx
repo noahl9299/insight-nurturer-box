@@ -414,24 +414,36 @@ export default function Index() {
             <p className="text-muted-foreground text-lg">Jede Katze ist anders. Welcher Typ passt zu deiner?</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
                 to={cat.slug}
-                className="relative rounded-2xl overflow-hidden aspect-[4/3] group block"
+                className="group bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/40 hover:shadow-md transition-all hover:-translate-y-0.5 flex flex-col"
                 aria-label={cat.name}
               >
-                <img
-                  src={cat.image}
-                  alt={`${cat.name} für Katzen`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                  <h3 className="text-lg font-semibold" style={{ fontFamily: "'DM Serif Display', serif" }}>{cat.name}</h3>
-                  <p className="text-sm text-white/75">{cat.count}</p>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={cat.image}
+                    alt={`${cat.name} für Katzen`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                  <h3 className="absolute bottom-3 left-4 right-4 text-lg font-semibold text-white" style={{ fontFamily: "'DM Serif Display', serif" }}>
+                    {cat.name}
+                  </h3>
+                </div>
+                <div className="p-5 flex-1 flex flex-col">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{cat.desc}</p>
+                  <ul className="space-y-1.5 mt-auto">
+                    {cat.facts.map(([k, v]) => (
+                      <li key={k} className="text-xs text-foreground flex gap-2">
+                        <span className="font-semibold min-w-[88px]">{k}:</span>
+                        <span className="text-muted-foreground">{v}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Link>
             ))}
