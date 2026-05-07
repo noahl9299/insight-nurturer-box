@@ -59,18 +59,18 @@ const solutions = [
 ];
 
 const faqs = [
-  { q: "Welches Katzenbett ist das beste?", a: "Das beste Katzenbett gibt es nicht pauschal - es hängt von deiner Katze ab. Für ängstliche Katzen empfehlen wir Donut-Betten oder Höhlen, für Senioren orthopädische Modelle mit Memory Foam. Schaue dir unsere Kategorien an und nutze den Größenberater." },
-  { q: "Wie groß sollte ein Katzenbett sein?", a: "Deine Katze sollte sich bequem einrollen und ausstrecken können. Als Faustregel: Das Bett sollte mindestens 1,5x so groß sein wie deine eingerollte Katze. Bei 4-5 kg empfehlen wir 50 cm Durchmesser, bei großen Rassen wie Maine Coon mindestens 60-70 cm." },
-  { q: "Warum nimmt meine Katze das Bett nicht an?", a: "Katzen sind Gewohnheitstiere. Stelle das Bett an einen ruhigen, erhöhten Ort, lege ein getragenes T-Shirt hinein und verwende Katzenminze. Gib deiner Katze 2-3 Wochen Zeit. Manchmal hilft ein Betttyp-Wechsel: Manche Katzen mögen lieber offene Betten, andere Höhlen." },
-  { q: "Kann ich ein Katzenbett in der Waschmaschine waschen?", a: "Die meisten modernen Katzenbetten sind bei 30 Grad waschbar. Filzbetten solltest du nur per Hand waschen. Achte beim Kauf auf das Waschbarkeitslabel. Tipp: Wasch das Bett mit einem Wäschenetz und lass es an der Luft trocknen - so bleibt es flauschig." },
-  { q: "Welches Katzenbett für alte Katzen mit Gelenkproblemen?", a: "Für Senioren-Katzen empfehlen wir orthopädische Katzenbetten mit Memory Foam. Diese passen sich dem Körper an und entlasten Gelenke und Wirbelsäule. Wichtig: niedriger Einstieg und ein beheizbares Modell für Katzen, die besonders frieren." },
-  { q: "Sind beheizte Katzenbetten sicher?", a: "Ja, wenn sie für Haustiere zugelassen sind und das GS-Zeichen tragen. Achte auf eine automatische Abschaltung und einen thermostatgesteuerten Betrieb. Unsere empfohlenen Modelle sind TÜV-geprüft. Lass das Kabel nie unter dem Bett verlaufen." },
-  { q: "Wie viel sollte ich für ein Katzenbett ausgeben?", a: "25-60 Euro für ein gutes Standardbett, 60-120 Euro für orthopädische oder Design-Modelle. Unter 20 Euro bekommst du meist dünne Plüschkissen, die schnell platt werden. Investiere lieber einmal in ein hochwertiges Bett mit waschbarem Bezug - das hält oft 5+ Jahre." },
-  { q: "Wie oft sollte ich das Katzenbett waschen?", a: "Alle 2-4 Wochen, abhängig von Haarwurf und Allergien. Bei Allergikern oder Langhaarkatzen eher wöchentlich. Tägliches Ausschütteln und Absaugen hält das Bett zwischen den Wäschen frisch. Verwende geruchsneutrales Waschmittel - Katzen mögen keine Parfüms." },
-  { q: "Ist ein Katzenbett oder eine Katzendecke besser?", a: "Ein Bett gibt Geborgenheit und Form, eine Decke nur Wärme. Decken sind flexibel - du kannst sie auf Sofa oder Fensterbank legen. Ein Katzenbett bietet aber den umschließenden Rand, den viele Katzen lieben. Optimal: beides kombinieren - Bett als fester Schlafplatz, Decke als mobile Kuschelzone." },
+  { q: "Warum schläft meine Katze nicht im neuen Bett?", a: "Katzen sind Gewohnheitstiere und brauchen Zeit für neue Schlafplätze. Das Hinzufügen vertrauter Gerüche kann helfen, Katzen an neue Betten zu gewöhnen. Lege eine getragene Decke hinein und platziere das Bett an einem ruhigen Ort. Gib deiner Katze einige Wochen Zeit und zwinge sie nicht." },
+  { q: "Wie oft sollte ich das Katzenbett waschen?", a: "Ein Katzenbett sollte alle zwei Wochen gewaschen werden, bei häufiger Nutzung wöchentlich. Katzenbetten sollten leicht zu reinigen sein, idealerweise mit waschbaren, abnehmbaren Bezügen, die oft in der Waschmaschine gereinigt werden können. Zwischen den Wäschen hilft regelmäßiges Absaugen." },
+  { q: "Brauchen Wohnungskatzen spezielle Betten?", a: "Wohnungskatzen profitieren von abwechslungsreichen Schlafplätzen. Ein eigenes Katzenbett hilft, die Menge an Tierhaaren auf Möbeln und im Bett zu reduzieren, da die Katzen einen festen Schlafplatz haben. Kombiniere verschiedene Typen wie Höhle und Fensterliege für Abwechslung." },
+  { q: "Kann ich ein Hundebett für meine Katze verwenden?", a: "Grundsätzlich ja, wenn Größe und Form passen. Hundebetten sind oft größer und haben niedrigere Ränder. Für Katzen, die sich gerne ausstrecken, kann ein kleines Hundebett funktionieren. Achte auf weiche, waschbare Materialien." },
+  { q: "Welches Katzenbett für Maine Coon?", a: "Maine Coons benötigen XXL-Modelle mit mindestens 60 Zentimetern Innendurchmesser und einer Tragfähigkeit von zehn Kilogramm oder mehr. Orthopädische Betten mit Memory Foam sind ideal, da große Rassen anfälliger für Gelenkprobleme sind." },
+  { q: "Wie finde ich die richtige Bettgröße?", a: "Die Größe des Bettes sollte entsprechend der Katze gewählt werden, mit einem Durchmesser von circa 50 Zentimetern ideal für die meisten Katzen. Als Faustregel gilt: 1,5 mal die Körperlänge der eingerollten Katze. Miss vom Nasenrücken bis zur Schwanzwurzel und addiere 30 bis 50 Prozent." },
+  { q: "Sind beheizte Katzenbetten sicher?", a: "Beheizte Katzenbetten oder Heizmatten sind ideal für kalte Tage, da sie Wärme spenden und den Komfort der Katze erhöhen. Achte auf Produkte mit automatischer Abschaltung und GS-Zeichen. Selbstwärmende Varianten ohne Strom sind die sicherste Alternative." },
+  { q: "Wo stelle ich das Katzenbett am besten auf?", a: "Ein Katzenbett sollte an einem ruhigen Ort platziert werden, der abseits von belebten Bereichen liegt und Schutz vor Feuchtigkeit, Zugluft und direkter Sonneneinstrahlung bietet. Katzen mögen warme, trockene und ruhige Orte, bevorzugt in der Nähe einer Heizung." },
+  { q: "Warum braucht meine Katze überhaupt ein Bett?", a: "Katzenbetten bieten einen ruhigen Rückzugsort, der es Katzen ermöglicht, ungestört zu schlafen und sich zu erholen, was für ihre Gesundheit und ihr Wohlbefinden wichtig ist. Bei bis zu 16 Stunden Schlaf täglich ist ein ergonomischer Schlafplatz essenziell für die Gelenkgesundheit." },
 ];
 
-const brands = ["Bedsure", "Trixie", "FEANDREA", "LucyBalu", "MiaCara", "Navaris", "FUKUMARU", "Catit", "Dehner", "HUNTER", "West Paw", "Amazon Basics", "PAWZ Road", "Bedsure", "Trixie", "FEANDREA", "LucyBalu", "MiaCara"];
+const brands = ["Bedsure", "FEANDREA", "MEOWFIA", "Trixie", "FUKUMARU", "MiaCara", "Bedsure", "FEANDREA", "MEOWFIA", "Trixie", "FUKUMARU", "MiaCara"];
 
 export default function Index() {
   const bestsellers = [...products].sort((a, b) => a.rang - b.rang).slice(0, 8);
@@ -95,7 +95,7 @@ export default function Index() {
     <>
       <SEO
         title="Katzenbett Vergleich 2026 - Top Modelle, Größen & Materialien | katzenbett.de"
-        description="Katzenbett-Vergleich 2026: Bestseller, Größen-Tabelle pro Rasse, Material-Vergleich, 5 Kaufkriterien und Antworten auf 9 häufige Fragen. Unabhängig getestet."
+        description="Über 40 Katzenbetten verglichen - Bestseller 2026, Größen-Tabelle pro Rasse, Material-Vergleich, 9 häufige Fragen. Unabhängig getestet von katzenbett.de"
         canonical="https://www.katzenbett.de/"
         type="website"
       />
@@ -165,17 +165,17 @@ export default function Index() {
             </h1>
 
             <p className="text-lg text-foreground/80 font-medium mb-4 animate-fade-up delay-150 italic">
-              Ist deine Katze bei der Wahl des Schlafplatzes wählerisch und du weißt nicht, welches Katzenbett sie wirklich annimmt?
+              Ist deine Katze bei der Wahl des Schlafplatzes wählerisch?
             </p>
 
             <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border mb-4 animate-fade-up delay-200">
               <p className="text-sm text-foreground leading-relaxed">
-                <strong>Ein Katzenbett</strong> ist ein speziell gestalteter Schlafplatz für Hauskatzen, der Wärme, Geborgenheit und orthopädische Entlastung bietet. Es gibt acht Haupttypen - von der Katzenhöhle über das Donut-Bett bis zur Fensterliege. Die richtige Wahl hängt von Schlafstil, Alter und Größe deiner Katze ab.
+                <strong>Ein Katzenbett</strong> ist ein speziell gestalteter Schlafplatz für Hauskatzen, der Geborgenheit, Wärme und Komfort bietet. Das richtige Bett unterstützt das Wohlbefinden deiner Samtpfote, fördert erholsamen Schlaf und schont die Gelenke. Da Katzen bis zu 16 Stunden täglich schlafen, ist die Wahl des passenden Schlafplatzes entscheidend für Gesundheit und Zufriedenheit deines Lieblings.
               </p>
             </div>
 
             <p className="text-base text-muted-foreground mb-3 animate-fade-up delay-200 leading-relaxed">
-              Wir haben über 40 Katzenbetten verglichen und zeigen dir die Bestseller, eine Größen-Tabelle pro Rasse, einen Material-Vergleich und Antworten auf die neun häufigsten Fragen.
+              In diesem Ratgeber findest du unseren umfassenden Vergleich der beliebtesten Katzenbetten 2026, detaillierte Informationen zu acht Bett-Typen, Größentabellen für alle Rassen und praktische Kaufberatung.
             </p>
 
             <p className="text-xs text-muted-foreground mb-6 animate-fade-up delay-200">
@@ -272,10 +272,10 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 id="bestseller-heading" className="text-heading-2 text-foreground mb-3">
-              Bestseller - Das lieben Katzen (und ihre Menschen)
+              Bestseller - Die beliebtesten Katzenbetten 2026
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Die beliebtesten Katzenbetten, basierend auf Bewertungen und Verkäufen.
+              Wir haben über 40 Modelle verglichen. Unsere Kriterien: Bewertungs-Score 40 %, Material und Verarbeitung 30 %, Waschbarkeit 15 %, Preis-Leistung 15 %.
             </p>
           </div>
 
