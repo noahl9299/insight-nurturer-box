@@ -438,7 +438,113 @@ export default function Index() {
         </div>
       </section>
 
+      {/* SIZE TABLE BY BREED */}
+      <section className="py-20 bg-background" aria-labelledby="size-table-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Größenwahl</p>
+            <h2 id="size-table-heading" className="text-heading-2 text-foreground mb-3">
+              Katzenbett-Größe finden - Schritt für Schritt
+            </h2>
+            <p className="text-base font-semibold text-foreground italic">Wie groß muss ein Katzenbett sein?</p>
+          </div>
+
+          <div className="bg-card rounded-2xl border border-border overflow-hidden mb-6">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Rasse</TableHead>
+                  <TableHead>Typisches Gewicht</TableHead>
+                  <TableHead>Empfohlener Durchmesser</TableHead>
+                  <TableHead>Empfohlener Bett-Typ</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {[
+                  ["Hauskatze (kurzhaarig)", "3-5 kg", "45-50 cm", "Donut, Höhle"],
+                  ["Britisch Kurzhaar", "4-7 kg", "50-55 cm", "Donut, Sofa"],
+                  ["Siamkatze", "3-5 kg", "45-50 cm", "Höhle, Hängematte"],
+                  ["Perser", "3-6 kg", "50-55 cm", "Donut, Design-Bett"],
+                  ["Ragdoll", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Donut"],
+                  ["Maine Coon", "6-11 kg", "65-80 cm", "XXL-Sofa, XXL-Donut"],
+                  ["Norwegische Waldkatze", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Höhle"],
+                  ["Sphynx", "3-5 kg", "45-50 cm", "Beheiztes Bett, Höhle"],
+                ].map((r) => (
+                  <TableRow key={r[0]}>
+                    <TableCell className="font-medium">{r[0]}</TableCell>
+                    <TableCell>{r[1]}</TableCell>
+                    <TableCell>{r[2]}</TableCell>
+                    <TableCell>{r[3]}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+
+          <div className="rounded-2xl p-6 flex gap-4 items-start border border-primary/20" style={{ background: "hsl(var(--accent))" }}>
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Lightbulb size={24} className="text-primary" />
+            </div>
+            <div>
+              <p className="font-semibold text-foreground mb-1">Tipp der Redaktion</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Miss deine Katze in eingerollter Position vom Schwanzansatz bis zur Nase und multipliziere mit 1,5. Das ist dein Mindest-Durchmesser.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICE OVERVIEW */}
+      <section className="py-20 bg-muted/30" aria-labelledby="price-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Preis-Übersicht</p>
+            <h2 id="price-heading" className="text-heading-2 text-foreground mb-3">
+              Was kostet ein gutes Katzenbett?
+            </h2>
+            <p className="text-base font-semibold text-foreground italic mb-4">Wie viel kostet ein Katzenbett?</p>
+            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Ein gutes Katzenbett kostet zwischen 15 und 120 Euro - abhängig von Typ, Material und Marke. Einsteiger-Modelle aus Plüsch starten bei 15 €. Hochwertige Donut-Betten und Höhlen liegen bei 30-60 €. Orthopädische Betten und Design-Modelle aus Holz oder Bouclé kosten 60-120 €.
+            </p>
+          </div>
+
+          <div className="bg-card rounded-2xl border border-border overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Bett-Typ</TableHead>
+                  <TableHead>Einsteiger</TableHead>
+                  <TableHead>Mittelklasse</TableHead>
+                  <TableHead className="bg-secondary/15">Premium</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {[
+                  ["Donut-Bett", "15-25 €", "30-50 €", "60-90 €"],
+                  ["Katzenhöhle", "15-25 €", "30-55 €", "60-100 €"],
+                  ["Orthopädisches Bett", "25-40 €", "50-75 €", "80-120 €"],
+                  ["Fensterliege", "15-25 €", "25-45 €", "50-80 €"],
+                  ["Katzensofa", "20-35 €", "40-70 €", "80-150 €"],
+                  ["Design-Bett", "30-45 €", "55-90 €", "100-200 €"],
+                  ["Beheiztes Bett", "20-35 €", "40-65 €", "70-120 €"],
+                  ["Hängematte", "15-25 €", "25-40 €", "45-70 €"],
+                ].map((r) => (
+                  <TableRow key={r[0]}>
+                    <TableCell className="font-medium">{r[0]}</TableCell>
+                    <TableCell>{r[1]}</TableCell>
+                    <TableCell>{r[2]}</TableCell>
+                    <TableCell className="bg-secondary/10 font-semibold">{r[3]}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </section>
+
       {/* BUYING GUIDE */}
+
       <section className="py-20 bg-muted/20" aria-labelledby="guide-heading">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-14">
