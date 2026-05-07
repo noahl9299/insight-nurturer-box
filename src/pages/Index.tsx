@@ -33,15 +33,102 @@ const trustItems = [
 ];
 
 const categories = [
-  { name: "Katzenhöhlen & Iglus", slug: "/katzenhoehlen", image: catCave, count: "16 Betten" },
-  { name: "Donut-Betten", slug: "/donut-katzenbetten", image: catDonut, count: "12 Betten" },
-  { name: "Orthopädische Betten", slug: "/orthopaedische-katzenbetten", image: catOrtho, count: "5 Betten" },
-  { name: "Fensterliegen", slug: "/fensterliegen-katzen", image: catWindow, count: "3 Betten" },
-  { name: "Design & Premium", slug: "/design-katzenbetten", image: catDesign, count: "10 Betten" },
-  { name: "Katzensofas", slug: "/katzensofas", image: catSofa, count: "6 Betten" },
-  { name: "Beheizte Betten", slug: "/beheizte-katzenbetten", image: catHeated, count: "6 Betten" },
-  { name: "Hängematten", slug: "/haengematten-katzen", image: catHammock, count: "4 Betten" },
-  { name: "Alle Katzenbetten", slug: "/katzenbetten", image: heroCat, count: "100+ Betten" },
+  {
+    name: "Katzenhöhle / Iglu",
+    slug: "/katzenhoehlen",
+    image: catCave,
+    desc: "Katzenhöhlen und Iglus bieten einen geschlossenen Rückzugsort und schützen vor Zugluft, was besonders für ängstliche Katzen hilfreich ist. Das Material besteht meist aus Filz oder Merinowolle, was natürliche Temperaturregulierung ermöglicht. Diese Höhlen eignen sich ideal für scheue Stubentiger.",
+    facts: [
+      ["Material", "Filz, Merinowolle, Polypropylen"],
+      ["Vorteil", "Schutz, Wärme, Rückzugsort"],
+      ["Preis-Range", "25-80 Euro"],
+      ["Ideal für", "Ängstliche Katzen, Wohnungskatzen"],
+    ],
+  },
+  {
+    name: "Donut-Bett",
+    slug: "/donut-katzenbetten",
+    image: catDonut,
+    desc: "Donut-Betten sind ideal für Katzen, die sich gerne zusammenrollen und ein Gefühl der Geborgenheit suchen. Der erhöhte Rand bietet eine perfekte Kopfstütze und simuliert das Gefühl einer schützenden Umarmung.",
+    facts: [
+      ["Material", "Plüsch, Kunstfell, Sherpa"],
+      ["Vorteil", "Weicher Rand zum Anlehnen"],
+      ["Preis-Range", "15-60 Euro"],
+      ["Ideal für", "Kugelschläfer, alle Rassen"],
+    ],
+  },
+  {
+    name: "Orthopädisches Bett",
+    slug: "/orthopaedische-katzenbetten",
+    image: catOrtho,
+    desc: "Orthopädische Katzenbetten mit Memory Foam bieten zusätzlichen Komfort und Unterstützung für die Gelenke älterer Katzen. Die Füllung passt sich der Körperform an und verteilt das Gewicht gleichmäßig. Wir empfehlen eine Schaumstoffdichte von mindestens 40 Kilogramm pro Kubikmeter.",
+    facts: [
+      ["Material", "Memory Foam, Kaltschaum, Gel-Einlagen"],
+      ["Vorteil", "Gelenkschonung, Druckentlastung, langlebig"],
+      ["Preis-Range", "40-120 Euro"],
+      ["Ideal für", "Senior-Katzen, Katzen mit Gelenkproblemen"],
+    ],
+  },
+  {
+    name: "Fensterliege",
+    slug: "/fensterliegen-katzen",
+    image: catWindow,
+    desc: "Katzen lieben erhöhte Schlafplätze, da sie ihre Umgebung gut beobachten können. Fensterliegen nutzen dieses natürliche Bedürfnis und bieten gleichzeitig Sonnenwärme. Die Montage erfolgt meist über Saugnäpfe oder Haken, die Gewichtstragfähigkeit sollte mindestens zehn Kilogramm betragen.",
+    facts: [
+      ["Material", "Canvas, Polyester, Metallrahmen"],
+      ["Vorteil", "Aussicht, Sonnenwärme, platzsparend"],
+      ["Preis-Range", "20-55 Euro"],
+      ["Ideal für", "Sonnenanbeter, neugierige Katzen"],
+    ],
+  },
+  {
+    name: "Design-Bett",
+    slug: "/design-katzenbetten",
+    image: catDesign,
+    desc: "Design-Betten verbinden Ästhetik mit Funktion. Sie passen zu modernen Einrichtungsstilen und bieten gleichzeitig hohen Komfort. Materialien wie Birkenholz, Bouclé oder Wasserhyazinthe setzen optische Akzente. Marken wie MiaCara haben sich auf diese Kategorie spezialisiert.",
+    facts: [
+      ["Material", "Birkenholz, Bouclé, Wasserhyazinthe"],
+      ["Vorteil", "Stilvolles Design, hochwertige Verarbeitung"],
+      ["Preis-Range", "80-200 Euro"],
+      ["Ideal für", "Design-Fans, stilbewusste Halter"],
+    ],
+  },
+  {
+    name: "Katzensofa",
+    slug: "/katzensofas",
+    image: catSofa,
+    desc: "Katzensofas bieten eine offene Liegefläche mit seitlichen Armlehnen. Sie eignen sich für Katzen, die gerne ausgestreckt schlafen und den Überblick behalten möchten.",
+    facts: [
+      ["Material", "Webstoff, Cord, Kunstleder"],
+      ["Vorteil", "Großzügige Liegefläche, bequemer Einstieg"],
+      ["Preis-Range", "35-90 Euro"],
+      ["Ideal für", "Große Rassen, selbstbewusste Katzen"],
+    ],
+  },
+  {
+    name: "Heizungsliege / beheiztes Bett",
+    slug: "/beheizte-katzenbetten",
+    image: catHeated,
+    desc: "Beheizte Katzenbetten oder Heizmatten sind ideal für kalte Tage. Katzen mögen warme, trockene und ruhige Orte, bevorzugt in der Nähe einer Heizung. Selbstwärmende Varianten ohne Strom nutzen Reflexfolien oder spezielle Füllungen.",
+    facts: [
+      ["Material", "Plüsch mit Heizelement oder Reflexfolie"],
+      ["Vorteil", "Konstante Wärme, ideal für Winter"],
+      ["Preis-Range", "25-70 Euro"],
+      ["Ideal für", "Frierige Katzen, Senioren"],
+    ],
+  },
+  {
+    name: "Hängematte",
+    slug: "/haengematten-katzen",
+    image: catHammock,
+    desc: "Hängematten werden an Möbeln oder Wänden befestigt und sparen Boden-Platz. Sie bieten eine schwebende Schlafposition und ermöglichen einen guten Überblick über den Raum.",
+    facts: [
+      ["Material", "Canvas, Fleece, Metallgestell"],
+      ["Vorteil", "Platzsparend, luftig, modern"],
+      ["Preis-Range", "20-50 Euro"],
+      ["Ideal für", "Kletterfreudige Katzen, kleine Wohnungen"],
+    ],
+  },
 ];
 
 const problems = [
