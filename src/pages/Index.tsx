@@ -545,7 +545,24 @@ export default function Index() {
             <h2 id="size-table-heading" className="text-heading-2 text-foreground mb-3">
               Katzenbett-Größe finden - Schritt für Schritt
             </h2>
-            <p className="text-base font-semibold text-foreground italic">Wie groß muss ein Katzenbett sein?</p>
+            <p className="text-base font-semibold text-foreground italic mb-4">Wie groß muss ein Katzenbett sein?</p>
+            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Die Größe des Bettes sollte entsprechend der Katze gewählt werden, mit einem Durchmesser von circa 50 Zentimetern ideal für die meisten Katzen. Als Faustformel gilt: Das Bett sollte 1,5 mal so groß sein wie die eingerollte Körperlänge deiner Katze.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            {[
+              { n: "1", t: "Körperlänge messen", d: "Miss vom Nasenrücken bis zur Schwanzwurzel im entspannten Zustand." },
+              { n: "2", t: "Puffer addieren", d: "Addiere 30 bis 50 Prozent für Bewegungsfreiheit." },
+              { n: "3", t: "Höhlen-Einstieg", d: "Bei Höhlen: Miss zusätzlich die Schulterbreite für den Einstieg." },
+            ].map((s) => (
+              <div key={s.n} className="bg-card rounded-2xl border border-border p-5">
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center mb-3">{s.n}</div>
+                <h3 className="font-semibold text-foreground mb-1">{s.t}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+              </div>
+            ))}
           </div>
 
           <div className="bg-card rounded-2xl border border-border overflow-hidden mb-6">
@@ -553,21 +570,21 @@ export default function Index() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Rasse</TableHead>
-                  <TableHead>Typisches Gewicht</TableHead>
-                  <TableHead>Empfohlener Durchmesser</TableHead>
-                  <TableHead>Empfohlener Bett-Typ</TableHead>
+                  <TableHead>Durchschnittsgewicht</TableHead>
+                  <TableHead>Körperlänge</TableHead>
+                  <TableHead>Empfohlene Bettgröße</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {[
-                  ["Hauskatze (kurzhaarig)", "3-5 kg", "45-50 cm", "Donut, Höhle"],
-                  ["Britisch Kurzhaar", "4-7 kg", "50-55 cm", "Donut, Sofa"],
-                  ["Siamkatze", "3-5 kg", "45-50 cm", "Höhle, Hängematte"],
-                  ["Perser", "3-6 kg", "50-55 cm", "Donut, Design-Bett"],
-                  ["Ragdoll", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Donut"],
-                  ["Maine Coon", "6-11 kg", "65-80 cm", "XXL-Sofa, XXL-Donut"],
-                  ["Norwegische Waldkatze", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Höhle"],
-                  ["Sphynx", "3-5 kg", "45-50 cm", "Beheiztes Bett, Höhle"],
+                  ["Hauskatze", "4-5 kg", "30-35 cm", "45-55 cm"],
+                  ["Britisch Kurzhaar", "5-7 kg", "35-40 cm", "55-65 cm"],
+                  ["Siamkatze", "3-5 kg", "30-35 cm", "45-55 cm"],
+                  ["Perser", "4-6 kg", "40-45 cm", "55-65 cm"],
+                  ["Ragdoll", "5-8 kg", "40-45 cm", "60-70 cm"],
+                  ["Maine Coon", "8-12 kg", "45-55 cm", "75-100 cm"],
+                  ["Norwegische Waldkatze", "6-9 kg", "40-50 cm", "65-80 cm"],
+                  ["Sphynx", "3-5 kg", "30-35 cm", "45-55 cm"],
                 ].map((r) => (
                   <TableRow key={r[0]}>
                     <TableCell className="font-medium">{r[0]}</TableCell>
