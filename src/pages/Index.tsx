@@ -819,12 +819,57 @@ export default function Index() {
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-5 text-muted-foreground leading-relaxed border-t border-border">
-                    <p className="pt-4">{faq.a}</p>
+                    {(() => {
+                      const match = faq.a.match(/^([^.!?]*[.!?])\s*(.*)$/s);
+                      const first = match?.[1] ?? faq.a;
+                      const rest = match?.[2] ?? "";
+                      return (
+                        <p className="pt-4">
+                          <strong className="text-foreground">{first}</strong>{rest ? " " + rest : ""}
+                        </p>
+                      );
+                    })()}
                   </div>
                 )}
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* METHODIK / ÜBER UNS */}
+      <section className="py-20 bg-muted/30" aria-labelledby="methodik-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">E-E-A-T</p>
+            <h2 id="methodik-heading" className="text-heading-2 text-foreground mb-4">
+              Über katzenbett.de - Unsere Vergleichsmethodik
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              katzenbett.de ist ein unabhängiges Vergleichsportal für Katzenbetten. Wir testen, vergleichen und empfehlen - finanziert über transparente Affiliate-Provisionen, die für dich keinen Mehrpreis bedeuten.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+            {[
+              { pct: "40%", title: "Bewertungs-Score", desc: "Durchschnitts-Bewertung gewichtet nach Anzahl Rezensionen" },
+              { pct: "30%", title: "Material & Verarbeitung", desc: "Stoff, Polsterung, Nahtqualität, Schadstoff-Siegel" },
+              { pct: "15%", title: "Waschbarkeit", desc: "Maschinenfähigkeit, abnehmbarer Bezug" },
+              { pct: "15%", title: "Preis-Leistung", desc: "Preis im Verhältnis zu Material und Lebensdauer" },
+            ].map((c) => (
+              <Card key={c.title} className="border-border">
+                <CardContent className="p-5">
+                  <div className="text-3xl font-bold text-primary mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>{c.pct}</div>
+                  <h3 className="font-semibold text-foreground mb-1">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground italic">
+            Wir aktualisieren unsere Empfehlungen monatlich. Die letzten Daten wurden im Mai 2026 gesichtet.
+          </p>
         </div>
       </section>
     </>
