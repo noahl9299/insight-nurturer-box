@@ -165,17 +165,17 @@ export default function Index() {
             </h1>
 
             <p className="text-lg text-foreground/80 font-medium mb-4 animate-fade-up delay-150 italic">
-              Ist deine Katze bei der Wahl des Schlafplatzes wählerisch und du weißt nicht, welches Katzenbett sie wirklich annimmt?
+              Ist deine Katze bei der Wahl des Schlafplatzes wählerisch?
             </p>
 
             <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border mb-4 animate-fade-up delay-200">
               <p className="text-sm text-foreground leading-relaxed">
-                <strong>Ein Katzenbett</strong> ist ein speziell gestalteter Schlafplatz für Hauskatzen, der Wärme, Geborgenheit und orthopädische Entlastung bietet. Es gibt acht Haupttypen - von der Katzenhöhle über das Donut-Bett bis zur Fensterliege. Die richtige Wahl hängt von Schlafstil, Alter und Größe deiner Katze ab.
+                <strong>Ein Katzenbett</strong> ist ein speziell gestalteter Schlafplatz für Hauskatzen, der Geborgenheit, Wärme und Komfort bietet. Das richtige Bett unterstützt das Wohlbefinden deiner Samtpfote, fördert erholsamen Schlaf und schont die Gelenke. Da Katzen bis zu 16 Stunden täglich schlafen, ist die Wahl des passenden Schlafplatzes entscheidend für Gesundheit und Zufriedenheit deines Lieblings.
               </p>
             </div>
 
             <p className="text-base text-muted-foreground mb-3 animate-fade-up delay-200 leading-relaxed">
-              Wir haben über 40 Katzenbetten verglichen und zeigen dir die Bestseller, eine Größen-Tabelle pro Rasse, einen Material-Vergleich und Antworten auf die neun häufigsten Fragen.
+              In diesem Ratgeber findest du unseren umfassenden Vergleich der beliebtesten Katzenbetten 2026, detaillierte Informationen zu acht Bett-Typen, Größentabellen für alle Rassen und praktische Kaufberatung.
             </p>
 
             <p className="text-xs text-muted-foreground mb-6 animate-fade-up delay-200">
