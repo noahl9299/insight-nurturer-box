@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle, Clock, BookOpen } from "lucide-react";
+import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle, Clock, BookOpen, Lightbulb, ShieldCheck, Users, Home } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { products, searchProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SEO } from "@/components/SEO";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Card, CardContent } from "@/components/ui/card";
 import { guides } from "@/data/guides";
 import heroCat from "@/assets/hero-cat.jpg";
 import catCave from "@/assets/cat-cave.jpg";
