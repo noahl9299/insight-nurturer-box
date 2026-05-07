@@ -867,6 +867,16 @@ export default function Index() {
                 </div>
                 <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
                 <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{item.desc}</p>
+                {item.facts && (
+                  <ul className="space-y-1 mb-3">
+                    {item.facts.map(([k, v]) => (
+                      <li key={k} className="text-xs text-foreground flex gap-1.5">
+                        <span className="font-semibold">{k}:</span>
+                        <span className="text-muted-foreground">{v}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-semibold text-primary">→ {item.rec}</p>
                   <ArrowRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
