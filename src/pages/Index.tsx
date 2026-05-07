@@ -272,10 +272,10 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 id="bestseller-heading" className="text-heading-2 text-foreground mb-3">
-              Bestseller - Das lieben Katzen (und ihre Menschen)
+              Bestseller - Die beliebtesten Katzenbetten 2026
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Die beliebtesten Katzenbetten, basierend auf Bewertungen und Verkäufen.
+              Wir haben über 40 Modelle verglichen. Unsere Kriterien: Bewertungs-Score 40 %, Material und Verarbeitung 30 %, Waschbarkeit 15 %, Preis-Leistung 15 %.
             </p>
           </div>
 
