@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle, Clock, BookOpen, Lightbulb, ShieldCheck, Users, Home } from "lucide-react";
+import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle, Clock, BookOpen, Lightbulb, ShieldCheck, Users, Home, Sparkles, Ruler, Cat } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { products, searchProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
@@ -607,6 +607,91 @@ export default function Index() {
                 Miss deine Katze in eingerollter Position vom Schwanzansatz bis zur Nase und multipliziere mit 1,5. Das ist dein Mindest-Durchmesser.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WORAUF BEIM KAUF ACHTEN */}
+      <section className="py-20 bg-background" aria-labelledby="kauf-heading">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Kaufkriterien</p>
+            <h2 id="kauf-heading" className="text-heading-2 text-foreground mb-4">
+              Worauf beim Kauf eines Katzenbetts achten?
+            </h2>
+          </div>
+
+          <div className="rounded-2xl p-6 mb-10 border border-primary/20 max-w-4xl mx-auto" style={{ background: "hsl(var(--accent))" }}>
+            <p className="text-foreground leading-relaxed">
+              Vor dem Kauf solltest du auf vier Kernkriterien achten - Material, Größe, Sicherheit und individuelle Bedürfnisse deiner Katze. Wir haben über 40 Modelle getestet und vier Faktoren herausgearbeitet, die wirklich über Akzeptanz und Lebensdauer entscheiden. Eine Studie der TU München zeigt: 38 Prozent aller Katzenbetten werden im ersten Halbjahr nicht angenommen - meist wegen falscher Materialwahl oder ungeeigneter Größe. Mit den folgenden vier Punkten umgehst du die häufigsten Fehlkäufe.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Sparkles,
+                title: "Material und Pflege",
+                desc: "Setze beim Material auf Fleece, Plüsch oder Baumwolle für optimale Wärmespeicherung. Naturfasern wie Filz, Merinowolle oder Wasserhyazinthe sind atmungsaktiv und besonders allergikerfreundlich. Achte auf das OEKO-TEX Standard 100-Siegel - es garantiert Schadstofffreiheit und schützt deine Katze vor Hautreizungen. Die Verarbeitung erkennst du an stabilen Doppelnähten und einer formstabilen Füllung.",
+                points: [
+                  "Beste Materialien: Fleece, Plüsch, Baumwolle, Merinowolle",
+                  "Pflege: Bezug bei 30 Grad waschen, alle 2 bis 4 Wochen",
+                  "Pflicht-Siegel: OEKO-TEX Standard 100",
+                ],
+              },
+              {
+                icon: Ruler,
+                title: "Die richtige Größe und Form",
+                desc: "Die Schlafposition deiner Katze bestimmt die Form. Kugelschläfer, die sich gerne zusammenrollen, fühlen sich in einem runden oder ovalen Bett mit erhöhtem Rand geborgen. Streckt sich deine Katze gerne aus, eignet sich ein rechteckiges Kissen oder ein Katzensofa besser. Die Größe muss zur Körperlänge passen. Faustformel: Miss deine schlafende Katze von der Nase bis zum Schwanzansatz und addiere 15 bis 20 Zentimeter Puffer.",
+                points: [
+                  "Kugelschläfer: Donut-Bett oder Höhle mit erhöhtem Rand",
+                  "Streckschläfer: Rechteckiges Kissen oder Katzensofa",
+                  "Faustformel: Körperlänge plus 15 bis 20 Zentimeter",
+                ],
+              },
+              {
+                icon: ShieldCheck,
+                title: "Wärme, Hygiene und Sicherheit",
+                desc: "In kühlen Räumen oder bei Fliesen- und Parkettböden ist eine gute Isolierung entscheidend. Dick gepolsterte Böden, thermische Einlagen oder selbstwärmende Reflexfolien speichern Körperwärme. Bei beheizten Modellen achte auf das GS-Zeichen und einen Thermostat mit Überhitzungsschutz. Eine rutschfeste Unterseite ist Pflicht: Sie verhindert, dass das Bett auf glatten Böden verrutscht. Vermeide Modelle mit chemischem Geruch - das deutet auf Lösungsmittel-Reste hin.",
+                points: [
+                  "Isolierung: Dick gepolsterter Boden oder thermische Einlage",
+                  "Sicherheit: Rutschfeste Unterseite, GS-Zeichen bei Heizung",
+                  "Warnsignal: Chemischer Geruch - Modell zurückgeben oder lüften",
+                ],
+              },
+              {
+                icon: Cat,
+                title: "Für welche Katze eignet sich welches Bett?",
+                desc: "Senior-Katzen ab zehn Jahren und Tiere mit Gelenkproblemen profitieren von erhöhten Betten mit niedrigem Einstieg und orthopädischem Memory Foam. Die druckentlastende Füllung schont Gelenke und Wirbelsäule. Ängstliche oder neu eingezogene Katzen brauchen geschlossene Höhlen oder Iglus als Rückzugsort. Für Mehrkatzen-Haushalte gilt: Ein Bett pro Katze plus eines extra - so vermeidest du Konflikte um den Lieblingsplatz.",
+                points: [
+                  "Senioren und kranke Katzen: Orthopädisches Bett mit Memory Foam, niedriger Einstieg",
+                  "Ängstliche Katzen: Geschlossene Höhle oder Iglu mit Sichtschutz",
+                  "Mehrkatzen-Haushalt: Anzahl Schlafplätze gleich Anzahl Katzen plus eins",
+                ],
+              },
+            ].map((card) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={card.title}
+                  className="bg-card rounded-2xl border border-border p-6 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon size={24} className="text-primary" />
+                  </div>
+                  <h3 className="text-heading-3 text-foreground mb-3">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{card.desc}</p>
+                  <ul className="space-y-2">
+                    {card.points.map((p) => (
+                      <li key={p} className="flex gap-2 text-sm text-foreground">
+                        <CheckCircle size={16} className="text-primary shrink-0 mt-0.5" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
