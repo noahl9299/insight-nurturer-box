@@ -638,16 +638,21 @@ export default function Index() {
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Material</th>
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Vorteile</th>
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Nachteile</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Pflege</th>
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Am besten für</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { mat: "Plüsch / Kunstfell", pros: "Weich, günstig, waschbar", cons: "Verschleißt schneller", best: "Junge Katzen, Budget-Käufer" },
-                    { mat: "Filz (Merinowolle)", pros: "Natürlich, atmungsaktiv", cons: "Nur Handwäsche", best: "Höhlen, Naturliebhaber" },
-                    { mat: "Memory Foam", pros: "Gelenkentlastend, passt sich an", cons: "Teurer, schwerer", best: "Senioren, kranke Katzen" },
-                    { mat: "Cord / Canvas", pros: "Modisch, robust, pflegeleicht", cons: "Weniger weich", best: "Design-Haushalte" },
-                    { mat: "Holz / Birkenholz", pros: "Langlebig, hygienisch, stylisch", cons: "Kein Kuschelfaktor allein", best: "Design-Betten mit Kissen" },
+                    { mat: "Plüsch / Kunstfell", pros: "Weich, günstig, waschbar", cons: "Verschleißt schneller", care: "Maschine 30°C", best: "Junge Katzen, Budget-Käufer" },
+                    { mat: "Sherpa", pros: "Extra flauschig, warm", cons: "Fusselt anfangs", care: "Maschine 30°C, schonend", best: "Frostige Katzen, Winter" },
+                    { mat: "Filz (Merinowolle)", pros: "Natürlich, atmungsaktiv", cons: "Nur Handwäsche", care: "Handwäsche kalt", best: "Höhlen, Naturliebhaber" },
+                    { mat: "Memory Foam", pros: "Gelenkentlastend, passt sich an", cons: "Teurer, schwerer", care: "Bezug abnehmbar 30°C", best: "Senioren, kranke Katzen" },
+                    { mat: "Cord", pros: "Modisch, robust, weich", cons: "Haare bleiben sichtbar", care: "Bezug Maschine 30°C", best: "Design-Haushalte" },
+                    { mat: "Bouclé", pros: "Trendy, voluminös, weich", cons: "Krallen können hängenbleiben", care: "Schonwäsche oder Reinigung", best: "Stilbewusste Wohnzimmer" },
+                    { mat: "Canvas", pros: "Sehr robust, kratzfest", cons: "Weniger weich", care: "Maschine 40°C", best: "Aktive, kratzfreudige Katzen" },
+                    { mat: "Birkenholz", pros: "Langlebig, hygienisch, stylisch", cons: "Kein Kuschelfaktor allein", care: "Feucht abwischen", best: "Design-Betten mit Kissen" },
+                    { mat: "Wasserhyazinthe", pros: "Natürlich, leicht, stabil", cons: "Kann splittern", care: "Trocken abbürsten", best: "Boho-Stil, Körbchen-Optik" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                       <td className="px-4 py-3 font-medium text-foreground">{row.mat}</td>
@@ -661,6 +666,7 @@ export default function Index() {
                           <WarningIcon size={14} className="text-yellow-500 shrink-0" /> {row.cons}
                         </span>
                       </td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.care}</td>
                       <td className="px-4 py-3 text-muted-foreground">{row.best}</td>
                     </tr>
                   ))}
