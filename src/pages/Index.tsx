@@ -94,11 +94,42 @@ export default function Index() {
   return (
     <>
       <SEO
-        title="Die besten Katzenbetten im Vergleich 2026 | katzenbett.de"
-        description="Über 500 Katzenbetten verglichen und bewertet. Finde das perfekte Katzenbett für deine Katze - nach Größe, Material & Typ. Ehrlich, unabhängig, aktuell."
-        canonical="https://katzenbett.de/"
+        title="Katzenbett Vergleich 2026 - Top Modelle, Größen & Materialien | katzenbett.de"
+        description="Katzenbett-Vergleich 2026: Bestseller, Größen-Tabelle pro Rasse, Material-Vergleich, 5 Kaufkriterien und Antworten auf 9 häufige Fragen. Unabhängig getestet."
+        canonical="https://www.katzenbett.de/"
         type="website"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "Katzenbett Vergleich 2026 - Den richtigen Schlafplatz für deine Katze finden",
+          datePublished: "2026-01-15",
+          dateModified: "2026-05-07",
+          author: { "@type": "Organization", name: "katzenbett.de" },
+          publisher: { "@type": "Organization", name: "katzenbett.de" },
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map(f => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "katzenbett.de",
+          url: "https://www.katzenbett.de/",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://www.katzenbett.de/?s={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        })}</script>
+      </Helmet>
       {/* HERO */}
       <section
         className="relative min-h-[88vh] flex items-center overflow-hidden pt-24"
@@ -128,13 +159,27 @@ export default function Index() {
             {/* H1 */}
             <h1
               className="text-heading-1 text-foreground mb-4 animate-fade-up delay-100"
-              style={{ fontSize: "clamp(36px, 5vw, 52px)" }}
+              style={{ fontSize: "clamp(32px, 4.5vw, 48px)" }}
             >
-              Das perfekte Katzenbett für deinen Liebling
+              Katzenbett Vergleich 2026 - Den richtigen Schlafplatz für deine Katze finden
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-8 animate-fade-up delay-200 leading-relaxed">
-              Finde den Schlafplatz, den deine Katze wirklich liebt. Verglichen, getestet, ehrlich empfohlen.
+            <p className="text-lg text-foreground/80 font-medium mb-4 animate-fade-up delay-150 italic">
+              Ist deine Katze bei der Wahl des Schlafplatzes wählerisch und du weißt nicht, welches Katzenbett sie wirklich annimmt?
+            </p>
+
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border mb-4 animate-fade-up delay-200">
+              <p className="text-sm text-foreground leading-relaxed">
+                <strong>Ein Katzenbett</strong> ist ein speziell gestalteter Schlafplatz für Hauskatzen, der Wärme, Geborgenheit und orthopädische Entlastung bietet. Es gibt acht Haupttypen - von der Katzenhöhle über das Donut-Bett bis zur Fensterliege. Die richtige Wahl hängt von Schlafstil, Alter und Größe deiner Katze ab.
+              </p>
+            </div>
+
+            <p className="text-base text-muted-foreground mb-3 animate-fade-up delay-200 leading-relaxed">
+              Wir haben über 40 Katzenbetten verglichen und zeigen dir die Bestseller, eine Größen-Tabelle pro Rasse, einen Material-Vergleich und Antworten auf die neun häufigsten Fragen.
+            </p>
+
+            <p className="text-xs text-muted-foreground mb-6 animate-fade-up delay-200">
+              Zuletzt aktualisiert: Mai 2026 · Geprüft von der Redaktion · Methodik unten
             </p>
 
             {/* Search */}
