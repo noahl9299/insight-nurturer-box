@@ -1086,7 +1086,7 @@ export default function Index() {
       <section className="py-20 bg-muted/30" aria-labelledby="methodik-heading">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">E-E-A-T</p>
+            
             <h2 id="methodik-heading" className="text-heading-2 text-foreground mb-4">
               Über katzenbett.de - Unsere Vergleichsmethodik
             </h2>
