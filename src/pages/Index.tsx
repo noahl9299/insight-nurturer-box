@@ -803,14 +803,62 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: <AnxiousCatIcon size={30} className="text-primary" />, title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier - braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
-              { icon: <SunCatIcon size={30} className="text-primary" />, title: "Der Sonnenanbeter", desc: "Liegt immer am Fenster, beobachtet alles, liebt Wärme.", rec: "Fensterliege oder beheiztes Bett", link: "/fensterliegen-katzen", badge: "Tipp" },
-              { icon: <CrownIcon size={30} className="text-primary" />, title: "Die Diva", desc: "Hält dein Sofa für ihr Eigentum und lässt das alle wissen.", rec: "Katzensofa direkt daneben", link: "/katzensofas", badge: "Tipp" },
-              { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze - braucht Platz.", rec: "XL-Donut (60-70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
-              { icon: <SeniorCatIcon size={30} className="text-primary" />, title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
-              { icon: <SparkleIcon size={30} className="text-primary" />, title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
-              { icon: <Users size={30} className="text-primary" />, title: "Der Mehrkatzen-Haushalt", desc: "Zwei oder mehr Katzen leben friedlich zusammen, haben aber jeder eigene Schlaf-Vorlieben. Empfehlung: Mindestens ein Bett pro Katze plus ein gemeinsames XXL-Sofa. Faustregel: Anzahl Schlafplätze gleich Anzahl Katzen plus eins.", rec: "Mehrere Betten + XXL-Sofa", link: "/katzensofas", badge: "NEU" },
-              { icon: <Home size={30} className="text-primary" />, title: "Die Wohnungskatze ohne Freigang", desc: "Verbringt 16 Stunden täglich drinnen und braucht abwechslungsreiche Liegeplätze. Empfehlung: Kombination aus Höhle (Rückzug), Fensterliege (Stimulation) und Donut (Tiefschlaf).", rec: "Höhle + Fensterliege + Donut", link: "/fensterliegen-katzen", badge: "NEU" },
+              {
+                icon: <AnxiousCatIcon size={30} className="text-primary" />,
+                title: "Ängstliche Katze",
+                desc: "Katzenhöhlen bieten einen geschützten Rückzugsort, während offene Katzenbetten einen guten Überblick ermöglichen. Für ängstliche Tiere empfehlen wir eine Katzenhöhle oder ein Iglu mit geschlossenem Dach.",
+                facts: [["Empfehlung", "Katzenhöhle, Iglu, Kuschelhöhle"], ["Standort", "Ruhige Ecke, abseits von Durchgangsbereichen"], ["Material", "Filz oder Merinowolle für Geborgenheit"]],
+                rec: "Katzenhöhle oder Iglu", link: "/katzenhoehlen", badge: "Empfehlung",
+              },
+              {
+                icon: <SunCatIcon size={30} className="text-primary" />,
+                title: "Sonnenanbeter",
+                desc: "Manche Katzen verbringen Stunden in der Sonne. Für diese Sonnenanbeter ist eine Fensterliege oder Heizungsliege die perfekte Wahl.",
+                facts: [["Empfehlung", "Fensterliege, Heizungsliege"], ["Montage", "Saugnapf oder stabile Haken am Fenster"], ["Wichtig", "Sonnenschutz bei starker Hitze"]],
+                rec: "Fensterliege", link: "/fensterliegen-katzen", badge: "Tipp",
+              },
+              {
+                icon: <CrownIcon size={30} className="text-primary" />,
+                title: "Diva",
+                desc: "Die anspruchsvolle Katze verdient besondere Aufmerksamkeit. Katzensofas und Design-Betten in eleganten Farben sprechen diese Kategorie an. Hochwertige Materialien wie Bouclé oder Samt erfüllen gehobene Ansprüche.",
+                facts: [["Empfehlung", "Design-Bett, Katzensofa"], ["Material", "Bouclé, Samt, Birkenholz"], ["Budget", "Ab 70 Euro für Premiumqualität"]],
+                rec: "Design-Bett oder Sofa", link: "/katzensofas", badge: "Tipp",
+              },
+              {
+                icon: <BigCatIcon size={30} className="text-primary" />,
+                title: "Große Rasse (Maine Coon)",
+                desc: "Maine Coons erreichen ein Gewicht von acht bis zwölf Kilogramm. Das Bett sollte groß genug sein, damit sich die Katze komplett ausstrecken kann, aber kompakt für ein Gefühl von Sicherheit. Wir empfehlen einen Innendurchmesser von mindestens 60 Zentimetern.",
+                facts: [["Empfehlung", "XXL-Donut, orthopädisches Bett"], ["Mindestmaße", "60 cm Innendurchmesser"], ["Tragfähigkeit", "Bis 10 kg oder mehr"]],
+                rec: "XXL-Donut oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig",
+              },
+              {
+                icon: <SeniorCatIcon size={30} className="text-primary" />,
+                title: "Senior-Katze",
+                desc: "Für Katzen mit Gelenkproblemen sollte das Bett einen niedrigen Einstieg haben. Orthopädische Modelle mit Memory Foam entlasten Gelenke und Wirbelsäule. Ältere Katzen schlafen oft noch mehr als die durchschnittlichen 16 Stunden täglich.",
+                facts: [["Empfehlung", "Orthopädisches Bett mit Memory Foam"], ["Wichtig", "Niedriger Rand, rutschfester Boden"], ["Material", "Druckentlastender Schaumstoff"]],
+                rec: "Orthopädisches Bett", link: "/orthopaedische-katzenbetten", badge: "Medizinisch",
+              },
+              {
+                icon: <SparkleIcon size={30} className="text-primary" />,
+                title: "Design-Fan",
+                desc: "Wer Wert auf Ästhetik legt, findet bei Marken wie MiaCara oder Hunter stilvolle Modelle. Diese Betten integrieren sich harmonisch in moderne Wohnräume. Materialien wie Wasserhyazinthe oder Birkenholz verbinden natürliche Optik mit Funktionalität.",
+                facts: [["Empfehlung", "Design-Bett, Katzenkorb aus Naturmaterial"], ["Material", "Wasserhyazinthe, Birkenholz, Canvas"], ["Preis", "Premium-Segment ab 80 Euro"]],
+                rec: "Premium-Designbett", link: "/design-katzenbetten", badge: "Stil",
+              },
+              {
+                icon: <Users size={30} className="text-primary" />,
+                title: "Mehrkatzen-Haushalt",
+                desc: "Bei mehreren Katzen empfehlen wir unterschiedliche Bett-Typen an verschiedenen Orten. So kann jeder Vierbeiner seinen bevorzugten Schlafplatz finden. Verschiedene Ausführungen reduzieren Konflikte.",
+                facts: [["Empfehlung", "Mindestens ein Bett pro Katze plus Reserve"], ["Variation", "Höhle, Donut und offenes Bett kombinieren"], ["Standort", "Mehrere ruhige Ecken im Haus"]],
+                rec: "Mehrere Betten kombinieren", link: "/katzensofas", badge: "Tipp",
+              },
+              {
+                icon: <Home size={30} className="text-primary" />,
+                title: "Wohnungskatze ohne Freigang",
+                desc: "Wohnungskatzen benötigen besonders abwechslungsreiche Schlafplätze. Ein eigenes Katzenbett reduziert Tierhaare auf Möbeln. Erhöhte Positionen wie Fensterliegen bieten Abwechslung.",
+                facts: [["Empfehlung", "Kombination aus Höhle und Fensterliege"], ["Wichtig", "Mehrere Schlafplätze anbieten"], ["Tipp", "Standorte regelmäßig variieren"]],
+                rec: "Höhle + Fensterliege", link: "/fensterliegen-katzen", badge: "Tipp",
+              },
             ].map((item) => (
               <Link key={item.link} to={item.link} className="group bg-card rounded-2xl border border-border p-5 hover:border-primary/40 hover:shadow-md transition-all hover:-translate-y-0.5">
                 <div className="flex items-start justify-between mb-3">
