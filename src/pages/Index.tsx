@@ -95,7 +95,7 @@ export default function Index() {
     <>
       <SEO
         title="Katzenbett Vergleich 2026 - Top Modelle, Größen & Materialien | katzenbett.de"
-        description="Katzenbett-Vergleich 2026: Bestseller, Größen-Tabelle pro Rasse, Material-Vergleich, 5 Kaufkriterien und Antworten auf 9 häufige Fragen. Unabhängig getestet."
+        description="Über 40 Katzenbetten verglichen - Bestseller 2026, Größen-Tabelle pro Rasse, Material-Vergleich, 9 häufige Fragen. Unabhängig getestet von katzenbett.de"
         canonical="https://www.katzenbett.de/"
         type="website"
       />
