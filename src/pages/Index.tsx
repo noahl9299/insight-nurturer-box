@@ -251,22 +251,8 @@ export default function Index() {
               Katzenbett Vergleich 2026 - Den richtigen Schlafplatz für deine Katze finden
             </h1>
 
-            <p className="text-lg text-foreground/80 font-medium mb-4 animate-fade-up delay-150 italic">
-              Ist deine Katze bei der Wahl des Schlafplatzes wählerisch?
-            </p>
-
-            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border mb-4 animate-fade-up delay-200">
-              <p className="text-sm text-foreground leading-relaxed">
-                <strong>Ein Katzenbett</strong> ist ein speziell gestalteter Schlafplatz für Hauskatzen, der Geborgenheit, Wärme und Komfort bietet. Das richtige Bett unterstützt das Wohlbefinden deiner Samtpfote, fördert erholsamen Schlaf und schont die Gelenke. Da Katzen bis zu 16 Stunden täglich schlafen, ist die Wahl des passenden Schlafplatzes entscheidend für Gesundheit und Zufriedenheit deines Lieblings.
-              </p>
-            </div>
-
-            <p className="text-base text-muted-foreground mb-3 animate-fade-up delay-200 leading-relaxed">
-              In diesem Ratgeber findest du unseren umfassenden Vergleich der beliebtesten Katzenbetten 2026, detaillierte Informationen zu acht Bett-Typen, Größentabellen für alle Rassen und praktische Kaufberatung.
-            </p>
-
-            <p className="text-xs text-muted-foreground mb-6 animate-fade-up delay-200">
-              Zuletzt aktualisiert: Mai 2026 · Geprüft von der Redaktion · Methodik unten
+            <p className="text-lg text-muted-foreground mb-6 animate-fade-up delay-200 italic">
+              Finde den Schlafplatz, den deine Katze wirklich liebt. Verglichen, getestet, ehrlich empfohlen.
             </p>
 
             {/* Search */}
@@ -1100,7 +1086,7 @@ export default function Index() {
       <section className="py-20 bg-muted/30" aria-labelledby="methodik-heading">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">E-E-A-T</p>
+            
             <h2 id="methodik-heading" className="text-heading-2 text-foreground mb-4">
               Über katzenbett.de - Unsere Vergleichsmethodik
             </h2>
