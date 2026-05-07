@@ -33,15 +33,102 @@ const trustItems = [
 ];
 
 const categories = [
-  { name: "Katzenhöhlen & Iglus", slug: "/katzenhoehlen", image: catCave, count: "16 Betten" },
-  { name: "Donut-Betten", slug: "/donut-katzenbetten", image: catDonut, count: "12 Betten" },
-  { name: "Orthopädische Betten", slug: "/orthopaedische-katzenbetten", image: catOrtho, count: "5 Betten" },
-  { name: "Fensterliegen", slug: "/fensterliegen-katzen", image: catWindow, count: "3 Betten" },
-  { name: "Design & Premium", slug: "/design-katzenbetten", image: catDesign, count: "10 Betten" },
-  { name: "Katzensofas", slug: "/katzensofas", image: catSofa, count: "6 Betten" },
-  { name: "Beheizte Betten", slug: "/beheizte-katzenbetten", image: catHeated, count: "6 Betten" },
-  { name: "Hängematten", slug: "/haengematten-katzen", image: catHammock, count: "4 Betten" },
-  { name: "Alle Katzenbetten", slug: "/katzenbetten", image: heroCat, count: "100+ Betten" },
+  {
+    name: "Katzenhöhle / Iglu",
+    slug: "/katzenhoehlen",
+    image: catCave,
+    desc: "Katzenhöhlen und Iglus bieten einen geschlossenen Rückzugsort und schützen vor Zugluft, was besonders für ängstliche Katzen hilfreich ist. Das Material besteht meist aus Filz oder Merinowolle, was natürliche Temperaturregulierung ermöglicht. Diese Höhlen eignen sich ideal für scheue Stubentiger.",
+    facts: [
+      ["Material", "Filz, Merinowolle, Polypropylen"],
+      ["Vorteil", "Schutz, Wärme, Rückzugsort"],
+      ["Preis-Range", "25-80 Euro"],
+      ["Ideal für", "Ängstliche Katzen, Wohnungskatzen"],
+    ],
+  },
+  {
+    name: "Donut-Bett",
+    slug: "/donut-katzenbetten",
+    image: catDonut,
+    desc: "Donut-Betten sind ideal für Katzen, die sich gerne zusammenrollen und ein Gefühl der Geborgenheit suchen. Der erhöhte Rand bietet eine perfekte Kopfstütze und simuliert das Gefühl einer schützenden Umarmung.",
+    facts: [
+      ["Material", "Plüsch, Kunstfell, Sherpa"],
+      ["Vorteil", "Weicher Rand zum Anlehnen"],
+      ["Preis-Range", "15-60 Euro"],
+      ["Ideal für", "Kugelschläfer, alle Rassen"],
+    ],
+  },
+  {
+    name: "Orthopädisches Bett",
+    slug: "/orthopaedische-katzenbetten",
+    image: catOrtho,
+    desc: "Orthopädische Katzenbetten mit Memory Foam bieten zusätzlichen Komfort und Unterstützung für die Gelenke älterer Katzen. Die Füllung passt sich der Körperform an und verteilt das Gewicht gleichmäßig. Wir empfehlen eine Schaumstoffdichte von mindestens 40 Kilogramm pro Kubikmeter.",
+    facts: [
+      ["Material", "Memory Foam, Kaltschaum, Gel-Einlagen"],
+      ["Vorteil", "Gelenkschonung, Druckentlastung, langlebig"],
+      ["Preis-Range", "40-120 Euro"],
+      ["Ideal für", "Senior-Katzen, Katzen mit Gelenkproblemen"],
+    ],
+  },
+  {
+    name: "Fensterliege",
+    slug: "/fensterliegen-katzen",
+    image: catWindow,
+    desc: "Katzen lieben erhöhte Schlafplätze, da sie ihre Umgebung gut beobachten können. Fensterliegen nutzen dieses natürliche Bedürfnis und bieten gleichzeitig Sonnenwärme. Die Montage erfolgt meist über Saugnäpfe oder Haken, die Gewichtstragfähigkeit sollte mindestens zehn Kilogramm betragen.",
+    facts: [
+      ["Material", "Canvas, Polyester, Metallrahmen"],
+      ["Vorteil", "Aussicht, Sonnenwärme, platzsparend"],
+      ["Preis-Range", "20-55 Euro"],
+      ["Ideal für", "Sonnenanbeter, neugierige Katzen"],
+    ],
+  },
+  {
+    name: "Design-Bett",
+    slug: "/design-katzenbetten",
+    image: catDesign,
+    desc: "Design-Betten verbinden Ästhetik mit Funktion. Sie passen zu modernen Einrichtungsstilen und bieten gleichzeitig hohen Komfort. Materialien wie Birkenholz, Bouclé oder Wasserhyazinthe setzen optische Akzente. Marken wie MiaCara haben sich auf diese Kategorie spezialisiert.",
+    facts: [
+      ["Material", "Birkenholz, Bouclé, Wasserhyazinthe"],
+      ["Vorteil", "Stilvolles Design, hochwertige Verarbeitung"],
+      ["Preis-Range", "80-200 Euro"],
+      ["Ideal für", "Design-Fans, stilbewusste Halter"],
+    ],
+  },
+  {
+    name: "Katzensofa",
+    slug: "/katzensofas",
+    image: catSofa,
+    desc: "Katzensofas bieten eine offene Liegefläche mit seitlichen Armlehnen. Sie eignen sich für Katzen, die gerne ausgestreckt schlafen und den Überblick behalten möchten.",
+    facts: [
+      ["Material", "Webstoff, Cord, Kunstleder"],
+      ["Vorteil", "Großzügige Liegefläche, bequemer Einstieg"],
+      ["Preis-Range", "35-90 Euro"],
+      ["Ideal für", "Große Rassen, selbstbewusste Katzen"],
+    ],
+  },
+  {
+    name: "Heizungsliege / beheiztes Bett",
+    slug: "/beheizte-katzenbetten",
+    image: catHeated,
+    desc: "Beheizte Katzenbetten oder Heizmatten sind ideal für kalte Tage. Katzen mögen warme, trockene und ruhige Orte, bevorzugt in der Nähe einer Heizung. Selbstwärmende Varianten ohne Strom nutzen Reflexfolien oder spezielle Füllungen.",
+    facts: [
+      ["Material", "Plüsch mit Heizelement oder Reflexfolie"],
+      ["Vorteil", "Konstante Wärme, ideal für Winter"],
+      ["Preis-Range", "25-70 Euro"],
+      ["Ideal für", "Frierige Katzen, Senioren"],
+    ],
+  },
+  {
+    name: "Hängematte",
+    slug: "/haengematten-katzen",
+    image: catHammock,
+    desc: "Hängematten werden an Möbeln oder Wänden befestigt und sparen Boden-Platz. Sie bieten eine schwebende Schlafposition und ermöglichen einen guten Überblick über den Raum.",
+    facts: [
+      ["Material", "Canvas, Fleece, Metallgestell"],
+      ["Vorteil", "Platzsparend, luftig, modern"],
+      ["Preis-Range", "20-50 Euro"],
+      ["Ideal für", "Kletterfreudige Katzen, kleine Wohnungen"],
+    ],
+  },
 ];
 
 const problems = [
@@ -327,24 +414,36 @@ export default function Index() {
             <p className="text-muted-foreground text-lg">Jede Katze ist anders. Welcher Typ passt zu deiner?</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
                 to={cat.slug}
-                className="relative rounded-2xl overflow-hidden aspect-[4/3] group block"
+                className="group bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/40 hover:shadow-md transition-all hover:-translate-y-0.5 flex flex-col"
                 aria-label={cat.name}
               >
-                <img
-                  src={cat.image}
-                  alt={`${cat.name} für Katzen`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                  <h3 className="text-lg font-semibold" style={{ fontFamily: "'DM Serif Display', serif" }}>{cat.name}</h3>
-                  <p className="text-sm text-white/75">{cat.count}</p>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={cat.image}
+                    alt={`${cat.name} für Katzen`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                  <h3 className="absolute bottom-3 left-4 right-4 text-lg font-semibold text-white" style={{ fontFamily: "'DM Serif Display', serif" }}>
+                    {cat.name}
+                  </h3>
+                </div>
+                <div className="p-5 flex-1 flex flex-col">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{cat.desc}</p>
+                  <ul className="space-y-1.5 mt-auto">
+                    {cat.facts.map(([k, v]) => (
+                      <li key={k} className="text-xs text-foreground flex gap-2">
+                        <span className="font-semibold min-w-[88px]">{k}:</span>
+                        <span className="text-muted-foreground">{v}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Link>
             ))}
@@ -446,7 +545,24 @@ export default function Index() {
             <h2 id="size-table-heading" className="text-heading-2 text-foreground mb-3">
               Katzenbett-Größe finden - Schritt für Schritt
             </h2>
-            <p className="text-base font-semibold text-foreground italic">Wie groß muss ein Katzenbett sein?</p>
+            <p className="text-base font-semibold text-foreground italic mb-4">Wie groß muss ein Katzenbett sein?</p>
+            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Die Größe des Bettes sollte entsprechend der Katze gewählt werden, mit einem Durchmesser von circa 50 Zentimetern ideal für die meisten Katzen. Als Faustformel gilt: Das Bett sollte 1,5 mal so groß sein wie die eingerollte Körperlänge deiner Katze.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            {[
+              { n: "1", t: "Körperlänge messen", d: "Miss vom Nasenrücken bis zur Schwanzwurzel im entspannten Zustand." },
+              { n: "2", t: "Puffer addieren", d: "Addiere 30 bis 50 Prozent für Bewegungsfreiheit." },
+              { n: "3", t: "Höhlen-Einstieg", d: "Bei Höhlen: Miss zusätzlich die Schulterbreite für den Einstieg." },
+            ].map((s) => (
+              <div key={s.n} className="bg-card rounded-2xl border border-border p-5">
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center mb-3">{s.n}</div>
+                <h3 className="font-semibold text-foreground mb-1">{s.t}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+              </div>
+            ))}
           </div>
 
           <div className="bg-card rounded-2xl border border-border overflow-hidden mb-6">
@@ -454,21 +570,21 @@ export default function Index() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Rasse</TableHead>
-                  <TableHead>Typisches Gewicht</TableHead>
-                  <TableHead>Empfohlener Durchmesser</TableHead>
-                  <TableHead>Empfohlener Bett-Typ</TableHead>
+                  <TableHead>Durchschnittsgewicht</TableHead>
+                  <TableHead>Körperlänge</TableHead>
+                  <TableHead>Empfohlene Bettgröße</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {[
-                  ["Hauskatze (kurzhaarig)", "3-5 kg", "45-50 cm", "Donut, Höhle"],
-                  ["Britisch Kurzhaar", "4-7 kg", "50-55 cm", "Donut, Sofa"],
-                  ["Siamkatze", "3-5 kg", "45-50 cm", "Höhle, Hängematte"],
-                  ["Perser", "3-6 kg", "50-55 cm", "Donut, Design-Bett"],
-                  ["Ragdoll", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Donut"],
-                  ["Maine Coon", "6-11 kg", "65-80 cm", "XXL-Sofa, XXL-Donut"],
-                  ["Norwegische Waldkatze", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Höhle"],
-                  ["Sphynx", "3-5 kg", "45-50 cm", "Beheiztes Bett, Höhle"],
+                  ["Hauskatze", "4-5 kg", "30-35 cm", "45-55 cm"],
+                  ["Britisch Kurzhaar", "5-7 kg", "35-40 cm", "55-65 cm"],
+                  ["Siamkatze", "3-5 kg", "30-35 cm", "45-55 cm"],
+                  ["Perser", "4-6 kg", "40-45 cm", "55-65 cm"],
+                  ["Ragdoll", "5-8 kg", "40-45 cm", "60-70 cm"],
+                  ["Maine Coon", "8-12 kg", "45-55 cm", "75-100 cm"],
+                  ["Norwegische Waldkatze", "6-9 kg", "40-50 cm", "65-80 cm"],
+                  ["Sphynx", "3-5 kg", "30-35 cm", "45-55 cm"],
                 ].map((r) => (
                   <TableRow key={r[0]}>
                     <TableCell className="font-medium">{r[0]}</TableCell>
@@ -704,14 +820,62 @@ export default function Index() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: <AnxiousCatIcon size={30} className="text-primary" />, title: "Die ängstliche Katze", desc: "Neue Katze, Freigänger, scheues Tier - braucht Geborgenheit.", rec: "Katzenhöhle oder tiefer Donut-Rand", link: "/katzenhoehlen", badge: "Empfehlung" },
-              { icon: <SunCatIcon size={30} className="text-primary" />, title: "Der Sonnenanbeter", desc: "Liegt immer am Fenster, beobachtet alles, liebt Wärme.", rec: "Fensterliege oder beheiztes Bett", link: "/fensterliegen-katzen", badge: "Tipp" },
-              { icon: <CrownIcon size={30} className="text-primary" />, title: "Die Diva", desc: "Hält dein Sofa für ihr Eigentum und lässt das alle wissen.", rec: "Katzensofa direkt daneben", link: "/katzensofas", badge: "Tipp" },
-              { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze - braucht Platz.", rec: "XL-Donut (60-70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
-              { icon: <SeniorCatIcon size={30} className="text-primary" />, title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
-              { icon: <SparkleIcon size={30} className="text-primary" />, title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
-              { icon: <Users size={30} className="text-primary" />, title: "Der Mehrkatzen-Haushalt", desc: "Zwei oder mehr Katzen leben friedlich zusammen, haben aber jeder eigene Schlaf-Vorlieben. Empfehlung: Mindestens ein Bett pro Katze plus ein gemeinsames XXL-Sofa. Faustregel: Anzahl Schlafplätze gleich Anzahl Katzen plus eins.", rec: "Mehrere Betten + XXL-Sofa", link: "/katzensofas", badge: "NEU" },
-              { icon: <Home size={30} className="text-primary" />, title: "Die Wohnungskatze ohne Freigang", desc: "Verbringt 16 Stunden täglich drinnen und braucht abwechslungsreiche Liegeplätze. Empfehlung: Kombination aus Höhle (Rückzug), Fensterliege (Stimulation) und Donut (Tiefschlaf).", rec: "Höhle + Fensterliege + Donut", link: "/fensterliegen-katzen", badge: "NEU" },
+              {
+                icon: <AnxiousCatIcon size={30} className="text-primary" />,
+                title: "Ängstliche Katze",
+                desc: "Katzenhöhlen bieten einen geschützten Rückzugsort, während offene Katzenbetten einen guten Überblick ermöglichen. Für ängstliche Tiere empfehlen wir eine Katzenhöhle oder ein Iglu mit geschlossenem Dach.",
+                facts: [["Empfehlung", "Katzenhöhle, Iglu, Kuschelhöhle"], ["Standort", "Ruhige Ecke, abseits von Durchgangsbereichen"], ["Material", "Filz oder Merinowolle für Geborgenheit"]],
+                rec: "Katzenhöhle oder Iglu", link: "/katzenhoehlen", badge: "Empfehlung",
+              },
+              {
+                icon: <SunCatIcon size={30} className="text-primary" />,
+                title: "Sonnenanbeter",
+                desc: "Manche Katzen verbringen Stunden in der Sonne. Für diese Sonnenanbeter ist eine Fensterliege oder Heizungsliege die perfekte Wahl.",
+                facts: [["Empfehlung", "Fensterliege, Heizungsliege"], ["Montage", "Saugnapf oder stabile Haken am Fenster"], ["Wichtig", "Sonnenschutz bei starker Hitze"]],
+                rec: "Fensterliege", link: "/fensterliegen-katzen", badge: "Tipp",
+              },
+              {
+                icon: <CrownIcon size={30} className="text-primary" />,
+                title: "Diva",
+                desc: "Die anspruchsvolle Katze verdient besondere Aufmerksamkeit. Katzensofas und Design-Betten in eleganten Farben sprechen diese Kategorie an. Hochwertige Materialien wie Bouclé oder Samt erfüllen gehobene Ansprüche.",
+                facts: [["Empfehlung", "Design-Bett, Katzensofa"], ["Material", "Bouclé, Samt, Birkenholz"], ["Budget", "Ab 70 Euro für Premiumqualität"]],
+                rec: "Design-Bett oder Sofa", link: "/katzensofas", badge: "Tipp",
+              },
+              {
+                icon: <BigCatIcon size={30} className="text-primary" />,
+                title: "Große Rasse (Maine Coon)",
+                desc: "Maine Coons erreichen ein Gewicht von acht bis zwölf Kilogramm. Das Bett sollte groß genug sein, damit sich die Katze komplett ausstrecken kann, aber kompakt für ein Gefühl von Sicherheit. Wir empfehlen einen Innendurchmesser von mindestens 60 Zentimetern.",
+                facts: [["Empfehlung", "XXL-Donut, orthopädisches Bett"], ["Mindestmaße", "60 cm Innendurchmesser"], ["Tragfähigkeit", "Bis 10 kg oder mehr"]],
+                rec: "XXL-Donut oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig",
+              },
+              {
+                icon: <SeniorCatIcon size={30} className="text-primary" />,
+                title: "Senior-Katze",
+                desc: "Für Katzen mit Gelenkproblemen sollte das Bett einen niedrigen Einstieg haben. Orthopädische Modelle mit Memory Foam entlasten Gelenke und Wirbelsäule. Ältere Katzen schlafen oft noch mehr als die durchschnittlichen 16 Stunden täglich.",
+                facts: [["Empfehlung", "Orthopädisches Bett mit Memory Foam"], ["Wichtig", "Niedriger Rand, rutschfester Boden"], ["Material", "Druckentlastender Schaumstoff"]],
+                rec: "Orthopädisches Bett", link: "/orthopaedische-katzenbetten", badge: "Medizinisch",
+              },
+              {
+                icon: <SparkleIcon size={30} className="text-primary" />,
+                title: "Design-Fan",
+                desc: "Wer Wert auf Ästhetik legt, findet bei Marken wie MiaCara oder Hunter stilvolle Modelle. Diese Betten integrieren sich harmonisch in moderne Wohnräume. Materialien wie Wasserhyazinthe oder Birkenholz verbinden natürliche Optik mit Funktionalität.",
+                facts: [["Empfehlung", "Design-Bett, Katzenkorb aus Naturmaterial"], ["Material", "Wasserhyazinthe, Birkenholz, Canvas"], ["Preis", "Premium-Segment ab 80 Euro"]],
+                rec: "Premium-Designbett", link: "/design-katzenbetten", badge: "Stil",
+              },
+              {
+                icon: <Users size={30} className="text-primary" />,
+                title: "Mehrkatzen-Haushalt",
+                desc: "Bei mehreren Katzen empfehlen wir unterschiedliche Bett-Typen an verschiedenen Orten. So kann jeder Vierbeiner seinen bevorzugten Schlafplatz finden. Verschiedene Ausführungen reduzieren Konflikte.",
+                facts: [["Empfehlung", "Mindestens ein Bett pro Katze plus Reserve"], ["Variation", "Höhle, Donut und offenes Bett kombinieren"], ["Standort", "Mehrere ruhige Ecken im Haus"]],
+                rec: "Mehrere Betten kombinieren", link: "/katzensofas", badge: "Tipp",
+              },
+              {
+                icon: <Home size={30} className="text-primary" />,
+                title: "Wohnungskatze ohne Freigang",
+                desc: "Wohnungskatzen benötigen besonders abwechslungsreiche Schlafplätze. Ein eigenes Katzenbett reduziert Tierhaare auf Möbeln. Erhöhte Positionen wie Fensterliegen bieten Abwechslung.",
+                facts: [["Empfehlung", "Kombination aus Höhle und Fensterliege"], ["Wichtig", "Mehrere Schlafplätze anbieten"], ["Tipp", "Standorte regelmäßig variieren"]],
+                rec: "Höhle + Fensterliege", link: "/fensterliegen-katzen", badge: "Tipp",
+              },
             ].map((item) => (
               <Link key={item.link} to={item.link} className="group bg-card rounded-2xl border border-border p-5 hover:border-primary/40 hover:shadow-md transition-all hover:-translate-y-0.5">
                 <div className="flex items-start justify-between mb-3">
@@ -720,6 +884,16 @@ export default function Index() {
                 </div>
                 <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
                 <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{item.desc}</p>
+                {item.facts && (
+                  <ul className="space-y-1 mb-3">
+                    {item.facts.map(([k, v]) => (
+                      <li key={k} className="text-xs text-foreground flex gap-1.5">
+                        <span className="font-semibold">{k}:</span>
+                        <span className="text-muted-foreground">{v}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-semibold text-primary">→ {item.rec}</p>
                   <ArrowRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -845,15 +1019,17 @@ export default function Index() {
             <h2 id="methodik-heading" className="text-heading-2 text-foreground mb-4">
               Über katzenbett.de - Unsere Vergleichsmethodik
             </h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              katzenbett.de ist ein unabhängiges Vergleichsportal für Katzenbetten. Wir testen, vergleichen und empfehlen - finanziert über transparente Affiliate-Provisionen, die für dich keinen Mehrpreis bedeuten.
-            </p>
+            <div className="text-muted-foreground max-w-3xl mx-auto leading-relaxed space-y-3 text-left md:text-center">
+              <p>Wir finanzieren uns über Amazon-Affiliate-Links. Das bedeutet: Wenn du über einen unserer Links ein Produkt kaufst, erhalten wir eine kleine Provision. Der Preis für dich bleibt gleich. Unsere Bewertungen sind unabhängig von Provisionen oder Herstellerbeziehungen.</p>
+              <p>Wir haben über 40 Katzenbett-Modelle verglichen und testen regelmäßig neue Produkte. Alle Empfehlungen basieren auf unserer Bewertungsmethodik und den Erfahrungen unserer Redaktion.</p>
+              <p className="font-medium text-foreground">Wir aktualisieren unsere Empfehlungen monatlich. Letzter Stand: Mai 2026.</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { pct: "40%", title: "Bewertungs-Score", desc: "Durchschnitts-Bewertung gewichtet nach Anzahl Rezensionen" },
-              { pct: "30%", title: "Material & Verarbeitung", desc: "Stoff, Polsterung, Nahtqualität, Schadstoff-Siegel" },
+              { pct: "40%", title: "Bewertungs-Score", desc: "Amazon-Rezensionen, gewichtet nach Anzahl" },
+              { pct: "30%", title: "Material und Verarbeitung", desc: "Stoff, Polsterung, Nahtqualität, Schadstoff-Siegel" },
               { pct: "15%", title: "Waschbarkeit", desc: "Maschinenfähigkeit, abnehmbarer Bezug" },
               { pct: "15%", title: "Preis-Leistung", desc: "Preis im Verhältnis zu Material und Lebensdauer" },
             ].map((c) => (
@@ -866,10 +1042,6 @@ export default function Index() {
               </Card>
             ))}
           </div>
-
-          <p className="text-center text-sm text-muted-foreground italic">
-            Wir aktualisieren unsere Empfehlungen monatlich. Die letzten Daten wurden im Mai 2026 gesichtet.
-          </p>
         </div>
       </section>
     </>
