@@ -1019,15 +1019,17 @@ export default function Index() {
             <h2 id="methodik-heading" className="text-heading-2 text-foreground mb-4">
               Über katzenbett.de - Unsere Vergleichsmethodik
             </h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              katzenbett.de ist ein unabhängiges Vergleichsportal für Katzenbetten. Wir testen, vergleichen und empfehlen - finanziert über transparente Affiliate-Provisionen, die für dich keinen Mehrpreis bedeuten.
-            </p>
+            <div className="text-muted-foreground max-w-3xl mx-auto leading-relaxed space-y-3 text-left md:text-center">
+              <p>Wir finanzieren uns über Amazon-Affiliate-Links. Das bedeutet: Wenn du über einen unserer Links ein Produkt kaufst, erhalten wir eine kleine Provision. Der Preis für dich bleibt gleich. Unsere Bewertungen sind unabhängig von Provisionen oder Herstellerbeziehungen.</p>
+              <p>Wir haben über 40 Katzenbett-Modelle verglichen und testen regelmäßig neue Produkte. Alle Empfehlungen basieren auf unserer Bewertungsmethodik und den Erfahrungen unserer Redaktion.</p>
+              <p className="font-medium text-foreground">Wir aktualisieren unsere Empfehlungen monatlich. Letzter Stand: Mai 2026.</p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { pct: "40%", title: "Bewertungs-Score", desc: "Durchschnitts-Bewertung gewichtet nach Anzahl Rezensionen" },
-              { pct: "30%", title: "Material & Verarbeitung", desc: "Stoff, Polsterung, Nahtqualität, Schadstoff-Siegel" },
+              { pct: "40%", title: "Bewertungs-Score", desc: "Amazon-Rezensionen, gewichtet nach Anzahl" },
+              { pct: "30%", title: "Material und Verarbeitung", desc: "Stoff, Polsterung, Nahtqualität, Schadstoff-Siegel" },
               { pct: "15%", title: "Waschbarkeit", desc: "Maschinenfähigkeit, abnehmbarer Bezug" },
               { pct: "15%", title: "Preis-Leistung", desc: "Preis im Verhältnis zu Material und Lebensdauer" },
             ].map((c) => (
@@ -1040,10 +1042,6 @@ export default function Index() {
               </Card>
             ))}
           </div>
-
-          <p className="text-center text-sm text-muted-foreground italic">
-            Wir aktualisieren unsere Empfehlungen monatlich. Die letzten Daten wurden im Mai 2026 gesichtet.
-          </p>
         </div>
       </section>
     </>
