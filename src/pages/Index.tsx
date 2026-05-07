@@ -1082,39 +1082,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* METHODIK / ÜBER UNS */}
-      <section className="py-20 bg-muted/30" aria-labelledby="methodik-heading">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-10">
-            
-            <h2 id="methodik-heading" className="text-heading-2 text-foreground mb-4">
-              Über katzenbett.de - Unsere Vergleichsmethodik
-            </h2>
-            <div className="text-muted-foreground max-w-3xl mx-auto leading-relaxed space-y-3 text-left md:text-center">
-              <p>Wir finanzieren uns über Amazon-Affiliate-Links. Das bedeutet: Wenn du über einen unserer Links ein Produkt kaufst, erhalten wir eine kleine Provision. Der Preis für dich bleibt gleich. Unsere Bewertungen sind unabhängig von Provisionen oder Herstellerbeziehungen.</p>
-              <p>Wir haben über 40 Katzenbett-Modelle verglichen und testen regelmäßig neue Produkte. Alle Empfehlungen basieren auf unserer Bewertungsmethodik und den Erfahrungen unserer Redaktion.</p>
-              <p className="font-medium text-foreground">Wir aktualisieren unsere Empfehlungen monatlich. Letzter Stand: Mai 2026.</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              { pct: "40%", title: "Bewertungs-Score", desc: "Amazon-Rezensionen, gewichtet nach Anzahl" },
-              { pct: "30%", title: "Material und Verarbeitung", desc: "Stoff, Polsterung, Nahtqualität, Schadstoff-Siegel" },
-              { pct: "15%", title: "Waschbarkeit", desc: "Maschinenfähigkeit, abnehmbarer Bezug" },
-              { pct: "15%", title: "Preis-Leistung", desc: "Preis im Verhältnis zu Material und Lebensdauer" },
-            ].map((c) => (
-              <Card key={c.title} className="border-border">
-                <CardContent className="p-5">
-                  <div className="text-3xl font-bold text-primary mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>{c.pct}</div>
-                  <h3 className="font-semibold text-foreground mb-1">{c.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
