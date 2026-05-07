@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle, Clock, BookOpen } from "lucide-react";
+import { Search, ArrowRight, Shield, Star, Package, RotateCcw, CheckCircle, Clock, BookOpen, Lightbulb, ShieldCheck, Users, Home } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { products, searchProducts } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SEO } from "@/components/SEO";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Card, CardContent } from "@/components/ui/card";
 import { guides } from "@/data/guides";
 import heroCat from "@/assets/hero-cat.jpg";
 import catCave from "@/assets/cat-cave.jpg";
@@ -62,6 +65,9 @@ const faqs = [
   { q: "Kann ich ein Katzenbett in der Waschmaschine waschen?", a: "Die meisten modernen Katzenbetten sind bei 30 Grad waschbar. Filzbetten solltest du nur per Hand waschen. Achte beim Kauf auf das Waschbarkeitslabel. Tipp: Wasch das Bett mit einem Wäschenetz und lass es an der Luft trocknen - so bleibt es flauschig." },
   { q: "Welches Katzenbett für alte Katzen mit Gelenkproblemen?", a: "Für Senioren-Katzen empfehlen wir orthopädische Katzenbetten mit Memory Foam. Diese passen sich dem Körper an und entlasten Gelenke und Wirbelsäule. Wichtig: niedriger Einstieg und ein beheizbares Modell für Katzen, die besonders frieren." },
   { q: "Sind beheizte Katzenbetten sicher?", a: "Ja, wenn sie für Haustiere zugelassen sind und das GS-Zeichen tragen. Achte auf eine automatische Abschaltung und einen thermostatgesteuerten Betrieb. Unsere empfohlenen Modelle sind TÜV-geprüft. Lass das Kabel nie unter dem Bett verlaufen." },
+  { q: "Wie viel sollte ich für ein Katzenbett ausgeben?", a: "25-60 Euro für ein gutes Standardbett, 60-120 Euro für orthopädische oder Design-Modelle. Unter 20 Euro bekommst du meist dünne Plüschkissen, die schnell platt werden. Investiere lieber einmal in ein hochwertiges Bett mit waschbarem Bezug - das hält oft 5+ Jahre." },
+  { q: "Wie oft sollte ich das Katzenbett waschen?", a: "Alle 2-4 Wochen, abhängig von Haarwurf und Allergien. Bei Allergikern oder Langhaarkatzen eher wöchentlich. Tägliches Ausschütteln und Absaugen hält das Bett zwischen den Wäschen frisch. Verwende geruchsneutrales Waschmittel - Katzen mögen keine Parfüms." },
+  { q: "Ist ein Katzenbett oder eine Katzendecke besser?", a: "Ein Bett gibt Geborgenheit und Form, eine Decke nur Wärme. Decken sind flexibel - du kannst sie auf Sofa oder Fensterbank legen. Ein Katzenbett bietet aber den umschließenden Rand, den viele Katzen lieben. Optimal: beides kombinieren - Bett als fester Schlafplatz, Decke als mobile Kuschelzone." },
 ];
 
 const brands = ["Bedsure", "Trixie", "FEANDREA", "LucyBalu", "MiaCara", "Navaris", "FUKUMARU", "Catit", "Dehner", "HUNTER", "West Paw", "Amazon Basics", "PAWZ Road", "Bedsure", "Trixie", "FEANDREA", "LucyBalu", "MiaCara"];
@@ -88,11 +94,42 @@ export default function Index() {
   return (
     <>
       <SEO
-        title="Die besten Katzenbetten im Vergleich 2026 | katzenbett.de"
-        description="Über 500 Katzenbetten verglichen und bewertet. Finde das perfekte Katzenbett für deine Katze - nach Größe, Material & Typ. Ehrlich, unabhängig, aktuell."
-        canonical="https://katzenbett.de/"
+        title="Katzenbett Vergleich 2026 - Top Modelle, Größen & Materialien | katzenbett.de"
+        description="Katzenbett-Vergleich 2026: Bestseller, Größen-Tabelle pro Rasse, Material-Vergleich, 5 Kaufkriterien und Antworten auf 9 häufige Fragen. Unabhängig getestet."
+        canonical="https://www.katzenbett.de/"
         type="website"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "Katzenbett Vergleich 2026 - Den richtigen Schlafplatz für deine Katze finden",
+          datePublished: "2026-01-15",
+          dateModified: "2026-05-07",
+          author: { "@type": "Organization", name: "katzenbett.de" },
+          publisher: { "@type": "Organization", name: "katzenbett.de" },
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map(f => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "katzenbett.de",
+          url: "https://www.katzenbett.de/",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://www.katzenbett.de/?s={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        })}</script>
+      </Helmet>
       {/* HERO */}
       <section
         className="relative min-h-[88vh] flex items-center overflow-hidden pt-24"
@@ -122,13 +159,27 @@ export default function Index() {
             {/* H1 */}
             <h1
               className="text-heading-1 text-foreground mb-4 animate-fade-up delay-100"
-              style={{ fontSize: "clamp(36px, 5vw, 52px)" }}
+              style={{ fontSize: "clamp(32px, 4.5vw, 48px)" }}
             >
-              Das perfekte Katzenbett für deinen Liebling
+              Katzenbett Vergleich 2026 - Den richtigen Schlafplatz für deine Katze finden
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-8 animate-fade-up delay-200 leading-relaxed">
-              Finde den Schlafplatz, den deine Katze wirklich liebt. Verglichen, getestet, ehrlich empfohlen.
+            <p className="text-lg text-foreground/80 font-medium mb-4 animate-fade-up delay-150 italic">
+              Ist deine Katze bei der Wahl des Schlafplatzes wählerisch und du weißt nicht, welches Katzenbett sie wirklich annimmt?
+            </p>
+
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-border mb-4 animate-fade-up delay-200">
+              <p className="text-sm text-foreground leading-relaxed">
+                <strong>Ein Katzenbett</strong> ist ein speziell gestalteter Schlafplatz für Hauskatzen, der Wärme, Geborgenheit und orthopädische Entlastung bietet. Es gibt acht Haupttypen - von der Katzenhöhle über das Donut-Bett bis zur Fensterliege. Die richtige Wahl hängt von Schlafstil, Alter und Größe deiner Katze ab.
+              </p>
+            </div>
+
+            <p className="text-base text-muted-foreground mb-3 animate-fade-up delay-200 leading-relaxed">
+              Wir haben über 40 Katzenbetten verglichen und zeigen dir die Bestseller, eine Größen-Tabelle pro Rasse, einen Material-Vergleich und Antworten auf die neun häufigsten Fragen.
+            </p>
+
+            <p className="text-xs text-muted-foreground mb-6 animate-fade-up delay-200">
+              Zuletzt aktualisiert: Mai 2026 · Geprüft von der Redaktion · Methodik unten
             </p>
 
             {/* Search */}
@@ -387,7 +438,113 @@ export default function Index() {
         </div>
       </section>
 
+      {/* SIZE TABLE BY BREED */}
+      <section className="py-20 bg-background" aria-labelledby="size-table-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Größenwahl</p>
+            <h2 id="size-table-heading" className="text-heading-2 text-foreground mb-3">
+              Katzenbett-Größe finden - Schritt für Schritt
+            </h2>
+            <p className="text-base font-semibold text-foreground italic">Wie groß muss ein Katzenbett sein?</p>
+          </div>
+
+          <div className="bg-card rounded-2xl border border-border overflow-hidden mb-6">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Rasse</TableHead>
+                  <TableHead>Typisches Gewicht</TableHead>
+                  <TableHead>Empfohlener Durchmesser</TableHead>
+                  <TableHead>Empfohlener Bett-Typ</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {[
+                  ["Hauskatze (kurzhaarig)", "3-5 kg", "45-50 cm", "Donut, Höhle"],
+                  ["Britisch Kurzhaar", "4-7 kg", "50-55 cm", "Donut, Sofa"],
+                  ["Siamkatze", "3-5 kg", "45-50 cm", "Höhle, Hängematte"],
+                  ["Perser", "3-6 kg", "50-55 cm", "Donut, Design-Bett"],
+                  ["Ragdoll", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Donut"],
+                  ["Maine Coon", "6-11 kg", "65-80 cm", "XXL-Sofa, XXL-Donut"],
+                  ["Norwegische Waldkatze", "5-9 kg", "60-70 cm", "XL-Sofa, XL-Höhle"],
+                  ["Sphynx", "3-5 kg", "45-50 cm", "Beheiztes Bett, Höhle"],
+                ].map((r) => (
+                  <TableRow key={r[0]}>
+                    <TableCell className="font-medium">{r[0]}</TableCell>
+                    <TableCell>{r[1]}</TableCell>
+                    <TableCell>{r[2]}</TableCell>
+                    <TableCell>{r[3]}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+
+          <div className="rounded-2xl p-6 flex gap-4 items-start border border-primary/20" style={{ background: "hsl(var(--accent))" }}>
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Lightbulb size={24} className="text-primary" />
+            </div>
+            <div>
+              <p className="font-semibold text-foreground mb-1">Tipp der Redaktion</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Miss deine Katze in eingerollter Position vom Schwanzansatz bis zur Nase und multipliziere mit 1,5. Das ist dein Mindest-Durchmesser.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICE OVERVIEW */}
+      <section className="py-20 bg-muted/30" aria-labelledby="price-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Preis-Übersicht</p>
+            <h2 id="price-heading" className="text-heading-2 text-foreground mb-3">
+              Was kostet ein gutes Katzenbett?
+            </h2>
+            <p className="text-base font-semibold text-foreground italic mb-4">Wie viel kostet ein Katzenbett?</p>
+            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Ein gutes Katzenbett kostet zwischen 15 und 120 Euro - abhängig von Typ, Material und Marke. Einsteiger-Modelle aus Plüsch starten bei 15 €. Hochwertige Donut-Betten und Höhlen liegen bei 30-60 €. Orthopädische Betten und Design-Modelle aus Holz oder Bouclé kosten 60-120 €.
+            </p>
+          </div>
+
+          <div className="bg-card rounded-2xl border border-border overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Bett-Typ</TableHead>
+                  <TableHead>Einsteiger</TableHead>
+                  <TableHead>Mittelklasse</TableHead>
+                  <TableHead className="bg-secondary/15">Premium</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {[
+                  ["Donut-Bett", "15-25 €", "30-50 €", "60-90 €"],
+                  ["Katzenhöhle", "15-25 €", "30-55 €", "60-100 €"],
+                  ["Orthopädisches Bett", "25-40 €", "50-75 €", "80-120 €"],
+                  ["Fensterliege", "15-25 €", "25-45 €", "50-80 €"],
+                  ["Katzensofa", "20-35 €", "40-70 €", "80-150 €"],
+                  ["Design-Bett", "30-45 €", "55-90 €", "100-200 €"],
+                  ["Beheiztes Bett", "20-35 €", "40-65 €", "70-120 €"],
+                  ["Hängematte", "15-25 €", "25-40 €", "45-70 €"],
+                ].map((r) => (
+                  <TableRow key={r[0]}>
+                    <TableCell className="font-medium">{r[0]}</TableCell>
+                    <TableCell>{r[1]}</TableCell>
+                    <TableCell>{r[2]}</TableCell>
+                    <TableCell className="bg-secondary/10 font-semibold">{r[3]}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </section>
+
       {/* BUYING GUIDE */}
+
       <section className="py-20 bg-muted/20" aria-labelledby="guide-heading">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-14">
@@ -437,6 +594,13 @@ export default function Index() {
                 content: "Ein waschbares Katzenbett ist kein Luxus, sondern Pflicht. Katzen verlieren täglich Haare und hinterlassen Hautschuppen - ein regelmäßiges Waschen bei 30-40 Grad reduziert Bakterien und Gerüche. Achte auf Modelle mit abnehmbarem Bezug: So muss nicht das komplette Bett in die Maschine. Filzhöhlen nur per Handwäsche.",
                 links: [],
               },
+              {
+                step: "05",
+                title: "Sicherheit und Schadstoff-Prüfung",
+                icon: <ShieldCheck size={22} className="text-primary" />,
+                content: "Achte auf Prüf-Siegel: OEKO-TEX Standard 100 (textile Schadstoff-Prüfung), GS-Zeichen (geprüfte Sicherheit, vor allem bei beheizten Betten) und TÜV-geprüft. Vermeide Modelle mit chemischem Geruch - das deutet auf Lösungsmittel-Reste hin. Bei beheizten Betten muss eine automatische Abschaltung vorhanden sein (Überhitzungsschutz).",
+                links: [],
+              },
             ].map((item) => (
               <div key={item.step} className="flex gap-6 bg-card rounded-2xl border border-border p-6 hover:border-primary/30 transition-colors">
                 <div className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold text-primary/20 border-2 border-primary/20 font-mono">
@@ -474,16 +638,21 @@ export default function Index() {
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Material</th>
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Vorteile</th>
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Nachteile</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Pflege</th>
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Am besten für</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { mat: "Plüsch / Kunstfell", pros: "Weich, günstig, waschbar", cons: "Verschleißt schneller", best: "Junge Katzen, Budget-Käufer" },
-                    { mat: "Filz (Merinowolle)", pros: "Natürlich, atmungsaktiv", cons: "Nur Handwäsche", best: "Höhlen, Naturliebhaber" },
-                    { mat: "Memory Foam", pros: "Gelenkentlastend, passt sich an", cons: "Teurer, schwerer", best: "Senioren, kranke Katzen" },
-                    { mat: "Cord / Canvas", pros: "Modisch, robust, pflegeleicht", cons: "Weniger weich", best: "Design-Haushalte" },
-                    { mat: "Holz / Birkenholz", pros: "Langlebig, hygienisch, stylisch", cons: "Kein Kuschelfaktor allein", best: "Design-Betten mit Kissen" },
+                    { mat: "Plüsch / Kunstfell", pros: "Weich, günstig, waschbar", cons: "Verschleißt schneller", care: "Maschine 30°C", best: "Junge Katzen, Budget-Käufer" },
+                    { mat: "Sherpa", pros: "Extra flauschig, warm", cons: "Fusselt anfangs", care: "Maschine 30°C, schonend", best: "Frostige Katzen, Winter" },
+                    { mat: "Filz (Merinowolle)", pros: "Natürlich, atmungsaktiv", cons: "Nur Handwäsche", care: "Handwäsche kalt", best: "Höhlen, Naturliebhaber" },
+                    { mat: "Memory Foam", pros: "Gelenkentlastend, passt sich an", cons: "Teurer, schwerer", care: "Bezug abnehmbar 30°C", best: "Senioren, kranke Katzen" },
+                    { mat: "Cord", pros: "Modisch, robust, weich", cons: "Haare bleiben sichtbar", care: "Bezug Maschine 30°C", best: "Design-Haushalte" },
+                    { mat: "Bouclé", pros: "Trendy, voluminös, weich", cons: "Krallen können hängenbleiben", care: "Schonwäsche oder Reinigung", best: "Stilbewusste Wohnzimmer" },
+                    { mat: "Canvas", pros: "Sehr robust, kratzfest", cons: "Weniger weich", care: "Maschine 40°C", best: "Aktive, kratzfreudige Katzen" },
+                    { mat: "Birkenholz", pros: "Langlebig, hygienisch, stylisch", cons: "Kein Kuschelfaktor allein", care: "Feucht abwischen", best: "Design-Betten mit Kissen" },
+                    { mat: "Wasserhyazinthe", pros: "Natürlich, leicht, stabil", cons: "Kann splittern", care: "Trocken abbürsten", best: "Boho-Stil, Körbchen-Optik" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-muted/20" : ""}>
                       <td className="px-4 py-3 font-medium text-foreground">{row.mat}</td>
@@ -497,6 +666,7 @@ export default function Index() {
                           <WarningIcon size={14} className="text-yellow-500 shrink-0" /> {row.cons}
                         </span>
                       </td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.care}</td>
                       <td className="px-4 py-3 text-muted-foreground">{row.best}</td>
                     </tr>
                   ))}
@@ -540,6 +710,8 @@ export default function Index() {
               { icon: <BigCatIcon size={30} className="text-primary" />, title: "Die große Rasse", desc: "Maine Coon, Ragdoll, Norwegische Waldkatze - braucht Platz.", rec: "XL-Donut (60-70 cm) oder XXL-Sofa", link: "/donut-katzenbetten", badge: "Wichtig" },
               { icon: <SeniorCatIcon size={30} className="text-primary" />, title: "Die Senioren-Katze", desc: "Ab 10 Jahren: Gelenke, Arthritis, schlechte Durchblutung.", rec: "Orthopädischer Memory Foam + beheizt", link: "/orthopaedische-katzenbetten", badge: "Medizinisch" },
               { icon: <SparkleIcon size={30} className="text-primary" />, title: "Der Design-Fan", desc: "Du liebst schönes Wohnen und willst kein hässliches Bett.", rec: "Premium-Holzbett oder Cord-Sofa", link: "/design-katzenbetten", badge: "Stil" },
+              { icon: <Users size={30} className="text-primary" />, title: "Der Mehrkatzen-Haushalt", desc: "Zwei oder mehr Katzen leben friedlich zusammen, haben aber jeder eigene Schlaf-Vorlieben. Empfehlung: Mindestens ein Bett pro Katze plus ein gemeinsames XXL-Sofa. Faustregel: Anzahl Schlafplätze gleich Anzahl Katzen plus eins.", rec: "Mehrere Betten + XXL-Sofa", link: "/katzensofas", badge: "NEU" },
+              { icon: <Home size={30} className="text-primary" />, title: "Die Wohnungskatze ohne Freigang", desc: "Verbringt 16 Stunden täglich drinnen und braucht abwechslungsreiche Liegeplätze. Empfehlung: Kombination aus Höhle (Rückzug), Fensterliege (Stimulation) und Donut (Tiefschlaf).", rec: "Höhle + Fensterliege + Donut", link: "/fensterliegen-katzen", badge: "NEU" },
             ].map((item) => (
               <Link key={item.link} to={item.link} className="group bg-card rounded-2xl border border-border p-5 hover:border-primary/40 hover:shadow-md transition-all hover:-translate-y-0.5">
                 <div className="flex items-start justify-between mb-3">
@@ -647,12 +819,57 @@ export default function Index() {
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-5 text-muted-foreground leading-relaxed border-t border-border">
-                    <p className="pt-4">{faq.a}</p>
+                    {(() => {
+                      const match = faq.a.match(/^([^.!?]*[.!?])\s*(.*)$/s);
+                      const first = match?.[1] ?? faq.a;
+                      const rest = match?.[2] ?? "";
+                      return (
+                        <p className="pt-4">
+                          <strong className="text-foreground">{first}</strong>{rest ? " " + rest : ""}
+                        </p>
+                      );
+                    })()}
                   </div>
                 )}
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* METHODIK / ÜBER UNS */}
+      <section className="py-20 bg-muted/30" aria-labelledby="methodik-heading">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">E-E-A-T</p>
+            <h2 id="methodik-heading" className="text-heading-2 text-foreground mb-4">
+              Über katzenbett.de - Unsere Vergleichsmethodik
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              katzenbett.de ist ein unabhängiges Vergleichsportal für Katzenbetten. Wir testen, vergleichen und empfehlen - finanziert über transparente Affiliate-Provisionen, die für dich keinen Mehrpreis bedeuten.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+            {[
+              { pct: "40%", title: "Bewertungs-Score", desc: "Durchschnitts-Bewertung gewichtet nach Anzahl Rezensionen" },
+              { pct: "30%", title: "Material & Verarbeitung", desc: "Stoff, Polsterung, Nahtqualität, Schadstoff-Siegel" },
+              { pct: "15%", title: "Waschbarkeit", desc: "Maschinenfähigkeit, abnehmbarer Bezug" },
+              { pct: "15%", title: "Preis-Leistung", desc: "Preis im Verhältnis zu Material und Lebensdauer" },
+            ].map((c) => (
+              <Card key={c.title} className="border-border">
+                <CardContent className="p-5">
+                  <div className="text-3xl font-bold text-primary mb-2" style={{ fontFamily: "'DM Serif Display', serif" }}>{c.pct}</div>
+                  <h3 className="font-semibold text-foreground mb-1">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground italic">
+            Wir aktualisieren unsere Empfehlungen monatlich. Die letzten Daten wurden im Mai 2026 gesichtet.
+          </p>
         </div>
       </section>
     </>
