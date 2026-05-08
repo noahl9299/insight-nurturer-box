@@ -619,7 +619,7 @@ export default function Index() {
               {
                 icon: Sparkles,
                 title: "Material und Pflege",
-                desc: "Setze beim Material auf Fleece, Plüsch oder Baumwolle für optimale Wärmespeicherung. Naturfasern wie Filz, Merinowolle oder Wasserhyazinthe sind atmungsaktiv und besonders allergikerfreundlich. Achte auf das OEKO-TEX Standard 100-Siegel - es garantiert Schadstofffreiheit und schützt deine Katze vor Hautreizungen. Die Verarbeitung erkennst du an stabilen Doppelnähten und einer formstabilen Füllung.",
+                desc: "Setze auf Fleece, Plüsch oder Baumwolle für optimale Wärmespeicherung. Naturfasern wie Filz, Merinowolle oder Wasserhyazinthe sind atmungsaktiv und allergikerfreundlich. Achte auf das OEKO-TEX Standard 100-Siegel - es garantiert Schadstofffreiheit.",
                 points: [
                   "Beste Materialien: Fleece, Plüsch, Baumwolle, Merinowolle",
                   "Pflege: Bezug bei 30 Grad waschen, alle 2 bis 4 Wochen",
@@ -629,7 +629,7 @@ export default function Index() {
               {
                 icon: Ruler,
                 title: "Die richtige Größe und Form",
-                desc: "Die Schlafposition deiner Katze bestimmt die Form. Kugelschläfer, die sich gerne zusammenrollen, fühlen sich in einem runden oder ovalen Bett mit erhöhtem Rand geborgen. Streckt sich deine Katze gerne aus, eignet sich ein rechteckiges Kissen oder ein Katzensofa besser. Die Größe muss zur Körperlänge passen. Faustformel: Miss deine schlafende Katze von der Nase bis zum Schwanzansatz und addiere 15 bis 20 Zentimeter Puffer.",
+                desc: "Die Schlafposition deiner Katze bestimmt die Form. Kugelschläfer bevorzugen runde oder ovale Betten mit erhöhtem Rand. Streckschläfer fühlen sich auf rechteckigen Kissen oder Katzensofas wohler. Faustformel: Körperlänge plus 15 bis 20 Zentimeter Puffer.",
                 points: [
                   "Kugelschläfer: Donut-Bett oder Höhle mit erhöhtem Rand",
                   "Streckschläfer: Rechteckiges Kissen oder Katzensofa",
@@ -639,20 +639,20 @@ export default function Index() {
               {
                 icon: ShieldCheck,
                 title: "Wärme, Hygiene und Sicherheit",
-                desc: "In kühlen Räumen oder bei Fliesen- und Parkettböden ist eine gute Isolierung entscheidend. Dick gepolsterte Böden, thermische Einlagen oder selbstwärmende Reflexfolien speichern Körperwärme. Bei beheizten Modellen achte auf das GS-Zeichen und einen Thermostat mit Überhitzungsschutz. Eine rutschfeste Unterseite ist Pflicht: Sie verhindert, dass das Bett auf glatten Böden verrutscht. Vermeide Modelle mit chemischem Geruch - das deutet auf Lösungsmittel-Reste hin.",
+                desc: "In kühlen Räumen oder bei Fliesen- und Parkettböden ist eine gute Isolierung entscheidend. Bei beheizten Modellen achte auf das GS-Zeichen und einen Thermostat mit Überhitzungsschutz. Eine rutschfeste Unterseite ist Pflicht. Vermeide Modelle mit chemischem Geruch.",
                 points: [
                   "Isolierung: Dick gepolsterter Boden oder thermische Einlage",
                   "Sicherheit: Rutschfeste Unterseite, GS-Zeichen bei Heizung",
-                  "Warnsignal: Chemischer Geruch - Modell zurückgeben oder lüften",
+                  "Warnsignal: Chemischer Geruch - Modell zurückgeben",
                 ],
               },
               {
                 icon: Cat,
                 title: "Für welche Katze eignet sich welches Bett?",
-                desc: "Senior-Katzen ab zehn Jahren und Tiere mit Gelenkproblemen profitieren von erhöhten Betten mit niedrigem Einstieg und orthopädischem Memory Foam. Die druckentlastende Füllung schont Gelenke und Wirbelsäule. Ängstliche oder neu eingezogene Katzen brauchen geschlossene Höhlen oder Iglus als Rückzugsort. Für Mehrkatzen-Haushalte gilt: Ein Bett pro Katze plus eines extra - so vermeidest du Konflikte um den Lieblingsplatz.",
+                desc: "Senior-Katzen ab zehn Jahren und Tiere mit Gelenkproblemen profitieren von erhöhten Betten mit niedrigem Einstieg und orthopädischem Memory Foam. Ängstliche Katzen brauchen geschlossene Höhlen als Rückzugsort. Mehrkatzen-Haushalte: Ein Bett pro Katze plus eines extra.",
                 points: [
-                  "Senioren und kranke Katzen: Orthopädisches Bett mit Memory Foam, niedriger Einstieg",
-                  "Ängstliche Katzen: Geschlossene Höhle oder Iglu mit Sichtschutz",
+                  "Senioren: Orthopädisches Bett mit Memory Foam, niedriger Einstieg",
+                  "Ängstliche Katzen: Geschlossene Höhle oder Iglu",
                   "Mehrkatzen-Haushalt: Anzahl Schlafplätze gleich Anzahl Katzen plus eins",
                 ],
               },
