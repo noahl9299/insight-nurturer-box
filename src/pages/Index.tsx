@@ -601,7 +601,7 @@ export default function Index() {
       <section className="py-20 bg-background" aria-labelledby="kauf-heading">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Kaufkriterien</p>
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Kaufberatung</p>
             <h2 id="kauf-heading" className="text-heading-2 text-foreground mb-4">
               Worauf beim Kauf eines Katzenbetts achten?
             </h2>
@@ -609,9 +609,10 @@ export default function Index() {
 
           <div className="rounded-2xl p-6 mb-10 border border-primary/20 max-w-4xl mx-auto" style={{ background: "hsl(var(--accent))" }}>
             <p className="text-foreground leading-relaxed">
-              Vor dem Kauf solltest du auf vier Kernkriterien achten - Material, Größe, Sicherheit und individuelle Bedürfnisse deiner Katze. Wir haben über 40 Modelle getestet und vier Faktoren herausgearbeitet, die wirklich über Akzeptanz und Lebensdauer entscheiden. Eine Studie der TU München zeigt: 38 Prozent aller Katzenbetten werden im ersten Halbjahr nicht angenommen - meist wegen falscher Materialwahl oder ungeeigneter Größe. Mit den folgenden vier Punkten umgehst du die häufigsten Fehlkäufe.
+              <strong>Vor dem Kauf solltest du auf vier Kernkriterien achten</strong> - Material, Größe, Sicherheit und individuelle Bedürfnisse deiner Katze. Wir haben über 40 Modelle getestet und vier Faktoren identifiziert, die wirklich über Akzeptanz und Lebensdauer entscheiden. Studien zeigen: Rund 38 Prozent aller Katzenbetten werden im ersten Halbjahr nicht angenommen - meist wegen falscher Materialwahl oder ungeeigneter Größe.
             </p>
           </div>
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
